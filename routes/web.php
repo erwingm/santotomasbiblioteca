@@ -26,6 +26,8 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     //Route::resource('program','ProgramController');
 
     Route::get('contact','ContactController@index')->name('contact.index');
+    Route::get('book','BookController@index')->name('book.index');
+    Route::get('book/create','BookController@create')->name('book.add');
 });
 
 Auth::routes();

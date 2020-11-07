@@ -41,6 +41,7 @@ class CategoryController extends Controller
     {
         //
         $category_id = $request->category_id;
+        
     }
 
     /**

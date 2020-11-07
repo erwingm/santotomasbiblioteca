@@ -13,8 +13,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- Ionicons --> 
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('backend/css/adminlte.min.css')}}">
+
+  <link rel="stylesheet" href="{{asset('backend/plugins/summernote/summernote-bs4.css')}}">
+
+  
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -223,13 +229,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('backend/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('backend/js/demo.js')}}"></script>
+<script src="{{asset('backend/plugins/summernote/summernote-bs4.min.js')}}"></script>
+
 <script>
     $(function () {
       $("#example1").DataTable({
         "responsive": true,
         "autoWidth": false,
       });
+      $('.textarea').summernote();
     });
   </script>
+
 </body>
 </html>
