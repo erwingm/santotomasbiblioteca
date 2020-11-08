@@ -17,7 +17,7 @@ class CategoryController extends Controller
     {
         //
         $categories = Category::all();
-        return view('admin.contact.index', compact('categories'));
+        return view('admin.category.index', compact('categories'));
     }
 
     /**
@@ -28,7 +28,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view('admin.contact.index');
+        return view('admin.category.add');
     }
 
     /**
@@ -40,7 +40,18 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-        $category_id = $request->category_id;
+   
+        $category = new Category();
+        $category->name = $request->input('categoryName');
+        $category->description = $request->input('categoryDescription');
+        if($category->save()){
+            toastr()->success('Se Elimino exitosamente!');
+            return redirect('admin/category');
+        }
+        toastr()->error('Error Message');
+        return redirect()->back();
+        
+        
         
     }
 
@@ -64,6 +75,8 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
+        $category  = Category::find($id);
+        return view('admin.category.edit',compact('category'));
     }
 
     /**
@@ -76,6 +89,13 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $category = Category::find($id);
+        $category->name = $request->input('categoryName');
+        $category->description = $request->input('categoryDescription');
+        if($category->save()){
+            return redirect('admin/category')->with('success', 'Se Registro la Categoria');
+        }
+        return redirect()->back()->with('failed','Problemas para registarar');
     }
 
     /**
@@ -84,8 +104,16 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         //
+
+        if(Category::destroy($id)){
+            toastr()->success('Se Elimino exitosamente!');
+            return redirect()->back();
+        }
+        return redirect()->back();
+
+   
     }
 }

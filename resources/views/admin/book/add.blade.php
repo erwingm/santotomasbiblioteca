@@ -60,8 +60,7 @@
 
   
             </div>
-            <!--/.col (left) -->
-            <!-- right column -->
+
             <div class="col-md-4">
               <!-- general form elements disabled -->
               <div class="card card-warning">

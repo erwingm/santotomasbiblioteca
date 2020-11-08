@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 class CreateBooksTable extends Migration
 {
     /**
@@ -15,6 +16,12 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description');
+            $table->timestamp('published_at')->nullable();
+            $table->string('quantity');
+            $table->unsignedInteger('category_id');
+
             $table->timestamps();
         });
     }

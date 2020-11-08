@@ -11,18 +11,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <title>AdminLTE 3 | Starter</title>
 
+  @toastr_css
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons --> 
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="{{asset('backend/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('backend/css/adminlte.min.css')}}">
 
   <link rel="stylesheet" href="{{asset('backend/plugins/summernote/summernote-bs4.css')}}">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+  <script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 
   
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -159,11 +171,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Bienvenido</h1>
+            
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+           
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -216,11 +228,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
+
+
 <script src="{{asset('backend/plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('backend/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-{{-- <script src="{{asset('backend/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script> --}}
-{{-- <script src="{{asset('backend/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script> --}}
+<!-- SweetAlert2 -->
+<script src="{{asset('backend/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
@@ -230,6 +244,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('backend/js/demo.js')}}"></script>
 <script src="{{asset('backend/plugins/summernote/summernote-bs4.min.js')}}"></script>
+
+
+
+
+
+@toastr_js
+@toastr_render
 
 <script>
     $(function () {
@@ -241,5 +262,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     });
   </script>
 
+
+
+
 </body>
+
 </html>
