@@ -45,6 +45,29 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item has-treeview {{ (request()->is('admin/distric*') ? 'menu-open' : '')}}">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Distritos
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('distric.index')}}" class="nav-link {{request()->is('admin/distric') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ver Listados</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{route('distric.create')}}" class="nav-link {{request()->is('admin/distric/create') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Registrar</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
           <li class="nav-item has-treeview {{ (request()->is('admin/book*') ? 'menu-open' : '')}}">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>

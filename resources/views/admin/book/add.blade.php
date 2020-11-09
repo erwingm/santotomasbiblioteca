@@ -7,7 +7,7 @@
         <div class="container-fluid">
           <div class="row">
             <!-- left column -->
-            <div class="col-md-8">
+            <div class="col-md-7">
               <!-- general form elements -->
               <div class="card card-primary">
                 <div class="card-header">
@@ -17,12 +17,24 @@
                 <!-- form start -->
                 <form role="form">
                   <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-7">
+                              <label>Condigo</label>
+                              <input type="name" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                          </div>
+                          <div class="col-md-5 ">
+                              <label>Cantidad</label>
+                              <input type="name" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                          </div>
+                          
+  
+                      </div>
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-7">
                             <label>Nombre</label>
                             <input type="name" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
                               <!-- select -->
                               <div class="form-group">
                                 <label>Autor</label>
@@ -35,6 +47,34 @@
                                 </select>
                               </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7">
+                              <!-- select -->
+                              <div class="form-group">
+                                <label>Categoria</label>
+                                <select class="form-control">
+                                  <option>option 1</option>
+                                  <option>option 2</option>
+                                  <option>option 3</option>
+                                  <option>option 4</option>
+                                  <option>option 5</option>
+                                </select>
+                              </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <!-- select -->
+                            <div class="form-group">
+                              <label>Editorial</label>
+                              <select class="form-control">
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                                <option>option 5</option>
+                              </select>
+                            </div>
+                      </div>
                     </div>
                     <div class="row">
                             <div class="col-md-12">
@@ -60,8 +100,9 @@
 
   
             </div>
-
-            <div class="col-md-4">
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-5">
               <!-- general form elements disabled -->
               <div class="card card-warning">
                 <div class="card-header">
@@ -71,10 +112,11 @@
                 <div class="card-body">
                   <form role="form">
                     <div class="row">
-                      <div class="col-sm-10">
+                      <div class="col-sm-10
+                      ">
                         <!-- text input -->
                         <div class="form-group">
-                          <label>Cantidad</label>
+                          <label>Paginas</label>
                           <input type="text" class="form-control" placeholder="Enter ...">
                         </div>
                       </div>
@@ -82,7 +124,7 @@
                     <div class="row">
                             <div class="col-sm-10">
                               <div class="form-group">
-                                <label>Categorias</label>
+                                <label>Etiquetas</label>
                                 <select class="form-control">
                                   <option>option 1</option>
                                   <option>option 2</option>
@@ -92,8 +134,8 @@
                                 </select>
                               </div>
                             </div>
-                          </div>
-  
+                      </div>
+
                     <div class="row">
                       <div class="col-sm-6">
                         <!-- checkbox -->
@@ -103,8 +145,12 @@
                             <label class="form-check-label">Virtual</label>
                           </div>
                         </div>
-                      </div> 
+                      </div>
                     </div>
+                    <div class="form-group">
+                        <label>Resumen</label>
+                        <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                      </div>
                     <div class="form-group">
                         <label for="exampleInputFile">Subir Iamgen</label>
                         <div class="input-group">
@@ -115,6 +161,7 @@
                             <div class="input-group-append">
                             <span class="input-group-text" id="">Seleccionar</span>
                             </div>
+                           
                         </div>
                     </div>
                     <div class="form-group">
@@ -131,6 +178,11 @@
           </div>
           <!-- /.row -->
         </div><!-- /.container-fluid -->
+
       </section>
 
+ 
+
+
 @endsection
+

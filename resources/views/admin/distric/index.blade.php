@@ -11,7 +11,7 @@
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">
-              Listado de Categorias
+              Listado de Distritos
             </h3>
           </div>
           <!-- /.card-header -->
@@ -26,14 +26,14 @@
               </thead>
               <tbody>
 
-              @foreach($categories as $category)
+              @foreach($districs as $distric)
               <tr>
-                <td>{{$category->name}}</td>
-                <td>{{$category->description}}</td>
+                <td>{{$distric->name}}</td>
+                <td>{{$distric->description}}</td>
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">
-                        <a href="{{URL::to('admin/category/edit')}}/{{$category->id}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
-                        <a href="{{URL::to('admin/category/delete')}}/{{$category->id}}" onclick="mensaje()" class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a>
+                        <a href="{{URL::to('admin/distric/edit')}}/{{$distric->id}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
+                        <a href="{{URL::to('admin/distric/delete')}}/{{$distric->id}}" onclick="mensaje()" class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a>
                         
                       </div>
                     </td>

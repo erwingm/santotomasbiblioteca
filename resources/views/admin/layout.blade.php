@@ -14,6 +14,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @toastr_css
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}">
+
   <!-- Ionicons --> 
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- SweetAlert2 -->
@@ -233,6 +234,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('backend/plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('backend/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+
+
 <!-- SweetAlert2 -->
 <script src="{{asset('backend/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 <!-- Bootstrap 4 -->
@@ -246,9 +249,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('backend/plugins/summernote/summernote-bs4.min.js')}}"></script>
 
 
-
-
-
 @toastr_js
 @toastr_render
 
@@ -260,6 +260,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       });
       $('.textarea').summernote();
     });
+
+    
+
   </script>
 
 

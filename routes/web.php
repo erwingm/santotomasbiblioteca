@@ -31,6 +31,10 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     Route::post('category/update/{id}','CategoryController@update')->name('category.update');
     Route::get('category/delete/{id}','CategoryController@destroy')->name('category.destroy');
 
+    Route::get('distric','DistricController@index')->name('distric.index');
+    Route::get('distric/create','DistricController@create')->name('distric.create');
+    Route::post('distric/store','DistricController@store')->name('distric.store');
+    
     Route::get('book','BookController@index')->name('book.index');
     Route::get('book/create','BookController@create')->name('book.add');
 

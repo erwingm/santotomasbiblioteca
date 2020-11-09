@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Category;
+use App\Models\Distric;
 
-class CategoryController extends Controller
+class DistricController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $categories = Category::all();
-        return view('admin.category.index', compact('categories'));
+        $districs = Distric::all();
+        return view('admin.distric.index', compact('districs')); 
     }
 
     /**
@@ -28,7 +28,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view('admin.category.add');
+        return view('admin.distric.create');
     }
 
     /**
@@ -40,19 +40,14 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-   
-        $category = new Category();
-        $category->name = $request->input('categoryName');
-        $category->description = $request->input('categoryDescription');
-        if($category->save()){
+        $distric = new Distric();
+        $distric->name = $request->input('districName');
+        if($disctric->save()){
             toastr()->success('Se Registro exitosamente!');
-            return redirect('admin/category');
+            return redirect('admin/distric');
         }
         toastr()->error('Error Message');
         return redirect()->back();
-        
-        
-        
     }
 
     /**
@@ -75,8 +70,6 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
-        $category  = Category::find($id);
-        return view('admin.category.edit',compact('category'));
     }
 
     /**
@@ -89,13 +82,6 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $category = Category::find($id);
-        $category->name = $request->input('categoryName');
-        $category->description = $request->input('categoryDescription');
-        if($category->save()){
-            return redirect('admin/category')->with('success', 'Se Registro la Categoria');
-        }
-        return redirect()->back()->with('failed','Problemas para registarar');
     }
 
     /**
@@ -104,16 +90,8 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request,$id)
+    public function destroy($id)
     {
         //
-
-        if(Category::destroy($id)){
-            toastr()->success('Se Elimino exitosamente!');
-            return redirect()->back();
-        }
-        return redirect()->back();
-
-   
     }
 }
