@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Distric;
+use App\Models\Editorial;
 
-class DistricController extends Controller
+class EditorialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,9 @@ class DistricController extends Controller
     public function index()
     {
         //
-        $districs = Distric::all();
-        return view('admin.distric.index', compact('districs')); 
+        $editorials = Editorial::all();
+        return view('admin.editorial.index', compact('editorials'));
+
     }
 
     /**
@@ -28,7 +29,7 @@ class DistricController extends Controller
     public function create()
     {
         //
-        return view('admin.distric.create');
+        return view('admin.editorial.create');
     }
 
     /**
@@ -40,14 +41,15 @@ class DistricController extends Controller
     public function store(Request $request)
     {
         //
-        $distric = new Distric();
-        $distric->name = $request->input('districName');
-        if($distric->save()){
+        $editorial = new Editorial();
+        $editorial->name = $request->input('editorialName');
+        if($editorial->save()){
             toastr()->success('Se Registro exitosamente!');
-            return redirect('admin/distric');
+            return redirect('admin/editorial');
         }
-        toastr()->error('Error Message');
+        toastr()->success('Se Algo paso exitosamente!');
         return redirect()->back();
+
     }
 
     /**
@@ -70,8 +72,8 @@ class DistricController extends Controller
     public function edit($id)
     {
         //
-        $distric = Distric::find($id);
-        return view('admin.distric.edit', compact('distric'));
+        $editorial = Editorial::find($id);
+        return view('admin.editorial.edit', compact('editorial'));
     }
 
     /**
@@ -84,13 +86,13 @@ class DistricController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $distric = Distric::find($id);
-        $distric->name = $request->input('districName');
-        if($distric->save()){
+        $editorial = Editorial::find($id);
+        $editorial->name = $request->input('editorialName');
+        if($editorial->save()){
             toastr()->success('Se Actualizo exitosamente!');
-            return redirect('admin/distric');
+            return redirect('admin/editorial');
         }
-        toastr()->error('Error Message');
+        toastr()->success('Se Algo apso exitosamente!');
         return redirect()->back();
     }
 
@@ -103,9 +105,10 @@ class DistricController extends Controller
     public function destroy($id)
     {
         //
-        if(Distric::destroy($id)){
+
+        if(Editorial::destroy($id)){
             toastr()->success('Se Elimino exitosamente!');
-            return redirect('admin/distric');
+            return redirect('admin/editorial');
         }
     }
 }

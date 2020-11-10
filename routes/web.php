@@ -34,6 +34,17 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     Route::get('distric','DistricController@index')->name('distric.index');
     Route::get('distric/create','DistricController@create')->name('distric.create');
     Route::post('distric/store','DistricController@store')->name('distric.store');
+    Route::get('distric/edit/{id}','DistricController@edit')->name('distric.edit');
+    Route::post('distric/update/{id}','DistricController@update')->name('distric.update');
+    Route::get('distric/delete/{id}','DistricController@destroy')->name('distric.destroy');
+
+    Route::get('editorial', 'EditorialController@index')->name('editorial.index');
+    Route::get('editorial/create', 'EditorialController@create')->name('editorial.create');
+    Route::post('editorial/store','EditorialController@store')->name('editorial.store');
+    Route::get('editorial/edit/{id}','EditorialController@edit')->name('editorial.edit');
+    Route::post('editorial/update/{id}','EditorialController@update')->name('editorial.update');
+    Route::get('editorial/delete/{id}','EditorialController@destroy')->name('editorial.destroy');
+
     
     Route::get('book','BookController@index')->name('book.index');
     Route::get('book/create','BookController@create')->name('book.add');

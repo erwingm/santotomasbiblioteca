@@ -68,7 +68,7 @@
                 </li>
               </ul>
             </li>
-          <li class="nav-item has-treeview {{ (request()->is('admin/book*') ? 'menu-open' : '')}}">
+          <li class="nav-item has-treeview {{ (request()->is('admin/book*') || request()->is('admin/editorial*') ? 'menu-open' : '')}}">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -80,13 +80,19 @@
               <li class="nav-item">
                 <a href="{{route('book.index')}}" class="nav-link {{request()->is('admin/book') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Registrar</p>
+                  <p>Ver Listado</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('book.add')}}" class="nav-link {{request()->is('admin/book/create') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('editorial.index')}}" class="nav-link {{request()->is('admin/editorial') ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Editorial</p>
                 </a>
               </li>
             </ul>
