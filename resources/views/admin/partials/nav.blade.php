@@ -68,7 +68,7 @@
                 </li>
               </ul>
             </li>
-          <li class="nav-item has-treeview {{ (request()->is('admin/book*') || request()->is('admin/editorial*') ? 'menu-open' : '')}}">
+          <li class="nav-item has-treeview {{ (request()->is('admin/book*') || request()->is('admin/editorial*') || request()->is('admin/author*') ? 'menu-open' : '')}}">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -93,6 +93,12 @@
                 <a href="{{route('editorial.index')}}" class="nav-link {{request()->is('admin/editorial') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Editorial</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('author.index')}}" class="nav-link {{request()->is('admin/author') ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Autores</p>
                 </a>
               </li>
             </ul>

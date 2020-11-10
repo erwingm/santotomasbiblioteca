@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title','Crear Distritos')
+@section('title','Registrar Autor')
 
 @section('content')
 
@@ -11,24 +11,24 @@
               <!-- general form elements -->
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Datos de la Categoria</h3>
+                  <h3 class="card-title">Datos del Autor</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ URL::to('admin/distric/store')}}" method="post">
+                <form action="{{ URL::to('admin/author/store')}}" method="post">
                 @csrf
                   <div class="card-body">
                     <div class="row">
                         <div class="col-md-8">
                             <label>Nombre</label>
-                            <input type="text" name="districName" class="form-control"  placeholder="Enter email">
+                            <input type="text" name="authorName" class="form-control"  placeholder="Enter email">
                         </div>
 
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-md-5">
-                                <button type="submit" class="btn btn-success">Enviar</button>x
+                                <button type="submit" class="btn btn-success">Enviar</button>
                         </div>
                         
                     </div>

@@ -45,7 +45,13 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     Route::post('editorial/update/{id}','EditorialController@update')->name('editorial.update');
     Route::get('editorial/delete/{id}','EditorialController@destroy')->name('editorial.destroy');
 
-    
+    Route::get('author', 'AuthorController@index')->name('author.index');
+    Route::get('author/create','AuthorController@create')->name('author.create');
+    Route::post('author/store','AuthorController@store')->name('author.store');
+    Route::get('author/edit/{id}','AuthorController@edit')->name('author.edit');
+    Route::post('author/update/{id}','AuthorController@update')->name('author.update');
+    Route::get('author/delete/{id}','AuthorController@destroy')->name('author.destroy');
+       
     Route::get('book','BookController@index')->name('book.index');
     Route::get('book/create','BookController@create')->name('book.add');
 
