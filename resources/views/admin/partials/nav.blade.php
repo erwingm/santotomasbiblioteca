@@ -45,7 +45,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview {{ (request()->is('admin/distric*') ? 'menu-open' : '')}}">
+          <li class="nav-item has-treeview {{ (request()->is('admin/distric*') || request()->is('admin/institute*') ? 'menu-open' : '')}}">
               <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
@@ -64,6 +64,12 @@
                   <a href="{{route('distric.create')}}" class="nav-link {{request()->is('admin/distric/create') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Registrar</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{route('institute.create')}}" class="nav-link {{request()->is('admin/institute/create') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Instituciones</p>
                   </a>
                 </li>
               </ul>
@@ -99,6 +105,30 @@
                 <a href="{{route('author.index')}}" class="nav-link {{request()->is('admin/author') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Autores</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item has-treeview {{request()->is('admin/activity*') ? 'menu-open' : ''}}">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Actividades
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item active">
+                <a href="{{route('activity.index')}}" class="nav-link {{request()->is('admin/activity') ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ver Actividades</p>
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a href="{{route('activity.create')}}" class="nav-link {{request()->is('admin/activity/create')? 'active' : ''}}" >
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Registrar Actividad</p>
                 </a>
               </li>
             </ul>

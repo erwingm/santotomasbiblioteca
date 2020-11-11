@@ -51,6 +51,18 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     Route::get('author/edit/{id}','AuthorController@edit')->name('author.edit');
     Route::post('author/update/{id}','AuthorController@update')->name('author.update');
     Route::get('author/delete/{id}','AuthorController@destroy')->name('author.destroy');
+
+    Route::get('institute','InstituteController@index')->name('institute.index');
+    Route::get('institute/create','InstituteController@create')->name('institute.create');
+    Route::post('institute/store','InstituteController@store')->name('institute.store');
+    Route::get('institute/edit/{id}','InstituteController@edit')->name('institute.edit');
+    Route::post('institute/update/{id}','InstituteController@update')->name('institute.update');
+    Route::get('institute/delete/{id}','InstituteController@destroy')->name('institute.destroy');
+
+
+    Route::get('activity','ActivityController@index')->name('activity.index');
+    Route::get('activity/create','ActivityController@create')->name('activity.create');
+
        
     Route::get('book','BookController@index')->name('book.index');
     Route::get('book/create','BookController@create')->name('book.add');

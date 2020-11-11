@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Institute;
-class InstituteController extends Controller
+use App\Models\Activity;
+
+class ActivityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class InstituteController extends Controller
     public function index()
     {
         //
-        $institutes = Institute::all();
-        return view('admin.institute.index',compact('institutes'));
+        //$activities = Activity::all();
+        return view('admin.activity.index');
     }
 
     /**
@@ -27,7 +28,7 @@ class InstituteController extends Controller
     public function create()
     {
         //
-        return view('admin.institute.create');
+        return view('admin.activity.create');
     }
 
     /**
@@ -39,13 +40,6 @@ class InstituteController extends Controller
     public function store(Request $request)
     {
         //
-        $institute = new Institute();
-        $institute->name = $request->input('instituteName');
-        if($institute->save()){
-            toastr()->success('Se Registro exitosamente!');
-            return redirect('admin/institute');
-        }
-        return redirect()->back();
     }
 
     /**
@@ -57,7 +51,6 @@ class InstituteController extends Controller
     public function show($id)
     {
         //
-        
     }
 
     /**
@@ -69,8 +62,6 @@ class InstituteController extends Controller
     public function edit($id)
     {
         //
-        $institute = Institute::find($id);
-        return view('admin.institute.edit',compact('institute'));
     }
 
     /**
@@ -83,13 +74,6 @@ class InstituteController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $institute = Institute::find($id);
-        $institute->name = $request->input('instituteName');
-        if($institute->save()){
-            toastr()->success('Se Actualizo exitosamente!');
-            return redirect('admin/institute');
-        }
-        return redirect()->bac();
     }
 
     /**
@@ -101,9 +85,5 @@ class InstituteController extends Controller
     public function destroy($id)
     {
         //
-        if($institute::destroy($id)){
-            toastr()->success('Se Elimino exitosamente!');
-            return redirect('admin/institute');
-        }
     }
 }
