@@ -33,8 +33,7 @@
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">
                         <a href="{{URL::to('admin/category/edit')}}/{{$category->id}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
-                        <a href="{{URL::to('admin/category/delete')}}/{{$category->id}}" onclick="mensaje()" class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a>
-                        
+                        <a href=""class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-trash"></i> Eliminar</a>
                       </div>
                     </td>
               </tr>
@@ -55,6 +54,28 @@
       <!-- /.col -->
     </div>
     <!-- /.row -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              @foreach ($categories as $category)
+              <a href="{{URL::to('admin/category/delete')}}/{{$category->id}}" class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a>    
+              @endforeach
+              
+            </div>
+          </div>
+        </div>
+      </div>
 
   </section>
 

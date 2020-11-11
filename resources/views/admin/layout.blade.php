@@ -19,7 +19,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="{{asset('backend/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
-  @stack('styles')
+  
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('backend/css/adminlte.min.css')}}">
 
@@ -29,12 +29,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- <script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script> -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css"> -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script> -->
-
   
+  @stack('styles')
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+ 
 
 
   
@@ -238,8 +239,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('backend/plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('backend/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-
-
 <!-- SweetAlert2 -->
 <script src="{{asset('backend/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 <!-- Bootstrap 4 -->
@@ -253,12 +252,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 @stack('scripts')
 <!-- AdminLTE App -->
 <script src="{{asset('backend/js/adminlte.js')}}"></script>
-
-
 @toastr_js
 @toastr_render
-
-
 <script>
     $(function () {
       $("#example1").DataTable({
@@ -267,9 +262,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       });
       $('.textarea').summernote();
     });
-
-    
-
   </script>
 
 
