@@ -22,7 +22,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview {{request()->is('admin/category*') ? 'menu-open' : ''}}">
+          <li class="nav-item has-treeview {{request()->is('admin/category*') || request()->is('admin/tag*')? 'menu-open' : ''}}">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -41,6 +41,12 @@
                 <a href="{{route('category.create')}}" class="nav-link {{request()->is('admin/category/create')? 'active' : ''}}" >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar</p>
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a href="{{route('tag.create')}}" class="nav-link {{request()->is('admin/tag/create')? 'active' : ''}}" >
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Etiquetas</p>
                 </a>
               </li>
             </ul>

@@ -23,6 +23,12 @@ Route::post('/', 'ContactController@sendMessage')->name('contact.send');
 // Rutas del Administrador
 Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'], function(){
    
+    Route::get('tag','TagController@index')->name('tag.index');
+    Route::get('tag/create','TagController@create')->name('tag.create');
+    Route::post('tag/store','TagController@store')->name('tag.store');
+    Route::get('tag/edit/{id}','TagController@edit')->name('tag.edit');
+    Route::post('tag/update/{id}','TagController@update')->name('tag.update');
+    Route::get('tag/delete/{id}','TagController@destroy')->name('tag.destroy');
 
     Route::get('category','CategoryController@index')->name('category.index');
     Route::get('category/create','CategoryController@create')->name('category.create');
@@ -62,6 +68,7 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
 
     Route::get('activity','ActivityController@index')->name('activity.index');
     Route::get('activity/create','ActivityController@create')->name('activity.create');
+    Route::post('activity/store','ActivityController@store')->name('activity.store');
 
        
     Route::get('book','BookController@index')->name('book.index');

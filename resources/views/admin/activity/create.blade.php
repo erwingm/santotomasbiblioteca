@@ -5,7 +5,7 @@
 
 <section class="content">
         <div class="container-fluid">
-        <form action="{{ URL::to('admin/distric/store')}}" method="post">
+        <form action="{{ URL::to('admin/activity/store')}}" method="post">
         @csrf
           <div class="row">
             <!-- left column -->
@@ -19,13 +19,22 @@
                 <!-- form start -->
                 
                   <div class="card-body">
-                    <div class="form-group">
-                        <label>Título de la publicación</label>
-                        <input type="text" name="activityTittle" class="form-control"  placeholder="Enter email">
+                    <div class="form-group  {{$errors->has('title') ? 'text-danger' : '' }} ">
+                        <label for="title">Título de la publicación</label>
+                        <input type="text" id="title" 
+                        name="title" class="form-control  {{$errors->has('title') ? 'is-invalid' : '' }}  "  
+                        placeholder="Enter email"
+                        value="{{old('title')}}">
+                        {!! $errors->first('title','<span >El titulo es requerido</span>') !!}
+
+                        
                     </div>
-                    <div class="form-group">
-                        <label for="">Descripcion</label>
-                        <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                    <div class="form-group {{$errors->has('description') ? 'text-danger' : '' }} ">
+                        <label for="description">Descripcion</label>
+                        <textarea class="form-control {{$errors->has('description') ? 'is-invalid' : '' }} " 
+                        name="description" id="description" 
+                        cols="30" rows="10">{{old('description')}}</textarea>
+                        {!! $errors->first('title','<span >El titulo es requerido</span>') !!}
                     </div>
                     
                     </div>
@@ -47,24 +56,24 @@
                     <div class="form-group" data-select2-id="47">
                         <label>Etiquetas</label>
                         <div class="select2-purple" data-select2-id="37">
-                          <select class="select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;" data-select2-id="15" tabindex="-1" aria-hidden="true">
-                            <option data-select2-id="38">Alabama</option>
-                            <option data-select2-id="39">Alaska</option>
-                            <option data-select2-id="40">California</option>
-                            <option data-select2-id="41">Delaware</option>
-                            <option data-select2-id="42">Tennessee</option>
-                            <option data-select2-id="43">Texas</option>
-                            <option data-select2-id="44">Washington</option>
+                          <select name="tags[]" class="select2 select2-hidden-accessible" 
+                                  multiple="" 
+                                  data-placeholder="Selecciona una o más etiquetas" 
+                                  data-dropdown-css-class="select2-purple" style="width: 100%;" data-select2-id="15" tabindex="-1" aria-hidden="true">
+                            @foreach($tags as $tag)
+                              <option {{ collect(old('tags'))->contains($tag->id) ? 'selected' : '' }} 
+                              value="{{$tag->id}}">{{$tag->name}}</option>
+                            @endforeach
                           </select>
                         </div>
                       </div>
                       <div class="form-group">
                           <label>URL De Inscripción</label>
-                          <input type="text" name="activityTittle" class="form-control"  placeholder="Enter email">
+                          <input type="text" name="urlInscription" class="form-control"  placeholder="Enter email">
                       </div>
                       <div class="form-group">
                           <label>URL De las Bases</label>
-                          <input type="text" name="activityTittle" class="form-control"  placeholder="Enter email">
+                          <input type="text" name="urlBase" class="form-control"  placeholder="Enter email">
                       </div>
                       <div class="form-group">
                         <div class="dropzone">

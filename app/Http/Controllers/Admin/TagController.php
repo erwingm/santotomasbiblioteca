@@ -4,12 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-use App\Models\Activity;
 use App\Models\Tag;
-use Carbon\Carbon;
 
-class ActivityController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +16,8 @@ class ActivityController extends Controller
     public function index()
     {
         //
-        //$activities = Activity::all();
-        
-        return view('admin.activity.index',compact('tags'));
+        $tags = Tag::all();
+        return view('admin.tag.index',compact('tags'));
     }
 
     /**
@@ -32,9 +28,7 @@ class ActivityController extends Controller
     public function create()
     {
         //
-        // $activities = Activity::all();
-        $tags = Tag::all();
-        return view('admin.activity.create', compact('tags'));
+        return view('admin.tag.create');
     }
 
     /**
@@ -46,29 +40,12 @@ class ActivityController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request, [
-            'title'=>'required',
-            'description' => 'required'
-        ]);
-        // Post::create($request->all)
-
-        $activity = new Activity();
-        $activity->title = $request->get('title');
-        $activity->description = $request->get('description');
-        $activity->published_at = $request->has('published_at') ? Carbon::parse($request->get('published_at')) : null;
-        $activity->url_inscription = $request->get('urlInscription');
-        $activity->url_base = $request->get('urlBase');
-        
-
-        if($activity->save()){
-            $activity->tags()->attach($request->get('tags'));
-            toastr()->success('Se Registro exitosamente!');
-            return redirect('admin/activity/create');
-        
+        $tag = new Tag();
+        $tag->name = $request->input('tagName');
+        if($tag->save()){
+            return redirect('admin/tag');
         }
-        
-
-        
+        return redirect()->bac();
     }
 
     /**
@@ -80,6 +57,7 @@ class ActivityController extends Controller
     public function show($id)
     {
         //
+     
     }
 
     /**
@@ -91,6 +69,10 @@ class ActivityController extends Controller
     public function edit($id)
     {
         //
+        $tag = Tag::find($id);
+        return view('admin.tag.edit');
+      
+
     }
 
     /**
@@ -103,6 +85,12 @@ class ActivityController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $tag = Tag::find($id);
+        $tag->name = $request->input('tagName');
+        if($tag->save()){
+            return redirect('admin/tag');
+        }
+        return redirect()->back();
     }
 
     /**
@@ -114,5 +102,8 @@ class ActivityController extends Controller
     public function destroy($id)
     {
         //
+        if(Tag::Destroy($id)){
+            return redirect('admin/tag');
+        }
     }
 }
