@@ -80,7 +80,7 @@
 <!-- daterange picker -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css" />
 <link rel="stylesheet" href="{{'/backend/plugins/select2/css/select2.min.css'}}">
-<link rel="stylesheet" href="{{'/backend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css'}}>
+<link rel="stylesheet" href="{{'/backend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css'}}">
 @endpush
 @push('scripts')
   

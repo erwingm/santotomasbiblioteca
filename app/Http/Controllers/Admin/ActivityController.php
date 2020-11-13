@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -19,9 +20,9 @@ class ActivityController extends Controller
     public function index()
     {
         //
-        //$activities = Activity::all();
-        
-        return view('admin.activity.index',compact('tags'));
+        $activities = Activity::all();
+        $tags = Tag::all();
+        return view('admin.activity.index',compact('tags','activities'));
     }
 
     /**
@@ -32,9 +33,9 @@ class ActivityController extends Controller
     public function create()
     {
         //
-        // $activities = Activity::all();
+        $activity = Activity::all();
         $tags = Tag::all();
-        return view('admin.activity.create', compact('tags'));
+        return view('admin.activity.create', compact('activity','tags'));
     }
 
     /**
@@ -43,33 +44,46 @@ class ActivityController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-        $this->validate($request, [
-            'title'=>'required',
-            'description' => 'required'
-        ]);
-        // Post::create($request->all)
 
-        $activity = new Activity();
-        $activity->title = $request->get('title');
-        $activity->description = $request->get('description');
-        $activity->published_at = $request->has('published_at') ? Carbon::parse($request->get('published_at')) : null;
-        $activity->url_inscription = $request->get('urlInscription');
-        $activity->url_base = $request->get('urlBase');
+     public function store(Request $request){
+
+        $this->validate($request, ['title' => 'required' ]);
+
+        $activity = Activity::create([
+            'title' => $request->get('title'),
+            'url' => str_slug($request->get('title'))
+            ]);
+
+        return redirect()->route('admin.activity.edit',$activity);
+     }
+    // public function store(Request $request)
+    // {
+    //     //
+    //     $this->validate($request, [
+    //         'title'=>'required',
+    //         'description' => 'required'
+    //     ]);
+    //     // Post::create($request->all)
+
+    //     $activity = new Activity();
+    //     $activity->title = $request->get('title');
+    //     $activity->url = Str::slug($request->get('title'));
+    //     $activity->description = $request->get('description');
+    //     $activity->published_at = $request->has('published_at') ? Carbon::parse($request->get('published_at')) : null;
+    //     $activity->url_inscription = $request->get('urlInscription');
+    //     $activity->url_base = $request->get('urlBase');
         
 
-        if($activity->save()){
-            $activity->tags()->attach($request->get('tags'));
-            toastr()->success('Se Registro exitosamente!');
-            return redirect('admin/activity/create');
+    //     if($activity->save()){
+    //         $activity->tags()->attach($request->get('tags'));
+    //         toastr()->success('Se Registro exitosamente!');
+    //         return redirect('admin/activity/create');
         
-        }
+    //     }
         
 
         
-    }
+    // }
 
     /**
      * Display the specified resource.
@@ -88,9 +102,11 @@ class ActivityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Activity $activity)
     {
         //
+        return view('admin.activity.edit',compact('activity'));
+
     }
 
     /**

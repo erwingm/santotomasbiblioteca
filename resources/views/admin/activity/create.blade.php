@@ -26,8 +26,6 @@
                         placeholder="Enter email"
                         value="{{old('title')}}">
                         {!! $errors->first('title','<span >El titulo es requerido</span>') !!}
-
-                        
                     </div>
                     <div class="form-group {{$errors->has('description') ? 'text-danger' : '' }} ">
                         <label for="description">Descripcion</label>
@@ -103,11 +101,12 @@
 @stop
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.css">
-<!-- daterange picker -->
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css" />
 <link rel="stylesheet" href="{{'/backend/plugins/select2/css/select2.min.css'}}">
-<link rel="stylesheet" href="{{'/backend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css'}}>
+<link rel="stylesheet" href="{{'/backend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css'}}">
 @endpush
+
 @push('scripts')
   
 
@@ -116,7 +115,7 @@
   <!-- Select2 -->
   <script src="{{'/backend/plugins/select2/js/select2.full.min.js'}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
-  {{-- <script src="{{asset('backend/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js')}}"></script> --}}
+  
 
   <script>
     $(function(){
@@ -137,10 +136,14 @@
 
     new Dropzone('.dropzone',{
       url:'/',
-      dictDefaultMessage: 'Arrastra las Footos aqui para subirloas',
+      dictDefaultMessage: 'Arrastra las Fotos aqui para subirloas',
+      // headers: {
+      //   'X-CSRF-TOKEN': @csrf,
+      // },
     });
 
     Dropzone.autoDiscover = false;
+
    
 
   </script>

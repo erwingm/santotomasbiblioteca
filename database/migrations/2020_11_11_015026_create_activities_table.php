@@ -16,9 +16,10 @@ class CreateActivitiesTable extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description');
-            $table->text('url_base');
-            $table->text('url_inscription');
+            $table->string('url');
+            $table->text('description')->nullable();
+            $table->text('url_base')->nullable();
+            $table->text('url_inscription')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

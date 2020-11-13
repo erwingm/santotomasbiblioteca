@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 use App\Models\Activity;
@@ -25,6 +25,7 @@ class ActivitiesTableSeeder extends Seeder
 
         $activity = new Activity;
         $activity->title = "1 ACTIVIDAD";
+        $activity->url = Str::slug("Mi primer actividad");
         $activity->description = "descripcion de la actividad";
         $activity->url_base = "www.example.com";
         $activity->url_inscription = "www.example.com";

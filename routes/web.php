@@ -76,6 +76,9 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     Route::get('activity','ActivityController@index')->name('activity.index');
     Route::get('activity/create','ActivityController@create')->name('activity.create');
     Route::post('activity/store','ActivityController@store')->name('activity.store');
+    Route::get('activity/edit/{id}','ActivityController@edit')->name('admin.activity.edit');
+
+    // Route::post('activity/{id}/photos','PhotoController@store')->name('activity.photo.store');
 
        
     Route::get('book','BookController@index')->name('book.index');

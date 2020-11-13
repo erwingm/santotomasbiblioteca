@@ -11,7 +11,8 @@
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">
-              <a href="{{route('activity.create')}}" class="btn btn-info"><i class="fas fa-plus"></i> Agregar</a>
+              <!-- <a href="{{route('activity.create')}}" class="btn btn-info"><i class="fas fa-plus"></i> Agregar</a> -->
+              <button class="btn btn-primary"data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>Agregar</button>
             </h3>
           </div>
           <!-- /.card-header -->
@@ -56,6 +57,39 @@
   }
 
   </script>
+
+  @push('scripts')
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form action="{{ URL::to('admin/activity/store')}}" method="POST">
+        @csrf
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <div class="form-group  {{$errors->has('title') ? 'text-danger' : '' }} ">
+                        <label for="title">Título de la publicación</label>
+                        <input type="text" id="title" 
+                        name="title" class="form-control  {{$errors->has('title') ? 'is-invalid' : '' }}  "  
+                        placeholder="Enter email"
+                        value="{{old('title')}}">
+                        {!! $errors->first('title','<span >El titulo es requerido</span>') !!}
+                    </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button  class="btn btn-secondary">Crear</button>
+
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>
+  @endpush
 
 
  
