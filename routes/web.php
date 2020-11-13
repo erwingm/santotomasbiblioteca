@@ -23,6 +23,13 @@ Route::post('/', 'ContactController@sendMessage')->name('contact.send');
 // Rutas del Administrador
 Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'], function(){
    
+    Route::get('investigation','InvestigationController@index')->name('investigation.index');
+    Route::get('investigation/create','InvestigationController@create')->name('investigation.create');
+    Route::post('investigation/store','InvestigationController@store')->name('investigation.store');
+    Route::get('investigation/edit/{id}','InvestigationController@edit')->name('investigation.edit');
+    Route::post('investigation/update/{id}','InvestigationController@update')->name('investigation.update');
+    Route::get('investigation/delete/{id}','InvestigationController@destroy')->name('investigation.destroy');
+    
     Route::get('tag','TagController@index')->name('tag.index');
     Route::get('tag/create','TagController@create')->name('tag.create');
     Route::post('tag/store','TagController@store')->name('tag.store');
