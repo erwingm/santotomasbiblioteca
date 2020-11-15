@@ -30,13 +30,13 @@ class ActivityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-        $activity = Activity::all();
-        $tags = Tag::all();
-        return view('admin.activity.create', compact('activity','tags'));
-    }
+    // public function create()
+    // {
+    //     //
+    //     // $activity = Activity::all();
+    //     $tags = Tag::all();
+    //     return view('admin.activity.create', compact('tags'));
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -56,35 +56,7 @@ class ActivityController extends Controller
 
         return redirect()->route('admin.activity.edit',$activity);
      }
-    // public function store(Request $request)
-    // {
-    //     //
-    //     $this->validate($request, [
-    //         'title'=>'required',
-    //         'description' => 'required'
-    //     ]);
-    //     // Post::create($request->all)
-
-    //     $activity = new Activity();
-    //     $activity->title = $request->get('title');
-    //     $activity->url = Str::slug($request->get('title'));
-    //     $activity->description = $request->get('description');
-    //     $activity->published_at = $request->has('published_at') ? Carbon::parse($request->get('published_at')) : null;
-    //     $activity->url_inscription = $request->get('urlInscription');
-    //     $activity->url_base = $request->get('urlBase');
-        
-
-    //     if($activity->save()){
-    //         $activity->tags()->attach($request->get('tags'));
-    //         toastr()->success('Se Registro exitosamente!');
-    //         return redirect('admin/activity/create');
-        
-    //     }
-        
-
-        
-    // }
-
+ 
     /**
      * Display the specified resource.
      *
@@ -105,7 +77,11 @@ class ActivityController extends Controller
     public function edit(Activity $activity)
     {
         //
-        return view('admin.activity.edit',compact('activity'));
+        
+       
+        $tags = Tag::all();
+        return view('admin.activity.edit', compact('tags','activity'));
+
 
     }
 
@@ -116,10 +92,32 @@ class ActivityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+     public function update(Activity $activity, Request $request)
     {
         //
+        $this->validate($request, [
+            'title'=>'required',
+            'description' => 'required'
+        ]);
+        // Post::create($request->all)
+
+        $activity->title = $request->get('title');
+        $activity->url = Str::slug($request->get('title'));
+        $activity->description = $request->get('description');
+        $activity->published_at = $request->has('published_at') ? Carbon::parse($request->get('published_at')) : null;
+        $activity->url_inscription = $request->get('urlInscription');
+        $activity->url_base = $request->get('urlBase');
+        
+
+        if($activity->save()){
+            $activity->tags()->sync($request->get('tags'));
+            toastr()->success('Se Actualizo exitosamente!');
+            return redirect()->back();
+        
+        }
+        
     }
+
 
     /**
      * Remove the specified resource from storage.

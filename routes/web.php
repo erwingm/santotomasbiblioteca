@@ -14,15 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('actividades');
+    $activities = App\Models\Activity::latest('published_at')->get();
+    return view('actividades', compact('activities'));
 });
+
+Route::get('activities', function(){
+    return App\Activity::all();
+});
+   
+
 
 
 Route::post('/', 'ContactController@sendMessage')->name('contact.send');
 
 // Rutas del Administrador
 Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'], function(){
-   
+    
+    Route::get('/', 'AdminController@index');
+
     Route::get('investigation','InvestigationController@index')->name('investigation.index');
     Route::get('investigation/create','InvestigationController@create')->name('investigation.create');
     Route::post('investigation/store','InvestigationController@store')->name('investigation.store');
@@ -76,7 +85,11 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     Route::get('activity','ActivityController@index')->name('activity.index');
     Route::get('activity/create','ActivityController@create')->name('activity.create');
     Route::post('activity/store','ActivityController@store')->name('activity.store');
-    Route::get('activity/edit/{id}','ActivityController@edit')->name('admin.activity.edit');
+    Route::get('activity/{activity}','ActivityController@edit')->name('admin.activity.edit');
+    Route::put('activity/{activity}','ActivityController@update')->name('admin.activity.update');
+
+
+    Route::post('activity/{activity}/photos','PhotoController@store')->name('admin.activity.photos.store');
 
     // Route::post('activity/{id}/photos','PhotoController@store')->name('activity.photo.store');
 
@@ -89,4 +102,3 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

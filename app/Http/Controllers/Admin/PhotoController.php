@@ -3,30 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\Activity;
+use App\Models\Photo;
 
 class PhotoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -37,7 +20,17 @@ class PhotoController extends Controller
     public function store(Activity $activity)
     {
         //
-        return 'procesando.....';
+        $this->validate(request(),[
+            'photo' => 'required|image|max:2048'
+        ]);
+
+        $photo = request()->file('photo')->store('public');
+
+
+       Photo::create([
+           'url' => Storage::url($photo),
+           'activity_id'=> $activity->id,
+       ]);
     }
 
     /**
