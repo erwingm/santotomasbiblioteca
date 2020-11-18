@@ -13,7 +13,7 @@
 								<div class="featured-post">
 									<a href="#">
 									@if ($activity->photos->count() === 1)
-									<img src="{{$activity->photos->first()->url}}" alt="">
+									<img src="{{$activity->photos->first()->url }}" width="70" height="250" alt="">
 									@endif
 									</a>
 								</div>
@@ -144,3 +144,15 @@
 		</div>
 	</div>
 @stop
+
+<style>
+	.carousel-item {
+	  height: 100vh;
+	  min-height: 350px;
+	  background: no-repeat center center scroll;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	}
+	</style>

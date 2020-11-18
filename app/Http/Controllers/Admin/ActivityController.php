@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Support\Str;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 use App\Models\Activity;
 use App\Models\Tag;
 use Carbon\Carbon;
@@ -51,7 +51,7 @@ class ActivityController extends Controller
 
         $activity = Activity::create([
             'title' => $request->get('title'),
-            'url' => str_slug($request->get('title'))
+            'url' => Str::slug($request->get('title'))
             ]);
 
         return redirect()->route('admin.activity.edit',$activity);
