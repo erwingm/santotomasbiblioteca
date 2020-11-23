@@ -13,14 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $activities = App\Models\Activity::latest('published_at')->get();
-    return view('actividades', compact('activities'));
-});
+Route::get('tramite', 'PagesController@procedure')->name('pages.procedure');
+Route::get('Actividades', 'PagesController@activity')->name('pages.activity');
 
-Route::get('activities', function(){
-    return App\Activity::all();
-});
+Route::get('/', 'PagesController@home');
+
+// Route::get('/', function () {
+//     $activities = App\Models\Activity::latest('published_at')->get();
+//     return view('actividades', compact('activities'));
+// });
+
+// Route::get('activities', function(){
+//     return App\Activity::all();
+// });
    
 
 
