@@ -8,10 +8,11 @@
       <div class="col-12">
 
 
-        <div class="card">
+      <div class="card">
           <div class="card-header">
             <h3 class="card-title">
-              Links de Investigación
+              <a href="{{route('investigation.create')}}" class="btn btn-info">
+              <i class="fas fa-plus"></i> Agregar Nueva Url</a>
             </h3>
           </div>
           <!-- /.card-header -->
@@ -33,7 +34,7 @@
                 <td>{{$investigation->description}}</td>
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">
-                        <a href="{{URL::to('admin/investigation/edit')}}/{{$investigation->id}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
+                        <a href="{{route('investigation.edit', $investigation->id)}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
                         <a href="{{URL::to('admin/investigation/delete')}}/{{$investigation->id}}" onclick="mensaje()" class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a>
                         
                       </div>

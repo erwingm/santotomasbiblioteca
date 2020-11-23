@@ -12,7 +12,7 @@
 							<article class="blog-post">
 								<div class="featured-post">
 									<a href="#">
-									@if ($activity->photos->count() === 1)
+									@if ($activity->photos->count() >= 1)
 									<img src="{{$activity->photos->first()->url}}" alt="">
 									@endif
 									</a>
@@ -25,24 +25,20 @@
 									<ul class="meta-post">
 										<li class="comment">
 											<a href="#">
-												2 Comments
+											@foreach($activity->tags as $tag)
+												<a href="" class=""># {{$tag->name}}</a>
+											@endforeach
 											</a>
 										</li>
 										<li class="date">
 											<a href="#">
-												{{$activity->published_at->format('M d')}}
+												
+												{{ Carbon\Carbon::parse($activity->published_at)->format('M d') }}
 											</a>
 										</li>
 									</ul>
 									<div class="entry-post">
 										<p>{{$activity->description}}</p>
-										<ul class="meta-post">
-											<li class="comment">
-											@foreach($activity->tags as $tag)
-												<a href="" class=""># {{$tag->name}}</a>
-											@endforeach
-											</li>
-										</ul>
 										<div class="more-link">
 											<a href="#" class="read-more-btn">Read More</a>
 											<a href="#" class="read-more-btn">Read More</a>

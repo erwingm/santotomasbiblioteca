@@ -34,10 +34,12 @@
                         cols="30" rows="10">{{old('description',$activity->description)}}</textarea>
                         {!! $errors->first('title','<span >El titulo es requerido</span>') !!}
                     </div>
-                    
                     </div>
+              
                   
                   </div>
+               
+                 
                   <!-- /.card-body -->
               </div>
               <div class="col-md-4">
@@ -69,17 +71,29 @@
                       </div>
                       <div class="form-group">
                           <label>URL De Inscripción</label>
-                          <input type="text" name="urlInscription" class="form-control"  placeholder="Enter email">
+                          <input type="text" value="{{old('url_inscription',$activity->url_inscription)}}" name="url_inscription" class="form-control"  placeholder="Enter email">
                       </div>
                       <div class="form-group">
                           <label>URL De las Bases</label>
-                          <input type="text" name="urlBase" class="form-control"  placeholder="Enter email">
+                          <input type="text" value="{{old('url_base',$activity->url_base)}}" name="url_base" class="form-control"  placeholder="Enter email">
+                        
                       </div>
-                      <div class="form-group">
-                        <div class="dropzone">
-                          
+                      
+                        <div class="form-group">
+                        @if($activity->photos->count() >= 1)
+                        <div style="display: none" class="dropzone" >
+                           
                         </div>
+                        @else
+                        
+                        <div class="dropzone" >
+              
+                        </div>
+   
+                        @endif
                       </div>
+
+                     
                       <div class="form-group">
                         <div class="row">
                           <div class="col-md-12">
@@ -98,6 +112,24 @@
           <!-- /.row -->
         </div><!-- /.container-fluid -->
         </form>
+        <div class="col-md-8">
+          <div class="box box-primary">
+            <div class="box body">
+            <div class="row">
+                      @foreach($activity->photos as $photo)
+                        <form action="{{ route('admin.photos.destroy', $photo) }}" method="POST">
+                          @csrf
+                          {{method_field('delete')}}
+                          <div class="col-md-3">
+                            <button class="btn btn-danger" style="position: absolute"><i class="fa fa-remove"></i>X</button>
+                            <img width="200" height="200" class="img-responsive" src="{{ url($photo->url) }}" alt="">
+                          </div>
+                        </form>
+                      @endforeach
+                    </div>
+            </div>
+          </div>
+        </div>
       </section>
 
 @stop
@@ -136,8 +168,12 @@
 
     });
 
+ 
+
+
     var myDropzone = new Dropzone('.dropzone',{
 
+      
       url:'/admin/activity/{{$activity->url}}/photos',
       acceptedFiles: 'image/*',
       maxFilessize: 2,
@@ -147,7 +183,6 @@
       headers: {
         'X-CSRF-TOKEN': '{{csrf_token()}}'
       },
-      dictDefaultMessage: 'Arrastra las Fotos aqui para subirloas'
 
     });
 
@@ -155,10 +190,10 @@
         var msg = res.errors.photo[0];
         $('.dz-error-message:last > span').text(msg);
     });
+   
 
     Dropzone.autoDiscover = false;
 
-   
 
   </script>
 
