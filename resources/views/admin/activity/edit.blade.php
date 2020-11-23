@@ -5,7 +5,7 @@
 
 <section class="content">
         <div class="container-fluid">
-        <form action="{{ URL::to('admin/activity',$activity)}}/" method="post">
+        <form action="{{ Route('admin.activity.update', $activity)}}" method="post">
         @csrf {{method_field('PUT')}}
           <div class="row">
             <!-- left column -->

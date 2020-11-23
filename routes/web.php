@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('tramite', 'PagesController@procedure')->name('pages.procedure');
 Route::get('Actividades', 'PagesController@activity')->name('pages.activity');
 
 Route::get('/', 'PagesController@home');
+Route::get('tramite', 'PagesController@procedure')->name('pages.procedure');
 
+Route::get('actividades','PagesController@activity')->name('page.activity');
+Route::get('tramite', 'PagesController@procedure')->name('page.tramite');
 // Route::get('/', function () {
 //     $activities = App\Models\Activity::latest('published_at')->get();
 //     return view('actividades', compact('activities'));
@@ -91,7 +93,7 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     Route::get('activity/create','ActivityController@create')->name('activity.create');
     Route::post('activity/store','ActivityController@store')->name('activity.store');
     Route::get('activity/{activity}','ActivityController@edit')->name('admin.activity.edit');
-    Route::put('activity/{activity}','ActivityController@update')->name('admin.activity.update');
+    Route::put('activity/update/{activity}','ActivityController@update')->name('admin.activity.update');
 
 
     Route::post('activity/{activity}/photos','PhotoController@store')->name('admin.activity.photos.store');

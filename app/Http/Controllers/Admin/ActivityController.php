@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Activity;
 use App\Models\Tag;
+use App\Models\Photo;
 use Carbon\Carbon;
 
 class ActivityController extends Controller
@@ -80,7 +81,9 @@ class ActivityController extends Controller
         
        
         $tags = Tag::all();
-        return view('admin.activity.edit', compact('tags','activity'));
+        $photos = Photo::all();
+
+        return view('admin.activity.edit', compact('tags','activity','photos'));
 
 
     }
@@ -107,6 +110,7 @@ class ActivityController extends Controller
         $activity->published_at = $request->has('published_at') ? Carbon::parse($request->get('published_at')) : null;
         $activity->url_inscription = $request->get('urlInscription');
         $activity->url_base = $request->get('urlBase');
+        
         
 
         if($activity->save()){
