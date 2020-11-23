@@ -14,7 +14,7 @@
                 </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('page.tramite')}}">Tramites</a>
+            <a class="nav-link" href="{{route('pages.tramite')}}">Tramites</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('page.activity')}}">Actividades</a>

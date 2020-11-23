@@ -19,7 +19,7 @@ Route::get('/', 'PagesController@home');
 Route::get('tramite', 'PagesController@procedure')->name('pages.procedure');
 
 Route::get('actividades','PagesController@activity')->name('page.activity');
-Route::get('tramite', 'PagesController@procedure')->name('page.tramite');
+Route::get('tramite', 'PagesController@procedure')->name('pages.tramite');
 // Route::get('/', function () {
 //     $activities = App\Models\Activity::latest('published_at')->get();
 //     return view('actividades', compact('activities'));
@@ -43,8 +43,8 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     Route::get('investigation/create','InvestigationController@create')->name('investigation.create');
     Route::post('investigation/store','InvestigationController@store')->name('investigation.store');
     Route::get('investigation/edit/{id}','InvestigationController@edit')->name('investigation.edit');
-    Route::post('investigation/update/{id}','InvestigationController@update')->name('investigation.update');
-    Route::get('investigation/delete/{id}','InvestigationController@destroy')->name('investigation.destroy');
+    Route::put('investigation/update/{id}','InvestigationController@update')->name('investigation.update');
+    Route::delete('investigation/delete/{id}','InvestigationController@destroy')->name('investigation.destroy');
 
     // Route::resource('investigation','InvestigationController');
     

@@ -70,7 +70,7 @@ class PhotoController extends Controller
         ]);
 
         $photo = request()->file('photo')->store('public');
-
+        
 
        Photo::update([
            'url' => Storage::url($photo),

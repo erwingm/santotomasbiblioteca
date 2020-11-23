@@ -17,7 +17,7 @@ class PagesController extends Controller
         return view('activity.actividades',compact('tags','activities'));
     }
     public function procedure(){
-        return view('procedure.tramite');
+        return view('pages.tramite');
     }
     public function home(){
         return view('layout');

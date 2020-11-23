@@ -14,6 +14,8 @@
   <link href="{{asset('frontend/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
+    <!-- Ionicons --> 
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Custom styles for this template -->
   <link href="{{asset('frontend/css/shop-homepage.css')}}" rel="stylesheet">
   <link href="{{asset('frontend/css/newtemplate.css')}}" rel="stylesheet">
@@ -36,10 +38,147 @@
 
 
 <!-- Page Content -->
-<section class="mt-5 container"><h4 class=" mb-4">
-  Popular among our collections  <br> <small class="subtitle-section">Our library's line of collection that have been favoured by our users were shown here. Look for them. Borrow them. Hope you also like them</small></h4> <div class="flex flex-wrap"><a href="index.php?subject=&quot;Operating+System&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Operating System</a><a href="index.php?subject=&quot;Computer&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Computer</a><a href="index.php?subject=&quot;Linux&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Linux</a><a href="index.php?subject=&quot;Programming&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Programming</a><a href="index.php?subject=&quot;Website&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Website</a></div> <div class="flex flex-wrap mt-4 collection"><div class="w-48 pr-4 pb-4"><a href="index.php?p=show_detail&amp;id=2" class="card border-0 hover:shadow cursor-pointer text-decoration-none h-full"><div class="card-body"><div class="card-image fit-height"><img src="./lib/minigalnano/createthumb.php?filename=..%2F..%2Fimages%2Fdocs%2Flinux_in_a_nutshell.jpg&amp;width=120" class="img-fluid"></div><div class="card-text mt-2 text-grey-darker">Linux In a Nutshell</div></div></a></div><div class="w-48 pr-4 pb-4"><a href="index.php?p=show_detail&amp;id=16" class="card border-0 hover:shadow cursor-pointer text-decoration-none h-full"><div class="card-body"><div class="card-image fit-height"><img src="./lib/minigalnano/createthumb.php?filename=..%2F..%2Fimages%2Fdocs%2Fdepositphotos_162199054-stock-illustration-open-book-cartoon-vector-symbol.jpg.jpg&amp;width=120" class="img-fluid"></div><div class="card-text mt-2 text-grey-darker">100 IDEAS PARA DIBUJAR</div></div></a></div><div class="w-48 pr-4 pb-4"><a href="index.php?p=show_detail&amp;id=6" class="card border-0 hover:shadow cursor-pointer text-decoration-none h-full"><div class="card-body"><div class="card-image fit-height"><img src="./lib/minigalnano/createthumb.php?filename=..%2F..%2Fimages%2Fdocs%2Fpostgresql.jpg&amp;width=120" class="img-fluid"></div><div class="card-text mt-2 text-grey-darker">Invierte.PE</div></div></a></div><div class="w-48 pr-4 pb-4"><a href="index.php?p=show_detail&amp;id=8" class="card border-0 hover:shadow cursor-pointer text-decoration-none h-full"><div class="card-body"><div class="card-image fit-height"><img src="./lib/minigalnano/createthumb.php?filename=..%2F..%2Fimages%2Fdocs%2Fajax.jpg&amp;width=120" class="img-fluid"></div><div class="card-text mt-2 text-grey-darker">Ajax : creating Web pages with asynchronous JavaScript and XML</div></div></a></div><div class="w-48 pr-4 pb-4"><a href="index.php?p=show_detail&amp;id=7" class="card border-0 hover:shadow cursor-pointer text-decoration-none h-full"><div class="card-body"><div class="card-image fit-height"><img src="./lib/minigalnano/createthumb.php?filename=..%2F..%2Fimages%2Fdocs%2Fwebapp_arch.jpg&amp;width=120" class="img-fluid"></div><div class="card-text mt-2 text-grey-darker">Web application architecture : principles, protocols, and practices</div></div></a></div><div class="w-48 pr-4 pb-4"><a href="index.php?p=show_detail&amp;id=11" class="card border-0 hover:shadow cursor-pointer text-decoration-none h-full"><div class="card-body"><div class="card-image fit-height"><img src="./lib/minigalnano/createthumb.php?filename=..%2F..%2Fimages%2Fdocs%2Finformation_arch.jpg&amp;width=120" class="img-fluid"></div><div class="card-text mt-2 text-grey-darker">Information Architecture for the World Wide Web: Designing Large-Scale Web Sites</div></div></a></div></div></section>
-<section class="mt-5 container"><h4 class=" mb-4">
-  Popular among our collections <br> <small class="subtitle-section">Our library's line of collection that have been favoured by our users were shown here. Look for them. Borrow them. Hope you also like them</small></h4> <div class="flex flex-wrap"><a href="index.php?subject=&quot;Operating+System&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Operating System</a><a href="index.php?subject=&quot;Computer&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Computer</a><a href="index.php?subject=&quot;Linux&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Linux</a><a href="index.php?subject=&quot;Programming&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Programming</a><a href="index.php?subject=&quot;Website&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Website</a></div> <div class="flex flex-wrap mt-4 collection"><div class="w-48 pr-4 pb-4"><a href="index.php?p=show_detail&amp;id=2" class="card border-0 hover:shadow cursor-pointer text-decoration-none h-full"><div class="card-body"><div class="card-image fit-height"><img src="./lib/minigalnano/createthumb.php?filename=..%2F..%2Fimages%2Fdocs%2Flinux_in_a_nutshell.jpg&amp;width=120" class="img-fluid"></div><div class="card-text mt-2 text-grey-darker">Linux In a Nutshell</div></div></a></div><div class="w-48 pr-4 pb-4"><a href="index.php?p=show_detail&amp;id=16" class="card border-0 hover:shadow cursor-pointer text-decoration-none h-full"><div class="card-body"><div class="card-image fit-height"><img src="./lib/minigalnano/createthumb.php?filename=..%2F..%2Fimages%2Fdocs%2Fdepositphotos_162199054-stock-illustration-open-book-cartoon-vector-symbol.jpg.jpg&amp;width=120" class="img-fluid"></div><div class="card-text mt-2 text-grey-darker">100 IDEAS PARA DIBUJAR</div></div></a></div><div class="w-48 pr-4 pb-4"><a href="index.php?p=show_detail&amp;id=6" class="card border-0 hover:shadow cursor-pointer text-decoration-none h-full"><div class="card-body"><div class="card-image fit-height"><img src="./lib/minigalnano/createthumb.php?filename=..%2F..%2Fimages%2Fdocs%2Fpostgresql.jpg&amp;width=120" class="img-fluid"></div><div class="card-text mt-2 text-grey-darker">Invierte.PE</div></div></a></div><div class="w-48 pr-4 pb-4"><a href="index.php?p=show_detail&amp;id=8" class="card border-0 hover:shadow cursor-pointer text-decoration-none h-full"><div class="card-body"><div class="card-image fit-height"><img src="./lib/minigalnano/createthumb.php?filename=..%2F..%2Fimages%2Fdocs%2Fajax.jpg&amp;width=120" class="img-fluid"></div><div class="card-text mt-2 text-grey-darker">Ajax : creating Web pages with asynchronous JavaScript and XML</div></div></a></div><div class="w-48 pr-4 pb-4"><a href="index.php?p=show_detail&amp;id=7" class="card border-0 hover:shadow cursor-pointer text-decoration-none h-full"><div class="card-body"><div class="card-image fit-height"><img src="./lib/minigalnano/createthumb.php?filename=..%2F..%2Fimages%2Fdocs%2Fwebapp_arch.jpg&amp;width=120" class="img-fluid"></div><div class="card-text mt-2 text-grey-darker">Web application architecture : principles, protocols, and practices</div></div></a></div><div class="w-48 pr-4 pb-4"><a href="index.php?p=show_detail&amp;id=11" class="card border-0 hover:shadow cursor-pointer text-decoration-none h-full"><div class="card-body"><div class="card-image fit-height"><img src="./lib/minigalnano/createthumb.php?filename=..%2F..%2Fimages%2Fdocs%2Finformation_arch.jpg&amp;width=120" class="img-fluid"></div><div class="card-text mt-2 text-grey-darker">Information Architecture for the World Wide Web: Designing Large-Scale Web Sites</div></div></a></div></div></section>
+<section class="mt-5 container">
+<h4 class=" mb-4">
+  Popular among our collections <br> 
+  <small class="subtitle-section">Our library's line of collection that have been favoured by our users were shown here. Look for them. Borrow them. Hope you also like them</small>
+  </h4> <div class="flex flex-wrap">
+    <a href="index.php?subject=&quot;Operating+System&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Operating System</a>
+    <a href="index.php?subject=&quot;Computer&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Computer</a>
+    <a href="index.php?subject=&quot;Linux&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Linux</a>
+    <a href="index.php?subject=&quot;Programming&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Programming</a>
+    <a href="index.php?subject=&quot;Website&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Website</a>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card shadow" style="width: 20rem;">
+                    <div class="card-header">
+                          <h3>asdasd</h3>
+                    </div>
+                    <div class="inner">
+                        <img class="card-img-top" src="Stock/pexels-4.jpeg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Design</h5>
+                      <p class="card-text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                      </p>
+                      
+                      <a  href="" class="btn btn-xs btn-default"><i class="fa fa-download fa-2x" ></i></a>
+                    </div>
+                    <div class="card-footer">
+                    
+                      <a  href="" class="btn btn-xs btn-default"><i class="fa fa-eye fa-2x" ></i></a>
+                      <a  href="" class="btn btn-xs btn-default"><i class="fa fa-download fa-2x" ></i></a>
+                      <a href="#" class="btn btn-success">Learn More...</a>
+                      
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow" style="width: 20rem;">
+                    <div class="inner">
+                            <img class="card-img-top" src="Stock/pexels-5.jpeg" alt="Card image cap">
+                    </div>
+                    
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Responsive</h5>
+                      <p class="card-text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                      </p>
+                      <a href="#" class="btn btn-success">Learn More...</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow" style="width: 20rem;">
+                    <div class="inner">
+                            <img class="card-img-top" src="Stock/pexels-3.jpeg" alt="Card image cap">
+                    </div>
+                    
+                    <div class="card-body text-center">
+                      <h5 class="card-title">UI/UX</h5>
+                      <p class="card-text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                      </p>
+                      <a href="#" class="btn btn-success">Learn More...</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+
+</section>
+<section class="mt-5 container">
+  <h4 class=" mb-4">
+  Popular among our collections <br> 
+  <small class="subtitle-section">Our library's line of collection that have been favoured by our users were shown here. Look for them. Borrow them. Hope you also like them</small>
+  </h4> <div class="flex flex-wrap">
+    <a href="index.php?subject=&quot;Operating+System&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Operating System</a>
+    <a href="index.php?subject=&quot;Computer&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Computer</a>
+    <a href="index.php?subject=&quot;Linux&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Linux</a>
+    <a href="index.php?subject=&quot;Programming&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Programming</a>
+    <a href="index.php?subject=&quot;Website&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Website</a>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card shadow" style="width: 20rem;">
+                    <div class="inner">
+                        <img class="card-img-top" src="Stock/pexels-4.jpeg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Design</h5>
+                      <p class="card-text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                      </p>
+                      <a href="#" class="btn btn-success">Learn More...</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow" style="width: 20rem;">
+                    <div class="inner">
+                            <img class="card-img-top" src="Stock/pexels-5.jpeg" alt="Card image cap">
+                    </div>
+                    
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Responsive</h5>
+                      <p class="card-text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                      </p>
+                      <a href="#" class="btn btn-success">Learn More...</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow" style="width: 20rem;">
+                    <div class="inner">
+                            <img class="card-img-top" src="Stock/pexels-3.jpeg" alt="Card image cap">
+                    </div>
+                    
+                    <div class="card-body text-center">
+                      <h5 class="card-title">UI/UX</h5>
+                      <p class="card-text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                      </p>
+                      <a href="#" class="btn btn-success">Learn More...</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+   </section>
+
+
+
 <section class="py-5">
   <div class="container">
     <h1>Contenido 2</h1>
@@ -47,13 +186,58 @@
 </section>
 <section class="py-5">
   <div class="container">
-    <h1>Contenido 3</h1>
+  <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card shadow" style="width: 20rem;">
+                    <div class="inner">
+                        <img class="card-img-top" src="Stock/pexels-4.jpeg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Design</h5>
+                      <p class="card-text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                      </p>
+                      <a href="#" class="btn btn-success">Learn More...</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow" style="width: 20rem;">
+                    <div class="inner">
+                            <img class="card-img-top" src="Stock/pexels-5.jpeg" alt="Card image cap">
+                    </div>
+                    
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Responsive</h5>
+                      <p class="card-text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                      </p>
+                      <a href="#" class="btn btn-success">Learn More...</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow" style="width: 20rem;">
+                    <div class="inner">
+                            <img class="card-img-top" src="Stock/pexels-3.jpeg" alt="Card image cap">
+                    </div>
+                    
+                    <div class="card-body text-center">
+                      <h5 class="card-title">UI/UX</h5>
+                      <p class="card-text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                      </p>
+                      <a href="#" class="btn btn-success">Learn More...</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
   </div>
 </section>
-{{-- <section class="py-5">
-  <div class="container">
-  </div>
-</section> --}}
+
 
   <!-- Fin Contenido -->
 
@@ -132,6 +316,7 @@
   <script src="{{asset('frontend/plugins/jquery/jquery.min.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
   <script src="{{asset('frontend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="https://use.fontawesome.com/b0ab2e418a.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>

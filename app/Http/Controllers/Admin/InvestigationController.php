@@ -50,7 +50,7 @@ class InvestigationController extends Controller
         //
         $this->validate($request,[
             'name' => 'required',
-            'image' => 'required'
+            'image' => 'required|mimes:jpeg,bmp,png,jpg'
         ]);
 
         $image = $request->file('image');
@@ -111,6 +111,8 @@ class InvestigationController extends Controller
     public function edit($id)
     {
         //
+        $investigation = Investigation::find($id);
+        return view('admin.investigation.edit',compact('investigation'));
     }
 
     /**
@@ -123,6 +125,56 @@ class InvestigationController extends Controller
     public function update(Request $request, $id)
     {
         //
+         //
+         $this->validate($request,[
+            'name' => 'required',
+            'image' => 'required|mimes:jpeg,bmp,png,jpg'
+        ]);
+
+        $image = $request->file('image');
+        $slug = str_slug($request->name);
+        $investigation = Investigation::find($id);
+
+        if(isset($image)){
+
+            $currentDate = Carbon::now()->toDateString();
+            $imagename = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+
+            if(!Storage::disk('public')->exists('investigation')){
+                Storage::disk('public')->makeDirectory('investigation');
+            }
+            // Busqueda y Elimina para la actualizacion de dato
+            if(Storage::disk('public')->exists('investigation/'.$investigation->image)){
+                
+                Storage::disk('public')->delete('investigation/'.$investigation->image);
+            }
+            $investigationImage = Image::make($image)->resize(500,255)->stream();
+            Storage::disk('public')->put('investigation/'.$imagename, $investigationImage);
+
+            
+            if(!Storage::disk('public')->exists('investigation/slider')){
+                Storage::disk('public')->makeDirectory('investigation/slider');
+            }
+            // Busqueda y actulizacion del image del slider
+            if(Storage::disk('public')->exists('investigation/slider/'.$investigation->image)){
+                
+                Storage::disk('public')->delete('investigation/slider/'.$investigation->image);
+            }
+            $slider = Image::make($image)->resize(500,255)->stream();
+            Storage::disk('public')->put('investigation/slider/'.$imagename, $slider);
+        }else{
+            $imagename = $investigation->image;
+        }
+
+
+        $investigation->name = $request->name;
+        $investigation->description = $request->description;
+        $investigation->slug = $slug;
+        $investigation->image = $imagename;
+        $investigation->save();
+
+        toastr()->success('Se Actualizo exitosamente!');
+        return redirect()->back();
     }
 
     /**
@@ -134,5 +186,15 @@ class InvestigationController extends Controller
     public function destroy($id)
     {
         //
+        $investigation = Investigation::find($id);
+        if(Storage::disk('public')->exists('investigation/'.$investigation->image)){
+            Storage::disk('public')->delete('investigation/'.$investigation->image);
+        }
+        if(Storage::disk('public')->exists('investigation/slider/'.$investigation->image)){
+            Storage::disk('public')->delete('investigation/slider/'.$investigation->image);
+        }
+        $investigation->delete();
+        toastr()->success('Se Elimino exitosamente!');
+        return redirect()->back();
     }
 }

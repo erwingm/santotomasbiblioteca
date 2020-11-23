@@ -90,6 +90,7 @@
   <!-- Select2 -->
   <script src="{{'/backend/plugins/select2/js/select2.full.min.js'}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
+
   
 
 @endpush

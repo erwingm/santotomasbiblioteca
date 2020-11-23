@@ -181,7 +181,15 @@
 
       </section>
 
- 
+      <h1>
+        Agregar status
+        AGREGAR DOWNLOAND BOTON
+        AGREGAR VIEW DE VISITAS
+        AGREGAR SI TIENE UNA EDICION VIRTUAL
+        AGREGAR SLUG
+        ANALIZAR status
+        ANALIZAR IS_APPROVED
+      </h1>
 
 
 @endsection

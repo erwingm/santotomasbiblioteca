@@ -1,7 +1,14 @@
+
 @extends('layout2')
 @section('content')
-
-<br>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<div class="blog-wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9 blog-left">
+					<ul class="bolg-post-list">
+          <br>
 <div class="container">
         <div class="row ">
             <div class="col-md-4 py-5 bg-primary text-white text-center ">
@@ -67,4 +74,76 @@
     </div>
     
 <br>
+					</ul>
+					<div class="blog-pagination">
+						<ul class="">
+						
+
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3 sidebar">
+					<div class="widget widget-search">
+						<form action="#" method="get" accept-charset="utf-8">
+							<input type="text" name="widget-search" placeholder="Search">
+						</form>
+					</div>
+					<div class="widget widget-categories">
+						<div class="widget-title">
+							<h3>Categories</h3>
+						</div>
+						<ul class="cat-list">
+							<li>
+								<a href="#"><i class="fas fa-chevron-right"></i> Accessories<span>(03)</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fas fa-chevron-right"></i> Cameras<span>(19)</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fas fa-chevron-right"></i> Computers<span>(56)</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fas fa-chevron-right"></i> Laptops<span>(03)</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fas fa-chevron-right"></i> Networking<span>(03)</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fas fa-chevron-right"></i> Old Products<span>(89)</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fas fa-chevron-right"></i> Smartphones<span>(90)</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fas fa-chevron-right"></i> Software<span>(23)</span></a>
+							</li>
+						</ul>
+					</div>
+					<div class="widget widget-tags">
+						<div class="widget-title">
+							<h3>Popular Tags</h3>
+						</div>
+						<ul class="tag-list">
+							<li>
+								<a href="#" class="waves-effect waves-teal">Phone</a>
+							</li>
+							<li>
+								<a href="#" class="waves-effect waves-teal">Cameras</a>
+							</li>
+							<li>
+								<a href="#" class="waves-effect waves-teal">Computers</a>
+							</li>
+							<li>
+								<a href="#" class="waves-effect waves-teal">Laptops</a>
+							</li>
+							<li>
+								<a href="#" class="waves-effect waves-teal">Headphones</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 @stop

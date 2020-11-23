@@ -12,14 +12,12 @@
 							<article class="blog-post">
 								<div class="featured-post">
 									<a href="#">
-<<<<<<< HEAD
-									@if ($activity->photos->count() >= 1)
-									<img src="{{$activity->photos->first()->url}}" alt="">
-=======
+
 									@if ($activity->photos->count() === 1)
 									<img src="{{$activity->photos->first()->url }}" width="70" height="250" alt="">
->>>>>>> 9b63de7927d69c53b4145ca3a9c0a8a7e27fca31
+
 									@endif
+								
 									</a>
 								</div>
 								<div class="divider25"></div>
@@ -145,15 +143,3 @@
 		</div>
 	</div>
 @stop
-
-<style>
-	.carousel-item {
-	  height: 100vh;
-	  min-height: 350px;
-	  background: no-repeat center center scroll;
-	  -webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
-	  background-size: cover;
-	}
-	</style>
