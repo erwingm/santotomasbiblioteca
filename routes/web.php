@@ -45,6 +45,8 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     Route::get('investigation/edit/{id}','InvestigationController@edit')->name('investigation.edit');
     Route::post('investigation/update/{id}','InvestigationController@update')->name('investigation.update');
     Route::get('investigation/delete/{id}','InvestigationController@destroy')->name('investigation.destroy');
+
+    // Route::resource('investigation','InvestigationController');
     
     Route::get('tag','TagController@index')->name('tag.index');
     Route::get('tag/create','TagController@create')->name('tag.create');
@@ -97,7 +99,7 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
 
 
     Route::post('activity/{activity}/photos','PhotoController@store')->name('admin.activity.photos.store');
-
+    Route::delete('photos/{photo}', 'PhotoController@destroy')->name('admin.photos.destroy');
     // Route::post('activity/{id}/photos','PhotoController@store')->name('activity.photo.store');
 
        

@@ -90,6 +90,7 @@
                         value="{{old('title')}}">
                         {!! $errors->first('title','<span >El titulo es requerido</span>') !!}
                     </div>
+                  
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -98,8 +99,12 @@
             </div>
           </div>
         </div>
+
       </form>
+      
       </div>
+
+ 
   @endpush
 
 

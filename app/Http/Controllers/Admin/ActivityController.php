@@ -108,14 +108,14 @@ class ActivityController extends Controller
         $activity->url = Str::slug($request->get('title'));
         $activity->description = $request->get('description');
         $activity->published_at = $request->has('published_at') ? Carbon::parse($request->get('published_at')) : null;
-        $activity->url_inscription = $request->get('urlInscription');
-        $activity->url_base = $request->get('urlBase');
+        $activity->url_inscription = $request->get('url_inscription');
+        $activity->url_base = $request->get('url_base');
         
         
 
         if($activity->save()){
             $activity->tags()->sync($request->get('tags'));
-            toastr()->success('Se Actualizo exitosamente!');
+            toastr()->success('Se Registro exitosamente!');
             return redirect()->back();
         
         }

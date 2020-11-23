@@ -21,7 +21,7 @@ class PhotoController extends Controller
     {
         //
         $this->validate(request(),[
-            'photo' => 'required|image|max:2048'
+            'photo' => 'required|image|max:1024'
         ]);
 
         $photo = request()->file('photo')->store('public');
@@ -85,8 +85,14 @@ class PhotoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Photo $photo)
     {
         //
+        $photo->delete();
+        $photoPath = str_replace('storage', 'public', $photo->url);
+        Storage::delete($photoPath);
+        toastr()->success('Se Elimino exitosamente!');
+        return redirect()->back();
     }
+
 }
