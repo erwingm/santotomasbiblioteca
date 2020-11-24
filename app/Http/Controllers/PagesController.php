@@ -22,6 +22,9 @@ class PagesController extends Controller
     public function home(){
         return view('layout');
     }
+    public function information(){
+        return view('pages.information');
+    }
     
 
 }

@@ -20,6 +20,7 @@ Route::get('tramite', 'PagesController@procedure')->name('pages.procedure');
 
 Route::get('actividades','PagesController@activity')->name('page.activity');
 Route::get('tramite', 'PagesController@procedure')->name('pages.tramite');
+Route::get('nosotros', 'PagesController@information')->name('page.information');
 // Route::get('/', function () {
 //     $activities = App\Models\Activity::latest('published_at')->get();
 //     return view('actividades', compact('activities'));
