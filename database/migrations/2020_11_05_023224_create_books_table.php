@@ -16,11 +16,17 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->string('code');
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
+            $table->string('extract');
+            $table->string('image')->default('default.png');
+            $table->string('document');
+            $table->string('material');
+            $table->integer('view_count')->default(0);
+            $table->boolean('status')->default(false);    
             $table->timestamp('published_at')->nullable();
-            $table->string('quantity');
-            $table->unsignedInteger('category_id');
+            $table->string('quantity');   
 
             $table->timestamps();
         });

@@ -36,31 +36,37 @@
                         </div>
                         <div class="col-sm-5">
                               <!-- select -->
-                              <div class="form-group">
-                                <label>Autor</label>
-                                <select class="form-control">
-                                  <option>option 1</option>
-                                  <option>option 2</option>
-                                  <option>option 3</option>
-                                  <option>option 4</option>
-                                  <option>option 5</option>
-                                </select>
-                              </div>
+                              <div class="form-group" >
+                        <label>Autores</label>
+                        <div class="select2-purple" >
+                          <select name="tags[]" class="author" 
+                                  multiple="" 
+                                  data-placeholder="Selecciona una o más etiquetas" 
+                                  data-dropdown-css-class="select2-purple" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                  @foreach($authors as $author)
+                                    <option value="{{$author->id}}">{{$author->name}}</option>
+                                  @endforeach
+                          </select>
+                        </div>
+                      </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-7">
                               <!-- select -->
-                              <div class="form-group">
-                                <label>Categoria</label>
-                                <select class="form-control">
-                                  <option>option 1</option>
-                                  <option>option 2</option>
-                                  <option>option 3</option>
-                                  <option>option 4</option>
-                                  <option>option 5</option>
-                                </select>
-                              </div>
+                              <div class="form-group" >
+                        <label>Etiquetas</label>
+                        <div class="select2-purple" >
+                          <select name="tags[]" class="select2" 
+                                  multiple="" 
+                                  data-placeholder="Selecciona una o más etiquetas" 
+                                  data-dropdown-css-class="select2-purple" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                  @foreach($tags as $tag)
+                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+                                  @endforeach
+                          </select>
+                        </div>
+                      </div>
                         </div>
                         <div class="col-sm-5">
                             <!-- select -->
@@ -112,46 +118,52 @@
                 <div class="card-body">
                   <form role="form">
                     <div class="row">
-                      <div class="col-sm-10
-                      ">
+                      <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
                           <label>Paginas</label>
                           <input type="text" class="form-control" placeholder="Enter ...">
                         </div>
                       </div>
-                    </div>
-                    <div class="row">
-                            <div class="col-sm-10">
-                              <div class="form-group">
-                                <label>Etiquetas</label>
-                                <select class="form-control">
-                                  <option>option 1</option>
-                                  <option>option 2</option>
-                                  <option>option 3</option>
-                                  <option>option 4</option>
-                                  <option>option 5</option>
-                                </select>
-                              </div>
-                            </div>
-                      </div>
-
-                    <div class="row">
                       <div class="col-sm-6">
-                        <!-- checkbox -->
+                        <!-- text input -->
                         <div class="form-group">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">Virtual</label>
-                          </div>
+                          <label>Categoria</label>
+                          <input type="text" class="form-control" placeholder="Enter ...">
                         </div>
                       </div>
                     </div>
-                    <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                        <div class="form-group" >
+                        <label>Material</label>
+                        <div class="select2-purple" >
+                          <select name="tags[]" class="author" 
+                                  multiple="" 
+                                  data-placeholder="Selecciona una o más etiquetas" 
+                                  data-dropdown-css-class="select2-purple" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                  @foreach($materials as $material)
+                                    <option value="{{$material->id}}">{{$material->name}}</option>
+                                  @endforeach
+                          </select>
+                        </div>
+                      </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-10">
+                      <div class="form-group">
                         <label>Resumen</label>
                         <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
                       </div>
-                    <div class="form-group">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12">
+                      <div class="form-group">
                         <label for="exampleInputFile">Subir Iamgen</label>
                         <div class="input-group">
                             <div class="custom-file">
@@ -161,12 +173,25 @@
                             <div class="input-group-append">
                             <span class="input-group-text" id="">Seleccionar</span>
                             </div>
-                           
-                        </div>
+                            
+                      </div>
+
                     </div>
                     <div class="form-group">
                          <button type="submit" class="btn btn-success">Submit</button>
                     </div>
+                    </div>
+                    
+                    </div>
+                  </div>
+                  </div>
+
+                  
+
+                   
+                           
+                       
+                  
                   </form>
                 </div>
                 <!-- /.card-body -->
@@ -194,3 +219,37 @@
 
 @endsection
 
+@push('styles')
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css" />
+<link rel="stylesheet" href="{{'/backend/plugins/select2/css/select2.min.css'}}">
+<link rel="stylesheet" href="{{'/backend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css'}}">
+@endpush
+
+@push('scripts')
+  <script>
+  $(function(){
+     //Initialize Select2 Elements
+     $('.autores').select2();
+     $('.select2').select2();
+     $('.author').select2();
+
+
+
+    });
+    $(function(){
+     //Initialize Select2 Elements
+     $('.etiquetas').select2();
+
+
+
+    });
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/js/gijgo.min.js"></script>
+  <script src="https://unpkg.com/gijgo@1.9.13/js/messages/messages.es-es.js" type="text/javascript"></script>
+  <!-- Select2 -->
+  <script src="{{'/backend/plugins/select2/js/select2.full.min.js'}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
+
+@endpush

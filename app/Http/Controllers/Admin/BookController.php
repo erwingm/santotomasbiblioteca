@@ -1,10 +1,15 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use App\Models\Book;
+use App\Models\Tag;
+use App\Models\Author;
+use App\Models\Material;
+
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Book;
+
 
 class BookController extends Controller
 {
@@ -13,12 +18,18 @@ class BookController extends Controller
         
         // $contacts = DB::table('contacts')->paginate(10);
         $books = Book::all();
-        return view('admin.book.index', compact('books'));
+        $tags = Tag::all();
+        return view('admin.book.index', compact('books','tags'));
+               
+       
     }
 
     public function create(){
-        
-        // $contacts = DB::table('contacts')->paginate(10);
-        return view('admin.book.add');
+
+        $tags = Tag::all();
+        $authors = Author::all();
+        $materials = Material::all();
+
+        return view('admin.book.add',compact('tags','authors','materials'));
     }
 }

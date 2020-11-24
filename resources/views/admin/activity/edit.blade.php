@@ -5,7 +5,7 @@
 
 <section class="content">
         <div class="container-fluid">
-        <form action="{{ Route('admin.activity.update', $activity)}}" method="post">
+        <form action="{{ route('activity.update', $activity)}}" method="post">
         @csrf {{method_field('PUT')}}
           <div class="row">
             <!-- left column -->
@@ -55,13 +55,13 @@
                         <!-- Carbon\Carbon::parse($activity->published_at)->format('d-m-Y'))  -->
                             <input value="{{ old('published_at', $activity->published_at ? $activity->published_at->format('d-m-Y') : null) }}" name="published_at" size="16" type="text" class="form-control" id="datepicker" >
                     </div>
-                    <div class="form-group" data-select2-id="47">
+                    <div class="form-group" >
                         <label>Etiquetas</label>
-                        <div class="select2-purple" data-select2-id="37">
-                          <select name="tags[]" class="select2 select2-hidden-accessible" 
+                        <div class="select2-purple" >
+                          <select name="tags[]" class="select2" 
                                   multiple="" 
                                   data-placeholder="Selecciona una o más etiquetas" 
-                                  data-dropdown-css-class="select2-purple" style="width: 100%;" data-select2-id="15" tabindex="-1" aria-hidden="true">
+                                  data-dropdown-css-class="select2-purple" style="width: 100%;" tabindex="-1" aria-hidden="true">
                             @foreach($tags as $tag)
                               <option {{ collect(old('tags', $activity->tags->pluck('id')))->contains($tag->id) ? 'selected' : '' }} 
                               value="{{$tag->id}}">{{$tag->name}}</option>

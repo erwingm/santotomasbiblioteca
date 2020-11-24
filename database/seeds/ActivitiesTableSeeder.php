@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 use App\Models\Activity;
 use App\Models\Tag;
+use App\Models\Material;
 
 class ActivitiesTableSeeder extends Seeder
 {
@@ -17,11 +18,18 @@ class ActivitiesTableSeeder extends Seeder
         //
         Activity::truncate();
         Tag::truncate();
+        Material::truncate();
 
         $tag = new Tag;
         $tag->name = "Etiqueta 1";
         $tag->save();
 
+        $material = new Material;
+        $material->name = "Digital";
+        $material->save();
+        $material = new Material;
+        $material->name = "Fisico";
+        $material->save();
 
         $activity = new Activity;
         $activity->title = "1 ACTIVIDAD";
