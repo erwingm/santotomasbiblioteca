@@ -190,22 +190,7 @@ body {
     -o-box-sizing: border-box;
     -ms-box-sizing: border-box;
 }
-.inner .form-row .form-holder input::-webkit-input-placeholder { Chrome/Opera/Safari
-  color: #666;
-  font-size: 16px;
-}
-.inner .form-row .form-holder input::-moz-placeholder { Firefox 19+
-  color: #666;
-  font-size: 16px;
-}
-.inner .form-row .form-holder input:-ms-input-placeholder { IE 10+
-  color: #666;
-  font-size: 16px;
-}
-.inner .form-row .form-holder input:-moz-placeholder { Firefox 18-
-  color: #666;
-  font-size: 16px;
-}
+
 .inner .form-row .form-holder select {
     background: 0 0;
     z-index: 1;

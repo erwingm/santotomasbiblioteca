@@ -11,9 +11,11 @@
       <div class="card">
           <div class="card-header">
             <h3 class="card-title">
-              <a href="{{route('investigation.create')}}" class="btn btn-info">
-              <i class="fas fa-plus"></i> Agregar Nueva Url</a>
+                Registar Enlaces
             </h3>
+            <div  style="text-align: right">
+            <a href="{{route('investigation.create')}}" class="btn btn-primary" ><i class="fa fa-plus"></i> Registrar Enlaces</a>
+            </div>
           </div>
           <!-- /.card-header -->
           <div class="card-body">

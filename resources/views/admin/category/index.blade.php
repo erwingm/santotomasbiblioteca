@@ -13,6 +13,10 @@
             <h3 class="card-title">
               Listado de Categorias
             </h3>
+            <div  style="text-align: right">
+            <a href="{{route('category.create')}}" class="btn btn-primary" ><i class="fa fa-plus"></i> Registrar</a>
+            </div>
+          
           </div>
           <!-- /.card-header -->
           <div class="card-body">

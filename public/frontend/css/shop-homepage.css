@@ -6,3 +6,20 @@
 body {
   padding-top: 54px;
 }
+.bg-light {
+  background-color: #1b73d2!important;
+}
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: rgba(245 243 255);
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  color: rgba(245 243 255);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(245 245 245);
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  color: #92da06;
+}

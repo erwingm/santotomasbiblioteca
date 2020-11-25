@@ -13,6 +13,9 @@
             <h3 class="card-title">
               Listado de Instituciones
             </h3>
+            <div  style="text-align: right">
+            <a href="{{route('institute.create')}}" class="btn btn-primary" ><i class="fa fa-plus"></i> Registrar</a>
+            </div>
           </div>
           <!-- /.card-header -->
           <div class="card-body">

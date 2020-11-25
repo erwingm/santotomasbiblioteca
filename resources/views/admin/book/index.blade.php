@@ -8,7 +8,12 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title"> <button class="btn btn-primary btn-md"><i class="fas fa-plus"></i>  Agregar</button></h3>
+            <h3 class="card-title">
+              Listado de Libros 
+            </h3>
+            <div  style="text-align: right">
+            <a href="{{route('book.add')}}" class="btn btn-primary" ><i class="fa fa-plus"></i> Registrar</a>
+            </div>
           </div>
           <!-- /.card-header -->
           <div class="card-body">

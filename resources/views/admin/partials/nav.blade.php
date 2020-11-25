@@ -38,13 +38,7 @@
                 </a>
               </li>
               <li class="nav-item active">
-                <a href="{{route('category.create')}}" class="nav-link {{request()->is('admin/category/create')? 'active' : ''}}" >
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Registrar</p>
-                </a>
-              </li>
-              <li class="nav-item active">
-                <a href="{{route('tag.create')}}" class="nav-link {{request()->is('admin/tag/create')? 'active' : ''}}" >
+                <a href="{{route('tag.index')}}" class="nav-link {{request()->is('admin/tag/create')? 'active' : ''}}" >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Etiquetas</p>
                 </a>
@@ -67,13 +61,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{route('distric.create')}}" class="nav-link {{request()->is('admin/distric/create') ? 'active' : ''}}">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Registrar</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{route('institute.create')}}" class="nav-link {{request()->is('admin/institute/create') ? 'active' : ''}}">
+                  <a href="{{route('institute.index')}}" class="nav-link {{request()->is('admin/institute*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Instituciones</p>
                   </a>
@@ -92,19 +80,13 @@
               <li class="nav-item">
                 <a href="{{route('book.index')}}" class="nav-link {{request()->is('admin/book') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Ver Listado</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('book.add')}}" class="nav-link {{request()->is('admin/book/create') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Registrar</p>
+                  <p>Libros</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('editorial.index')}}" class="nav-link {{request()->is('admin/editorial') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Editorial</p>
+                  <p>Editoriales</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -152,12 +134,6 @@
                 <a href="{{route('investigation.index')}}" class="nav-link {{request()->is('admin/investigation') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ver Links</p>
-                </a>
-              </li>
-              <li class="nav-item active">
-                <a href="{{route('investigation.create')}}" class="nav-link {{request()->is('admin/investigation/create')? 'active' : ''}}" >
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Registrar Link</p>
                 </a>
               </li>
             </ul>

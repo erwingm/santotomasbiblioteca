@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title','Categorias')
+@section('title','Distritos')
 
 @section('content')
 
@@ -13,6 +13,9 @@
             <h3 class="card-title">
               Listado de Distritos
             </h3>
+            <div  style="text-align: right">
+            <a href="{{route('distric.create')}}" class="btn btn-primary" ><i class="fa fa-plus"></i> Registrar</a>
+            </div>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -33,7 +36,7 @@
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">
                         <a href="{{URL::to('admin/distric/edit')}}/{{$distric->id}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
-                        <a href="{{URL::to('admin/distric/delete')}}/{{$distric->id}}" onclick="mensaje()" class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a>
+                        <a href="{{URL::to('admin/distric/delete')}}/{{$distric->id}}"  class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a>
                         
                       </div>
                     </td>

@@ -13,6 +13,9 @@
             <h3 class="card-title">
               Listado de Etiquetas
             </h3>
+            <div  style="text-align: right">
+            <a href="{{route('tag.create')}}" class="btn btn-primary" ><i class="fa fa-plus"></i> Registrar</a>
+            </div>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -31,7 +34,7 @@
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">
                         <a href="{{URL::to('admin/tag/edit')}}/{{$tag->id}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
-                        <a href="{{URL::to('admin/tag/delete')}}/{{$tag->id}}" onclick="mensaje()" class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a>
+                        <a href="{{URL::to('admin/tag/delete')}}/{{$tag->id}}" class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a>
                         
                       </div>
                     </td>
