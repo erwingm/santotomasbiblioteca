@@ -45,8 +45,6 @@
                         method="POST">
                           @csrf
                           @method('DELETE')
-
-
                         </form>
                       </div>
                     </td>
@@ -71,10 +69,6 @@
 
   </section>
 
-  <script>
-
-
-  </script>
   @push('scripts')
   
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

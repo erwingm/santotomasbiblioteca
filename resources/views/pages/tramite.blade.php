@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="col-md-8 py-5 border">
-                <h4 class="pb-4">Please fill with your details</h4>
+                <h4 class="pb-4">Tramite para la obtencion del Carnet</h4>
                 <form>
 					  <div class="form-row">
                         <div class="form-group col-md-6">
@@ -87,7 +87,7 @@
                     </div>
                     
                     <div class="form-row">
-                        <button type="button" class="btn btn-danger">Enviar Datos</button>
+                        <button type="button" class="btn btn-outline-primary waves-effect">Primary</button>
                     </div>
                 </form>
             </div>
@@ -96,6 +96,13 @@
 <br>
 </ul>
 </div>
-				
+		
+	
 @include('partials.sidebar')
+
+<style>
+ .bg-primary {
+  background-color: #1b73d2!important;
+}
+</style>	
 @stop

@@ -126,9 +126,9 @@ $('.dropdown-toggle').dropdown();
 /*FOOTER*/
 
 footer {
-  background: #16222A;
-  background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
-  background: linear-gradient(59deg, #3A6073, #16222A);
+  background: #1b73d2;
+  background: -webkit-linear-gradient(59deg, #1b73d2, #1b73d2);
+  background: linear-gradient(59deg, #1b73d2, #1b73d2);
   color: white;
   margin-top:100px;
 }

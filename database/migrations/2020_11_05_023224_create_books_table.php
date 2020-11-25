@@ -14,23 +14,40 @@ class CreateBooksTable extends Migration
      */
     public function up()
     {
+
+        
         Schema::create('books', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            
+            
             $table->string('code');
             $table->string('title');
+            $table->string('slug');
             $table->text('description');
             $table->string('extract');
+
             $table->string('image')->default('default.png');
-            $table->string('document');
-            $table->string('material');
+            $table->string('document')->nullable();
+          
+            $table->integer('page');
+            $table->string('donwload');
             $table->integer('view_count')->default(0);
-            $table->boolean('status')->default(false);    
-            $table->timestamp('published_at')->nullable();
-            $table->string('quantity');   
+            $table->boolean('status')->default(false);
+            $table->string('quantity');
+            $table->unsignedBigInteger('category_id');
+            
+            
+           
+            $table->foreign('category_id')->references('id')
+                    ->on('categories')->onDelete('cascade');
+                  
+            $table->unsignedInteger('editorial_id');
 
             $table->timestamps();
+        
         });
-    }
+
+}
 
     /**
      * Reverse the migrations.

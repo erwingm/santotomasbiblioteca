@@ -27,6 +27,7 @@ class ActivitiesTableSeeder extends Seeder
         $material = new Material;
         $material->name = "Digital";
         $material->save();
+        
         $material = new Material;
         $material->name = "Fisico";
         $material->save();

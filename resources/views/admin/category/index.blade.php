@@ -25,6 +25,7 @@
               <tr>
                 <th>Nombre</th>
                 <th>Descripción</th>
+                <th>Cantidad</th>
                 <th>Opciones</th>
               </tr>
               </thead>
@@ -32,8 +33,10 @@
 
               @foreach($categories as $category)
               <tr>
+
                 <td>{{$category->name}}</td>
                 <td>{{$category->description}}</td>
+                <td>{{$category->books->count() }}</td>
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">
                         <a href="{{URL::to('admin/category/edit')}}/{{$category->id}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>

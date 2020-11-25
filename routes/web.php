@@ -21,6 +21,9 @@ Route::get('tramite', 'PagesController@procedure')->name('pages.procedure');
 Route::get('actividades','PagesController@activity')->name('page.activity');
 Route::get('tramite', 'PagesController@procedure')->name('pages.tramite');
 Route::get('nosotros', 'PagesController@information')->name('page.information');
+
+
+
 // Route::get('/', function () {
 //     $activities = App\Models\Activity::latest('published_at')->get();
 //     return view('actividades', compact('activities'));
@@ -106,6 +109,10 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
        
     Route::get('book','BookController@index')->name('book.index');
     Route::get('book/create','BookController@create')->name('book.add');
+    Route::post('book/store','BookController@store')->name('book.store');
+    Route::get('book/edit/{id}','BookController@edit')->name('book.edit');
+    Route::put('book/update/{id}','BookController@update')->name('book.update');
+    Route::delete('book/delete/{id}','BookController@destroy')->name('book.destroy');
 
    
 });

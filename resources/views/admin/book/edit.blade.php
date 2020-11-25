@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title','Crear Libros')
+@section('title','Editar Libros')
 
 @section('content')
 
@@ -15,23 +15,27 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" action="{{route('book.store')}}" method="POST" enctype="multipart/form-data">
+                <form role="form" action="{{route('book.update', $book->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-7">
                               <label>Condigo</label>
-                              <input type="text" class="form-control" name="code" placeholder="Ingrese en Codigo">
+                              <input type="text" class="form-control" name="code" placeholder="Ingrese en Codigo" 
+                              value="{{$book->code}}">
                           </div>
                           <div class="col-md-5 ">
                               <label>Cantidad</label>
-                              <input type="number" class="form-control" name="quantity" placeholder="Ingrese la Cantidad">
+                              <input type="number" class="form-control" name="quantity" placeholder="Ingrese la Cantidad"
+                              value="{{$book->quantity}}">
                           </div>
                       </div>
                     <div class="row">
                         <div class="col-md-7">
                             <label>Titulo del Libro</label>
-                            <input type="text" class="form-control" name="title" placeholder="Ingrese el Titulo">
+                            <input type="text" class="form-control" name="title" placeholder="Ingrese el Titulo"
+                            value="{{$book->title}}">
                         </div>
                         <div class="col-sm-5">
                               <!-- select -->
@@ -43,7 +47,11 @@
                                   data-placeholder="Selecciona una o más etiquetas" 
                                   data-dropdown-css-class="select2-purple" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                   @foreach($authors as $author)
-                                    <option value="{{$author->id}}">{{$author->name}}</option>
+                                    <option 
+                                        @foreach($book->authors as $bookAuthor)
+                                            {{$bookAuthor->id == $author->id ? 'selected' : ''}}
+                                        @endforeach
+                                    value="{{$author->id}}">{{$author->name}}</option>
                                   @endforeach
                           </select>
                         </div>
@@ -61,7 +69,11 @@
                                   data-placeholder="Selecciona una o más etiquetas" 
                                   data-dropdown-css-class="select2-purple" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                   @foreach($tags as $tag)
-                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+                                    <option 
+                                        @foreach($book->tags as $bookTag)
+                                            {{$bookTag->id == $tag->id ? 'selected' : ''}}
+                                        @endforeach
+                                    value="{{$tag->id}}">{{$tag->name}}</option>
                                   @endforeach
                           </select>
                         </div>
@@ -86,7 +98,7 @@
                                     <label>Descripcion del Libro</label>
                                     <div class="mb-3">
                                         <textarea class="textarea" rows="5" name="description"
-                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{$book->description}}</textarea> -->
                                     </div>
                                 </div>
                                   
@@ -108,7 +120,7 @@
                         <!-- text input -->
                         <div class="form-group">
                           <label>Paginas</label>
-                          <input type="number" name="page" class="form-control" placeholder="Ingrese la cantidad de libros">
+                          <input type="number" value="{{$book->page}}" name="page" class="form-control" placeholder="Ingrese la cantidad de libros">
                         </div>
                       </div>
                       <div class="col-sm-6">
@@ -135,7 +147,11 @@
                                   data-placeholder="Selecciona una o más etiquetas" 
                                   data-dropdown-css-class="select2-purple" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                   @foreach($materials as $material)
-                                    <option value="{{$material->id}}">{{$material->name}}</option>
+                                    <option  
+                                    @foreach($book->materials as $bookMaterials)
+                                        {{$bookMaterials->id == $material->id ? 'selected' : ''}}
+                                    @endforeach
+                                    value="{{$material->id}}">{{$material->name}}</option>
                                   @endforeach
                           </select>
                         </div>
@@ -154,15 +170,16 @@
                     </div>
                     <div class="row">
                       <div class="form-group">
-                        <input type="checkbox" id="publish" class="filled-in" name="status" value="1">
-                        <label for="publish">Publicar</label>
+                        <input type="checkbox" id="publish" class="filled-in" name="status" value="1"
+                        {{$book->status == true ? 'checked' : ''}}>
+                        <label for="publish">Disponibilidad</label>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-sm-10">
                       <div class="form-group">
                         <label>Resumen</label>
-                        <textarea name="extract" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                        <textarea name="extract" class="form-control" rows="3" placeholder="Enter ...">{{$book->extract}}</textarea>
                       </div>
                       </div>
                     </div>

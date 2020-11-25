@@ -40,8 +40,8 @@
 <!-- Page Content -->
 <section class="mt-5 container">
 <h4 class=" mb-4">
-  Popular among our collections <br> 
-  <small class="subtitle-section">Our library's line of collection that have been favoured by our users were shown here. Look for them. Borrow them. Hope you also like them</small>
+  Listado de Libros Mas Vistos<br> 
+  <small class="subtitle-section"></small>
   </h4> <div class="flex flex-wrap">
     <a href="index.php?subject=&quot;Operating+System&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Operating System</a>
     <a href="index.php?subject=&quot;Computer&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Computer</a>
@@ -113,135 +113,6 @@
 
 
 </section>
-<section class="mt-5 container">
-  <h4 class=" mb-4">
-  Popular among our collections <br> 
-  <small class="subtitle-section">Our library's line of collection that have been favoured by our users were shown here. Look for them. Borrow them. Hope you also like them</small>
-  </h4> <div class="flex flex-wrap">
-    <a href="index.php?subject=&quot;Operating+System&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Operating System</a>
-    <a href="index.php?subject=&quot;Computer&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Computer</a>
-    <a href="index.php?subject=&quot;Linux&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Linux</a>
-    <a href="index.php?subject=&quot;Programming&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Programming</a>
-    <a href="index.php?subject=&quot;Website&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Website</a>
-    </div>
-    <br>
-    <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card shadow" style="width: 20rem;">
-                    <div class="inner">
-                        <img class="card-img-top" src="Stock/pexels-4.jpeg" alt="Card image cap">
-                    </div>
-                    <div class="card-body text-center">
-                      <h5 class="card-title">Design</h5>
-                      <p class="card-text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                      </p>
-                      <a href="#" class="btn btn-success">Learn More...</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow" style="width: 20rem;">
-                    <div class="inner">
-                            <img class="card-img-top" src="Stock/pexels-5.jpeg" alt="Card image cap">
-                    </div>
-                    
-                    <div class="card-body text-center">
-                      <h5 class="card-title">Responsive</h5>
-                      <p class="card-text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                      </p>
-                      <a href="#" class="btn btn-success">Learn More...</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow" style="width: 20rem;">
-                    <div class="inner">
-                            <img class="card-img-top" src="Stock/pexels-3.jpeg" alt="Card image cap">
-                    </div>
-                    
-                    <div class="card-body text-center">
-                      <h5 class="card-title">UI/UX</h5>
-                      <p class="card-text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                      </p>
-                      <a href="#" class="btn btn-success">Learn More...</a>
-                    </div>
-                  </div>
-            </div>
-        </div>
-
-   </section>
-
-
-
-<section class="py-5">
-  <div class="container">
-    <h1>Contenido 2</h1>
-  </div>
-</section>
-<section class="py-5">
-  <div class="container">
-  <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card shadow" style="width: 20rem;">
-                    <div class="inner">
-                        <img class="card-img-top" src="Stock/pexels-4.jpeg" alt="Card image cap">
-                    </div>
-                    <div class="card-body text-center">
-                      <h5 class="card-title">Design</h5>
-                      <p class="card-text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                      </p>
-                      <a href="#" class="btn btn-success">Learn More...</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow" style="width: 20rem;">
-                    <div class="inner">
-                            <img class="card-img-top" src="Stock/pexels-5.jpeg" alt="Card image cap">
-                    </div>
-                    
-                    <div class="card-body text-center">
-                      <h5 class="card-title">Responsive</h5>
-                      <p class="card-text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                      </p>
-                      <a href="#" class="btn btn-success">Learn More...</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow" style="width: 20rem;">
-                    <div class="inner">
-                            <img class="card-img-top" src="Stock/pexels-3.jpeg" alt="Card image cap">
-                    </div>
-                    
-                    <div class="card-body text-center">
-                      <h5 class="card-title">UI/UX</h5>
-                      <p class="card-text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                      </p>
-                      <a href="#" class="btn btn-success">Learn More...</a>
-                    </div>
-                  </div>
-            </div>
-        </div>
-  </div>
-</section>
-
-
-  <!-- Fin Contenido -->
-
-
 
 
     <!-- Footer -->
@@ -327,7 +198,9 @@
 </body>
 
 </html>
-
+<script>
+$('.dropdown-toggle').dropdown();
+</script>
 <style>
 	.carousel-item {
 	  height: 50vh;
@@ -356,7 +229,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #1b73d2;
+  color: #FA944B;
   text-decoration: none;
 }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Book;
 
 class CategoryController extends Controller
 {
@@ -17,6 +18,7 @@ class CategoryController extends Controller
     {
         //
         $categories = Category::all();
+
         return view('admin.category.index', compact('categories'));
     }
 
