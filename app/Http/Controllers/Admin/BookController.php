@@ -62,15 +62,11 @@ class BookController extends Controller
             $imageName = "default.png";
         }
 
-        // PDF
-        if($request->has('document')){
-            $pdf = $request->file('document');
-            $pdfName=time().'.'.$pdf->getClientOriginalExtension();
-            $destinationPath = public_path('/pdfs');
-            $pdf->move($destinationPath, $pdfName);
-        }else{
-            $pdfName=$request->pdf_old;
-        }
+    // PDF
+        $pdf = $request->file('document');
+        $pdfName=time().'.'.$pdf->getClientOriginalExtension();
+        $destinationPath = public_path('/pdfs');
+        $pdf->move($destinationPath, $pdfName);
 
         $book = new Book();
         $book->code = $request->code;
@@ -80,7 +76,7 @@ class BookController extends Controller
         $book->description = $request->description;
         $book->extract = $request->extract;
         $book->quantity = $request->quantity;
-        $book->document = $request->document;
+        $book->document = $request->pdfName;
         $book->page = $request->page;
         $book->donwload = $request->donwload;
         $book->category_id = $request->category;
@@ -100,7 +96,7 @@ class BookController extends Controller
         return redirect()->route('book.index');
         
     }
-    public function edit(Book $book,$id)
+    public function edit($id)
     {
         //
         $book = Book::find($id);
@@ -113,50 +109,59 @@ class BookController extends Controller
         return view('admin.book.edit',compact('book','tags','authors','materials','editorials','categories'));
     }
 
-    public function update(Request $request, Book $book, $id){
+    public function update(Request $request, $id){
 
         
         $image = $request->file('image');
         $slug = str_slug($request->title);
+        $book = Book::find($id);
+
         if(isset($image)){
             $currentDate = Carbon::now()->toDateString();
-            $imageName = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            $imagename = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
 
             if(!Storage::disk('public')->exists('book')){
                 
                 Storage::disk('public')->makeDirectory('book');
             }
 
-            if(Storage::disk('public')->exists('book/'.$book->image))
-            {
+          // Busqueda y Elimina para la actualizacion de dato
+            if(Storage::disk('public')->exists('book/'.$book->image)){
+                
                 Storage::disk('public')->delete('book/'.$book->image);
             }
+            $bookImage = Image::make($image)->resize(500,255)->stream();
+            Storage::disk('public')->put('book/'.$imagename, $bookImage);;
 
-            $bookImage = Image::make($image)->resize(1600,1066)->stream();
-            Storage::disk('public')->put('book/'.$imageName,$bookImage);
+
         }else{
 
-            $imageName = $book->image;
+            $imagename = $book->image;
         }
-        // PDF
-        $pdf = $request->file('document');
-        $pdfName=time().'.'.$pdf->getClientOriginalExtension();
-        $destinationPath = public_path('/pdfs');
-        $pdf->move($destinationPath, $pdfName);
 
-        $book = Book::find($id);
+         // PDF
+         if($request->has('document')){
+            $pdf = $request->file('document');
+            $pdfName=time().'.'.$pdf->getClientOriginalExtension();
+            $destinationPath = public_path('/pdfs');
+            $pdf->move($destinationPath, $pdfName);
+        }else{
+            $pdfName=$request->pdf_old;
+        }
+
         $book->code = $request->code;
         $book->title = $request->title;
         $book->slug = $slug;
-        $book->image = $imageName;
+        $book->image = $imagename;
         $book->description = $request->description;
         $book->extract = $request->extract;
         $book->quantity = $request->quantity;
-        $book->document = $request->document;
+        $book->document = $request->pdfName;
         $book->page = $request->page;
         $book->donwload = $request->donwload;
         $book->category_id = $request->category;
         $book->editorial_id = $request->editorial;
+
         if(isset($request->status)){
             $book->status = true;
         }else{

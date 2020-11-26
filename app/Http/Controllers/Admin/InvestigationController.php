@@ -171,6 +171,7 @@ class InvestigationController extends Controller
         $investigation->description = $request->description;
         $investigation->slug = $slug;
         $investigation->image = $imagename;
+        
         $investigation->save();
 
         toastr()->success('Se Actualizo exitosamente!');
