@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title','Tramites')
+@section('title','Autores')
 
 @section('content')
 
@@ -11,39 +11,29 @@
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">
-              Listado de Tramites
+                <a href="{{route('objective.create')}}" class="btn btn-info"><i class="fas fa-plus"></i> Agregar</a>
             </h3>
-            <div  style="text-align: right">
-            
-            </div>
-          
           </div>
           <!-- /.card-header -->
           <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>DNI</th>
+                <th>Icono</th>
                 <th>Nombre</th>
-                <th>Apellidos</th>
-                <th>Nivel de Estudio</th>
-                <th>Distrito</th>
-                <th>Insitituto</th>
+                <th>Descripcion</th>
                 <th>Opciones</th>
               </tr>
               </thead>
               <tbody>
 
-              @foreach($procedures as $procedure)
+              @foreach($objectives as $objective)
               <tr>
-
-                <td>{{$procedure->dni}}</td>
-                <td>{{$procedure->nombre}}</td>
-                <td>{{$procedure->last_name_one}} {{$procedure->last_name_two}}</td>
-                <td>{{$procedure->level_study}}</td>
-                <td>{{$procedure->distric}}</td>
-                <td>{{$procedure->institute}}</td>
+                <td style="text-align:center;"><i class="{{$objective->icon}}"></i></td>
+                <td>{{$objective->name}}</td>
+                <td>{{$objective->description}}</td>
                 <td></td>
+
               </tr>
               @endforeach
 
@@ -62,7 +52,6 @@
       <!-- /.col -->
     </div>
     <!-- /.row -->
-    
 
   </section>
 

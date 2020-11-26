@@ -50,13 +50,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Registar Libro</a>
+        <a href="index3.html" class="nav-link">Registrar Libro</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Registrar Actividad</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Registrar Categorias</a>
+        <a href="#" class="nav-link">Registrar Categorìa</a>
       </li>
     </ul>
       </li>
@@ -149,11 +149,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('backend/js/adminlte.js')}}"></script>
 @toastr_js
 @toastr_render
+
 <script>
     $(function () {
       $("#example1").DataTable({
         "responsive": true,
         "autoWidth": false,
+        "language": {
+          "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+        }
       });
       $('.textarea').summernote();
     });

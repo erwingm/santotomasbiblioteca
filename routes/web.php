@@ -20,19 +20,13 @@ Route::get('tramite', 'PagesController@procedure')->name('pages.procedure');
 
 Route::get('actividades','PagesController@activity')->name('page.activity');
 Route::get('tramite', 'PagesController@procedure')->name('pages.tramite');
+Route::post('tramite/store', 'PagesController@procedurestore')->name('pages.procedure.store');
 Route::get('nosotros', 'PagesController@information')->name('page.information');
 
+Route::get('investigacion','PagesController@investigation')->name('pages.investigation');
 
 
-// Route::get('/', function () {
-//     $activities = App\Models\Activity::latest('published_at')->get();
-//     return view('actividades', compact('activities'));
-// });
 
-// Route::get('activities', function(){
-//     return App\Activity::all();
-// });
-   
 
 
 
@@ -42,6 +36,12 @@ Route::post('/', 'ContactController@sendMessage')->name('contact.send');
 Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'], function(){
     
     Route::get('/', 'AdminController@index');
+
+    Route::get('procedure','ProcedureController@index')->name('procedure.index');
+
+    Route::get('Objective','ObjetiveController@index')->name('objective.index');
+    Route::get('Objective/create','ObjetiveController@create')->name('objective.create');
+    Route::post('Objective/store','ObjetiveController@store')->name('objective.store');
 
     Route::get('investigation','InvestigationController@index')->name('investigation.index');
     Route::get('investigation/create','InvestigationController@create')->name('investigation.create');
@@ -113,6 +113,7 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     Route::get('book/edit/{id}','BookController@edit')->name('book.edit');
     Route::put('book/update/{id}','BookController@update')->name('book.update');
     Route::delete('book/delete/{id}','BookController@destroy')->name('book.destroy');
+    Route::get('book/show/{id}','BookController@show')->name('book.show');
 
    
 });

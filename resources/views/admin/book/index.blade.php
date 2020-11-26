@@ -53,10 +53,10 @@
                 <td>{{$book->quantity}}</td>
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">
-                        <a href="{{route('book.edit', $book->id)}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
+                        <a href="{{route('book.show', $book->id)}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                        <a href="{{route('book.edit', $book->id)}}" class="btn btn-info"><i class="fas fa-edit"></i></a>
                         <button class="btn btn-danger" type="button" onclick="deleteBook({{$book->id}})">
-                        <i  class="fa fa-trash"></i>Eliminar</button>
-                        
+                        <i  class="fa fa-trash"></i></button>
                         <form id="delete-form-{{$book->id}}" 
                         action="{{route('book.destroy',$book->id)}}"
                         method="POST">
@@ -77,6 +77,7 @@
                 <th>Estado</th>
                 <th>Vistas</th>
                 <th>Cantidad</th>
+                <th>Opciones</th>
               </tr>
               </tfoot>
             </table>

@@ -96,6 +96,19 @@ class BookController extends Controller
         return redirect()->route('book.index');
         
     }
+       /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+        $book = Book::find($id);
+        return view('admin.book.show',compact('book'));
+    }
+
     public function edit($id)
     {
         //
@@ -176,5 +189,17 @@ class BookController extends Controller
         toastr()->success('Se Actulizo exitosamente!');
         return redirect()->route('book.index');
         
+    }
+    public function destroy(Book $book){
+        if(Storage::disk('public')->exists('book/'.$book->image)){
+            Storage::disk('public')->delete('book/'.$book->image);
+        }
+        $book->materials()->detach();
+        $book->tags()->detach();
+        $book->authors()->detach();
+        $book->delete();
+        toastr()->success('Se Elimino exitosamente!');
+        return redirect()->route('book.index');
+
     }
 }

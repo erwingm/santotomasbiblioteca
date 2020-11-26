@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12 about-text">
                     <div class="section-heading space-overflow">
-                        <h1 class="section-title"> <span>  About Us  </span> </h1>
+                        <h1 class="section-title"> <span>  Historia  </span> </h1>
                         <h4 class="section-description">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do incididunt ipsumaliqua. 
 						</h4>
@@ -34,7 +34,6 @@
                <ol class="carousel-indicators">
                   <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                   <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
                </ol>
                <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -43,16 +42,7 @@
                            <img src="https://placeimg.com/1200/800/nature" class="img-fluid" alt="">
                         </div>
                         <div class="col-md-6">
-                           <h3>Why do we use it?</h3>
-                           <div class="price">
-                              <p>Prices: <span>$159</span></p>
-                           </div>
-                           <p class="font-italic">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                           <ul>
-                              <li><i class="fas fa-arrow-right"></i> The standard Lorem Ipsum passage, used since the 1500s</li>
-                              <li><i class="fas fa-arrow-right"></i> 1914 translation by H. Rackham</li>
-                              <li><i class="fas fa-arrow-right"></i> Section 1.10.33 of "de Finibus Bonorum et Malorum"</li>
-                           </ul>
+                           <h3>Mision</h3>
                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                         </div>
                      </div>
@@ -60,43 +50,16 @@
                   <div class="carousel-item">
                      <div class="row">
                         <div class="col-md-6">
-                           <img src="images/image-two.jpg" class="img-fluid" alt="">
+                        <img src="https://placeimg.com/1200/800/nature" class="img-fluid" alt="">
                         </div>
                         <div class="col-md-6">
-                           <h3>What is Lorem Ipsum?</h3>
-                           <div class="price">
-                              <p>Prices: <span>$169</span></p>
-                           </div>
-                           <p class="font-italic">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                           <ul>
-                              <li><i class="fas fa-arrow-right"></i> The standard Lorem Ipsum passage, used since the 1500s</li>
-                              <li><i class="fas fa-arrow-right"></i> 1914 translation by H. Rackham</li>
-                              <li><i class="fas fa-arrow-right"></i> Section 1.10.33 of "de Finibus Bonorum et Malorum"</li>
-                           </ul>
+                           <h3>Vision</h3>
+                           
                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                         </div>
                      </div>
                   </div>
-                  <div class="carousel-item">
-                     <div class="row">
-                        <div class="col-md-6">
-                           <img src="images/image-three.jpg" class="img-fluid" alt="">
-                        </div>
-                        <div class="col-md-6">
-                           <h3>Where can I get some?</h3>
-                           <div class="price">
-                              <p>Prices: <span>$179</span></p>
-                           </div>
-                           <p class="font-italic">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                           <ul>
-                              <li><i class="fas fa-arrow-right"></i> The standard Lorem Ipsum passage, used since the 1500s</li>
-                              <li><i class="fas fa-arrow-right"></i> 1914 translation by H. Rackham</li>
-                              <li><i class="fas fa-arrow-right"></i> Section 1.10.33 of "de Finibus Bonorum et Malorum"</li>
-                           </ul>
-                           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                        </div>
-                     </div>
-                  </div>
+
                </div>
                <!-- Next and Pre arrow icons -->
                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -112,8 +75,66 @@
       </div>
     </section>
     <br>
+    <section class="container pt-3 mb-3">
+    <h2 class="h3 block-title text-center">Nuestros Objetivos</h2>
+    <div class="container mt-5">
+  <div class="row">
+  @foreach($objectives as $objective)
+        <div class="col-lg-3 col-md-6 col-xs-12 pl-1 pr-1">
+            <div class="card">
+            <i class="{{$objective->icon}} objetivos"></i>
+            <h3 class="objh3">{{$objective->name}}</h3>
+            <p class="objp">{{$objective->description}}</p>
+        </div>
+    </div> 
+@endforeach
+  
+  
+  	
+  	
+  
+
+  </div>         
+</div>
+</section>
 
 <style>
+     	.objetivos{
+ 		color: #1b73d2;
+ 		text-align: center;
+ 		padding: 30px;
+ 		font-size: 46px;
+ 	}
+ 	.card{
+ 		padding: 15px;
+ 		margin: 10px;
+ 		 box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.01);
+    transition: box-shadow 0.3s ease-in-out;
+    border:1px solid #ddd;
+    cursor: pointer;
+    border-radius: 4px;
+ 	}
+ 	.card:hover{
+ 		box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.3);
+ 	}
+ 	.objh3{
+ 		text-align: center;
+ 		font-size: 22px;
+ 		color: #839192;
+    font-weight: 600;
+
+ 	}
+ 	
+ 	.objp{
+ 		padding: 5px;
+ 		text-align: center;
+ 		font-size: 15px;
+ 		color: #839192;
+ 		line-height: 1.6;
+    font-weight: 500;
+    padding-top: 5px;
+   
+ 	}
 .how-section1{
     margin-top:-15%;
     padding: 10%;
@@ -223,7 +244,7 @@
     padding:100px 0;
 }
 .section-title {
-    color: #6b55d2;
+    color: #1b73d2;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 46px;

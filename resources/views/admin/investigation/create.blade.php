@@ -74,7 +74,7 @@
 
 @stop
 @push('styles')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.css">
+
 <!-- daterange picker -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css" />
 <link rel="stylesheet" href="{{'/backend/plugins/select2/css/select2.min.css'}}">

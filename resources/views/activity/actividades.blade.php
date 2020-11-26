@@ -1,7 +1,9 @@
 @extends('layout2')
 @section('content')
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	
+	
 	<div class="blog-wrap">
 		<div class="container">
 			<div class="row">
@@ -15,7 +17,6 @@
 
 									@if ($activity->photos->count() === 1)
 									<img src="{{$activity->photos->first()->url }}" width="70" height="250" alt="">
-
 									@endif
 								
 									</a>
@@ -35,7 +36,6 @@
 										</li>
 										<li class="date">
 											<a href="#">
-												
 												{{ Carbon\Carbon::parse($activity->published_at)->format('M d') }}
 											</a>
 										</li>
@@ -43,8 +43,8 @@
 									<div class="entry-post">
 										<p>{{$activity->description}}</p>
 										<div class="more-link">
-											<a href="#" class="read-more-btn">Read More</a>
-											<a href="#" class="read-more-btn">Read More</a>
+											<a href="#" class="read-more-btn">Ir</a>
+											<a href="#" class="read-more-btn">Registrar</a>
 										</div>
 									</div>
 								</div>
@@ -52,6 +52,11 @@
 						</li>
 					@endforeach
 					</ul>
+					
+				
+				
+			
+
 					<div class="blog-pagination">
 						<ul class="">
 							<li class="prev">
@@ -79,5 +84,6 @@
 						</ul>
 					</div>
 				</div>
+
 				@include('partials.sidebar')
 @stop

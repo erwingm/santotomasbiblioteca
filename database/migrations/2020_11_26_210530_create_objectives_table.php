@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProceduresTable extends Migration
+class CreateObjectivesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateProceduresTable extends Migration
      */
     public function up()
     {
-        Schema::create('procedures', function (Blueprint $table) {
+        Schema::create('objectives', function (Blueprint $table) {
             $table->id();
-            $table->string('dni');
             $table->string('name');
-            $table->string('last_name_one');
-            $table->string('last_name_two');
-            $table->string('level_study');
-            $table->string('distric');
-            $table->string('institute');
+            $table->string('icon');
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ class CreateProceduresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('procedures');
+        Schema::dropIfExists('objectives');
     }
 }

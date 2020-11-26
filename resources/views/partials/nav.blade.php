@@ -9,18 +9,21 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home
+            <a class="nav-link" href="/">Inicio
                   <span class="sr-only">(current)</span>
                 </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('pages.tramite')}}">Tramites</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('page.activity')}}">Actividades</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('page.information')}}">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('pages.investigation')}}">Investigacion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('pages.tramite')}}">Tramites</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" 
@@ -31,9 +34,7 @@
               <a class="dropdown-item" href="#">Fisicos</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Investigacion</a>
-          </li>
+
 
         </ul>
       

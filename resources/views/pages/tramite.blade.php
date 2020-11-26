@@ -1,6 +1,6 @@
-
 @extends('layout2')
 @section('content')
+
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 	<div class="blog-wrap">
@@ -23,10 +23,11 @@
             </div>
             <div class="col-md-8 py-5 border">
                 <h4 class="pb-4">Tramite para la obtencion del Carnet</h4>
-                <form>
+                <form action="{{route('pages.procedure.store')}}" method="POST" >
+                  @csrf
 					  <div class="form-row">
                         <div class="form-group col-md-6">
-                          <input id="Full Name" name="name" placeholder="DNI" class="form-control" type="text">
+                          <input id="Full Name" name="dni" placeholder="DNI" class="form-control" type="text">
                         </div>
 						<div class="form-group col-md-6">
                           <input id="Full Name" name="name" placeholder="Nombre" class="form-control" type="text">
@@ -34,16 +35,16 @@
                       </div>
 					  <div class="form-row">
                         <div class="form-group col-md-6">
-                          <input id="Full Name" name="name" placeholder="Apellido Paterno" class="form-control" type="text">
+                          <input id="Full Name" name="last_name_one" placeholder="Apellido Paterno" class="form-control" type="text">
                         </div>
 						<div class="form-group col-md-6">
-                          <input id="Full Name" name="name" placeholder="Apellido Materno" class="form-control" type="text">
+                          <input id="Full Name" name="last_name_two" placeholder="Apellido Materno" class="form-control" type="text">
                         </div>
                       </div>
 
                     <div class="form-row">
 					<div class="form-group col-md-6">
-                                  <select id="inputState" class="form-control">
+                                  <select name="distric" id="inputState" class="form-control">
                                     <option selected>Distrito</option>
                                     <option> New Buyer</option>
                                     <option> Auction</option>
@@ -52,7 +53,7 @@
                                   </select>
                         </div>
                         <div class="form-group col-md-6">
-                                  <select id="inputState" class="form-control">
+                                  <select name="level_study" id="inputState" class="form-control">
                                     <option selected>Centro de Estudios</option>
                                     <option> New Buyer</option>
                                     <option> Auction</option>
@@ -62,14 +63,8 @@
                         </div>
                     </div>
 					<div class="form-row">
-					<div class="form-group col-md-6">
-                                  <select placeholder="Nivel De Estudio" id="inputState" class="form-control">
-                                    <option selected>Nivel De Estudi222o</option>
-                                    <option> New Buyer</option>
-                                    <option> Auction</option>
-                                    <option> Complaint</option>
-                                    <option> Feedback</option>
-                                  </select>
+          <div class="form-group col-md-10">
+                          <input id="Full Name" name="institute" placeholder="Colegio" class="form-control" type="text">
                         </div>
                     </div>
 					<br>
@@ -87,7 +82,7 @@
                     </div>
                     
                     <div class="form-row">
-                        <button type="button" class="btn btn-outline-primary waves-effect">Primary</button>
+                        <button type="submit" class="btn btn-outline-primary waves-effect">Enviar Datos</button>
                     </div>
                 </form>
             </div>
@@ -106,3 +101,5 @@
 }
 </style>	
 @stop
+
+

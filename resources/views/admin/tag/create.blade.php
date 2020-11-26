@@ -28,7 +28,7 @@
                     <br>
                     <div class="row">
                         <div class="col-md-5">
-                                <button type="submit" class="btn btn-success">Enviar</button>x
+                                <button type="submit" class="btn btn-success">Registrar</button>
                         </div>
                         
                     </div>
