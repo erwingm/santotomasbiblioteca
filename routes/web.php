@@ -39,9 +39,19 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
 
     Route::get('procedure','ProcedureController@index')->name('procedure.index');
 
-    Route::get('Objective','ObjetiveController@index')->name('objective.index');
-    Route::get('Objective/create','ObjetiveController@create')->name('objective.create');
-    Route::post('Objective/store','ObjetiveController@store')->name('objective.store');
+    Route::get('objective','ObjetiveController@index')->name('objective.index');
+    Route::get('objective/create','ObjetiveController@create')->name('objective.create');
+    Route::post('objective/store','ObjetiveController@store')->name('objective.store');
+    Route::get('objective/edit/{id}','ObjetiveController@edit')->name('objective.edit');
+    Route::put('objective/update/{id}','ObjetiveController@update')->name('objective.update');
+    Route::delete('objective/delete/{id}','ObjetiveController@destroy')->name('objective.destroy');
+
+    Route::get('story','StoryController@index')->name('story.index');
+    Route::get('story/create','StoryController@create')->name('story.create');
+    Route::post('story/store','StoryController@store')->name('story.store');
+    Route::get('story/edit/{id}','StoryController@edit')->name('story.edit');
+    Route::put('story/update/{id}','StoryController@update')->name('story.update');
+    Route::delete('story/delete/{id}','StoryController@destroy')->name('story.destroy');
 
     Route::get('investigation','InvestigationController@index')->name('investigation.index');
     Route::get('investigation/create','InvestigationController@create')->name('investigation.create');

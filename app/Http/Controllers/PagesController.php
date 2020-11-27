@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\Activity;
+use App\Models\History;
 use App\Models\Tag;
 use App\Models\Investigation;
 use App\Models\Procedure;
@@ -45,8 +47,10 @@ class PagesController extends Controller
     public function information(){
 
         $objectives = Objective::all();
-        return view('pages.information',compact('objectives'));
+        $story = DB::table('histories')->get();
+        return view('pages.information',compact('objectives'),['story'=>$story]);
     }
+
 
     public function investigation(){
         $investigations = Investigation::all();

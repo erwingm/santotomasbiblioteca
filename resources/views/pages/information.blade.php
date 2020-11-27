@@ -6,20 +6,20 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12 about-text">
                     <div class="section-heading space-overflow">
-                        <h1 class="section-title"> <span>  Historia  </span> </h1>
+                        <h1 class="section-title"> <span>  {{$story[0]->name}}  </span> </h1>
                         <h4 class="section-description">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do incididunt ipsumaliqua. 
 						</h4>
                     </div>
 					<div class="space-t-40 space-b-40">
-						<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.Sed ut perspiciatis omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore </p>
+						<p> {{$story[0]->description}} </p>
 					</div>
 					
 				</div>
   
                 <div class="col-lg-6 col-md-12 about_img space-60">
                     <div class="about_img-inner">
-                        <img src="https://placeimg.com/1200/800/nature" class="img-fluid" alt="img">
+                    <img  class="img-responsive thumbnail" src="{{ Storage::disk('public')->url('story/'.$story[0]->image) }}" alt="">
                     </div>
                 </div>
             </div>

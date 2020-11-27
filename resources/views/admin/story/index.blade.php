@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title','Autores')
+@section('title','Historia de la Municipalidad')
 
 @section('content')
 
@@ -11,7 +11,7 @@
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">
-                <a href="{{route('objective.create')}}" class="btn btn-info"><i class="fas fa-plus"></i> Agregar</a>
+                <a href="{{route('story.create')}}" class="btn btn-info"><i class="fas fa-plus"></i> Agregar</a>
             </h3>
           </div>
           <!-- /.card-header -->
@@ -19,7 +19,6 @@
             <table id="example1" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>Icono</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
                 <th>Opciones</th>
@@ -27,19 +26,18 @@
               </thead>
               <tbody>
 
-              @foreach($objectives as $objective)
+              @foreach($stories as $story)
               <tr>
-                <td style="text-align:center;"><i class="{{$objective->icon}}"></i></td>
-                <td>{{$objective->name}}</td>
-                <td>{{$objective->description}}</td>
+                <td>{{$story->name}}</td>
+                <td>{{$story->description}}</td>
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">
-                        <a href="{{route('objective.edit', $objective->id)}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
-                        <button class="btn btn-danger" type="button" onclick="deleteObjective({{$objective->id}})">
+                        <a href="{{route('story.edit', $story->id)}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
+                        <button class="btn btn-danger" type="button" onclick="deleteStory({{$story->id}})">
                         <i  class="fa fa-trash"></i>Eliminar</button>
                         
-                        <form id="delete-form-{{$objective->id}}" 
-                        action="{{route('objective.destroy',$objective->id)}}"
+                        <form id="delete-form-{{$story->id}}" 
+                        action="{{route('story.destroy',$story->id)}}"
                         method="POST">
                           @csrf
                           @method('DELETE')
@@ -72,7 +70,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script>
 
-  function deleteObjective(id){
+  function deleteStory(id){
     Swal.fire({
   title: 'Are you sure?',
   text: "You won't be able to revert this!",

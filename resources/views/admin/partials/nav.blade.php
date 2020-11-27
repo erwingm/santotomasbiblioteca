@@ -165,7 +165,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item active">
-                <a href="{{route('category.index')}}" class="nav-link {{request()->is('admin/category') ? 'active' : ''}}">
+                <a href="{{route('story.index')}}" class="nav-link {{request()->is('admin/story') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Historia</p>
                 </a>

@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
-use App\Models\Objective;
-
-class ObjetiveController extends Controller
+use App\Models\History;
+use Carbon\Carbon;
+class StoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +18,8 @@ class ObjetiveController extends Controller
     public function index()
     {
         //
-        $objectives = Objective::all();
-        return view('admin.objective.index',compact('objectives'));
+        $stories = History::all();
+        return view('admin.story.index',compact('stories'));
     }
 
     /**
@@ -28,7 +30,7 @@ class ObjetiveController extends Controller
     public function create()
     {
         //
-        return view('admin.objective.create');
+        return view('admin.story.create');
     }
 
     /**
@@ -40,13 +42,29 @@ class ObjetiveController extends Controller
     public function store(Request $request)
     {
         //
-        $objective = new Objective();
-        $objective->icon = $request->icon;
-        $objective->name = $request->name;
-        $objective->description = $request->description;
-        $objective->save();
+        $image = $request->file('image');
+        $slug = str_slug($request->name);
+        if(isset($image)){
+            $currentDate = Carbon::now()->toDateString();
+            $imageName = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+
+            if(!Storage::disk('public')->exists('story')){
+                Storage::disk('public')->makeDirectory('story');
+            }
+            $storyImage = Image::make($image)->resize(1600,1066)->stream();
+            Storage::disk('public')->put('story/'.$imageName,$storyImage);
+        }else{
+
+            $imageName = "default.png";
+        }
+        $story = new History();
+        $story->name = $request->name;
+        $story->slug = $slug;
+        $story->description = $request->description;
+        $story->image = $imageName;
+        $story->save();
         toastr()->success('Se Registro exitosamente!');
-        return redirect()->back();
+        return redirect()->route('story.index');
     }
 
     /**
@@ -69,10 +87,6 @@ class ObjetiveController extends Controller
     public function edit($id)
     {
         //
-         //
-         $objective  = Objective::find($id);
-         return view('admin.objective.edit',compact('objective'));
-
     }
 
     /**
@@ -85,13 +99,6 @@ class ObjetiveController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $objective  = Objective::find($id);
-        $objective->icon = $request->icon;
-        $objective->name = $request->name;
-        $objective->description = $request->description;
-        $objective->save();
-        toastr()->success('Se Actualizo exitosamente!');
-        return redirect()->route('objective.index');
     }
 
     /**
@@ -102,10 +109,6 @@ class ObjetiveController extends Controller
      */
     public function destroy($id)
     {
-        if(Objective::destroy($id)){
-            toastr()->success('Se Elimino exitosamente!');
-            return redirect()->back();
-        }
-        return redirect()->back();
+        //
     }
 }
