@@ -16,6 +16,7 @@ class CreateVisionsTable extends Migration
         Schema::create('visions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug');
             $table->string('image');
             $table->text('description');
             $table->timestamps();

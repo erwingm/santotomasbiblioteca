@@ -23,7 +23,6 @@
               <thead>
               <tr>
                 <th>Nombre</th>
-                <th>Descripción</th>
                 <th>Opciones</th>
               </tr>
               </thead>
@@ -32,12 +31,18 @@
               @foreach($districs as $distric)
               <tr>
                 <td>{{$distric->name}}</td>
-                <td>{{$distric->description}}</td>
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">
                         <a href="{{URL::to('admin/distric/edit')}}/{{$distric->id}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
-                        <a href="{{URL::to('admin/distric/delete')}}/{{$distric->id}}"  class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a>
+                        <button class="btn btn-danger" type="button" onclick="deleteDistric({{$distric->id}})">
+                        <i  class="fa fa-trash"></i>Eliminar</button>
                         
+                        <form id="delete-form-{{$distric->id}}" 
+                        action="{{route('distric.destroy',$distric->id)}}"
+                        method="POST">
+                          @csrf
+                          @method('DELETE')
+                        </form>
                       </div>
                     </td>
               </tr>
@@ -61,19 +66,41 @@
 
   </section>
 
+  @push('scripts')
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script>
 
-  function  mensaje(){
+  function deleteDistric(id){
+    Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.value) {
+    event.preventDefault();
+    document.getElementById('delete-form-'+id).submit();
+  }else if (
+    result.dismiss == swal.DismissReason.cancel
+  ){
+    Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
 
-    var check = confirm("deseas eliminar este dato");
-    if(check){
-      return true
-    }
-    return false;
   }
+})
+  }
+  
 
   </script>
 
+@endpush
 
  
 @endsection

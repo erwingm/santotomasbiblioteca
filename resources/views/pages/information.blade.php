@@ -39,23 +39,23 @@
                   <div class="carousel-item active">
                      <div class="row">
                         <div class="col-md-6">
-                           <img src="https://placeimg.com/1200/800/nature" class="img-fluid" alt="">
+                           <img src="{{ Storage::disk('public')->url('vision/'.$vision[1]->image) }}" class="img-fluid" alt="">
                         </div>
                         <div class="col-md-6">
-                           <h3>Mision</h3>
-                           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                           <h3>{{$vision[0]->name}}</h3>
+                           <p>{{$vision[0]->description}}</p>
                         </div>
                      </div>
                   </div>
                   <div class="carousel-item">
                      <div class="row">
                         <div class="col-md-6">
-                        <img src="https://placeimg.com/1200/800/nature" class="img-fluid" alt="">
+                        <img src="{{ Storage::disk('public')->url('vision/'.$vision[0]->image) }}" class="img-fluid" alt="">
                         </div>
                         <div class="col-md-6">
-                           <h3>Vision</h3>
+                           <h3>{{$vision[1]->name}}</h3>
                            
-                           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                           <p>{{$vision[1]->description}}</p>
                         </div>
                      </div>
                   </div>

@@ -70,7 +70,7 @@ class TagController extends Controller
     {
         //
         $tag = Tag::find($id);
-        return view('admin.tag.edit');
+        return view('admin.tag.edit',compact('tag'));
       
 
     }

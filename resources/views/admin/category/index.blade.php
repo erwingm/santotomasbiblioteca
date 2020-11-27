@@ -40,7 +40,15 @@
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">
                         <a href="{{URL::to('admin/category/edit')}}/{{$category->id}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
-                        <a href=""class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-trash"></i> Eliminar</a>
+                        <button class="btn btn-danger" type="button" onclick="deleteCategory({{$category->id}})">
+                        <i  class="fa fa-trash"></i>Eliminar</button>
+                        
+                        <form id="delete-form-{{$category->id}}" 
+                        action="{{route('category.destroy',$category->id)}}"
+                        method="POST">
+                          @csrf
+                          @method('DELETE')
+                        </form>
                       </div>
                     </td>
               </tr>
@@ -61,43 +69,43 @@
       <!-- /.col -->
     </div>
     <!-- /.row -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              @foreach ($categories as $category)
-              <a href="{{URL::to('admin/category/delete')}}/{{$category->id}}" class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a>    
-              @endforeach
-              
-            </div>
-          </div>
-        </div>
-      </div>
-
   </section>
 
+  @push('scripts')
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script>
 
-  function  mensaje(){
+  function deleteCategory(id){
+    Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.value) {
+    event.preventDefault();
+    document.getElementById('delete-form-'+id).submit();
+  }else if (
+    result.dismiss == swal.DismissReason.cancel
+  ){
+    Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
 
-    var check = confirm("deseas eliminar este dato");
-    if(check){
-      return true
-    }
-    return false;
   }
+})
+  }
+  
 
   </script>
+
+@endpush
 
 
  

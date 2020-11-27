@@ -39,13 +39,10 @@
                             <!-- /.col-->
                     </div>
                     <div class="row">
-                        
                         <button type="submit" class="btn btn-success">Actualizar</button>
                     </div>
                   </div>
                   <!-- /.card-body -->
-  
-                 
                 </form>
               </div>
               <!-- /.card -->

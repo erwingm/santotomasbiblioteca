@@ -21,6 +21,8 @@
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
   @toastr_css
 
+
+
 </head>
 
 <body>
@@ -115,6 +117,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<script>
+$('.dropdown-toggle').dropdown();
+</script>
+
 </body>
 @jquery
 @toastr_js
@@ -122,9 +129,6 @@
 </html>
 
 
-<script>
-$('.dropdown-toggle').dropdown();
-</script>
 
 
 <style>

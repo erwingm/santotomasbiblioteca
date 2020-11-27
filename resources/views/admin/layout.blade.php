@@ -138,7 +138,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('backend/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
+<script src="https://use.fontawesome.com/b0ab2e418a.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('backend/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->

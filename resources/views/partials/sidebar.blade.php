@@ -4,35 +4,16 @@
 							<h3>Categories</h3>
 						</div>
 						<ul class="cat-list">
+						@foreach($categories as $category)
 							<li>
-								<a href="#"><i class="fas fa-chevron-right"></i> Accessories<span>(03)</span></a>
+								<a href="#"><i class="fas fa-chevron-right"></i>{{$category->name}}<span> ({{$category->books->count()}})</span></a>
 							</li>
-							<li>
-								<a href="#"><i class="fas fa-chevron-right"></i> Cameras<span>(19)</span></a>
-							</li>
-							<li>
-								<a href="#"><i class="fas fa-chevron-right"></i> Computers<span>(56)</span></a>
-							</li>
-							<li>
-								<a href="#"><i class="fas fa-chevron-right"></i> Laptops<span>(03)</span></a>
-							</li>
-							<li>
-								<a href="#"><i class="fas fa-chevron-right"></i> Networking<span>(03)</span></a>
-							</li>
-							<li>
-								<a href="#"><i class="fas fa-chevron-right"></i> Old Products<span>(89)</span></a>
-							</li>
-							<li>
-								<a href="#"><i class="fas fa-chevron-right"></i> Smartphones<span>(90)</span></a>
-							</li>
-							<li>
-								<a href="#"><i class="fas fa-chevron-right"></i> Software<span>(23)</span></a>
-							</li>
+						@endforeach
 						</ul>
 					</div>
 					<div class="widget widget-tags">
 						<div class="widget-title">
-							<h3>Popular Tags</h3>
+							<h3>Etiquetas</h3>
 						</div>
 						<ul class="tag-list">
 							<li>

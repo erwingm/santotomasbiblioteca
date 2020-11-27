@@ -86,7 +86,7 @@
                               <select name="editorial" class="form-control">
                                 <option>Selecciona un Editorial</option>
                                 @foreach($editorials as $editorial)
-                                <option value="{{$editorial->id}}">{{$editorial->name}}</option>
+                                <option value="{{$editorial->id}}" {{$editorial->id ? 'selected' : ''}}>{{$editorial->name}}</option>
                                 @endforeach
                               </select>
                             </div>
@@ -130,7 +130,7 @@
                           <select name="category" id="" class="form-control">
                                 <option value="">Selecciona una Categoria</option>
                                 @foreach ($categories as $category )
-                                <option value="{{$category->id}}">{{$category->name}}</option>
+                                <option value="{{$category->id}}" {{ $category->id ? 'selected' : ''}}>{{$category->name}}</option>
                                 @endforeach
                           </select>
                         </div>

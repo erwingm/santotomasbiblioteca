@@ -15,22 +15,24 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ URL::to('admin/tag/update')}}/{{$tag->id}}" method="post">
+                <form action="{{route('tag.update', $tag->id)}}" method="post">
                 @csrf
+                @method('PUT')
                   <div class="card-body">
                     <div class="row">
                         <div class="col-md-8">
                             <label>Nombre</label>
-                            <input type="text" name="tagName" value="{{$tag->name}}" class="form-control"  placeholder="Enter email">
+                            <input type="text" name="tagName" value="{{$tag->name}}" class="form-control"  placeholder="Ingresar Etiqueta">
                         </div>
-
                     </div>
-                    </div>
+                    <br>
                     <div class="row">
-                        
-                        <button type="submit" class="btn btn-success">Actualizar</button>
+                    <button type="submit" class="btn btn-success">Actualizar</button>
                     </div>
+                    </div>
+                   
                   </div>
+                 
                   <!-- /.card-body -->
   
                  

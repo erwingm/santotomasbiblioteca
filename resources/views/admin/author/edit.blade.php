@@ -25,11 +25,14 @@
                         </div>
 
                     </div>
-                    </div>
+                    <br>
                     <div class="row">
-                        
-                        <button type="submit" class="btn btn-success">Actualizar</button>
+                      <div class="col-md-5">
+                      <button type="submit" class="btn btn-success">Actualizar</button>
+                      </div>
                     </div>
+                    </div>
+
                   </div>
                   <!-- /.card-body -->
   

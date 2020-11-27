@@ -15,7 +15,7 @@ class Book extends Model
     protected $table = 'books';
 
     public function category(){
-        return $this->belongs(Category::class);
+        return $this->belongsTo(Category::class);
     }
     public function editorial(){
         return $this->belongsTo(Editorial::class);

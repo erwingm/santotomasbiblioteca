@@ -34,11 +34,12 @@
               <tr>
                 <td>{{$investigation->name}}</td>
                 <td>{{$investigation->description}}</td>
+                <td ><img height="100" width="100" class="img-responsive thumbnail" src="{{ Storage::disk('public')->url('investigation/'.$investigation->image) }}" alt=""></td>
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">
                         <a href="{{route('investigation.edit', $investigation->id)}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
                         <button class="btn btn-danger" type="button" onclick="deleteInvestigation({{$investigation->id}})">
-                        <i  class="fa fa-trash"></i>E</button>
+                        <i  class="fa fa-trash"></i>Eliminar</button>
                         
                         <form id="delete-form-{{$investigation->id}}" 
                         action="{{route('investigation.destroy',$investigation->id)}}"

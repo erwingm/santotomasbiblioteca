@@ -30,6 +30,7 @@ Route::get('investigacion','PagesController@investigation')->name('pages.investi
 
 
 
+
 Route::post('/', 'ContactController@sendMessage')->name('contact.send');
 
 // Rutas del Administrador
@@ -53,6 +54,13 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     Route::put('story/update/{id}','StoryController@update')->name('story.update');
     Route::delete('story/delete/{id}','StoryController@destroy')->name('story.destroy');
 
+    Route::get('vision','VisionController@index')->name('vision.index');
+    Route::get('vision/create','VisionController@create')->name('vision.create');
+    Route::post('vision/store','VisionController@store')->name('vision.store');
+    Route::get('vision/edit/{id}','VisionController@edit')->name('vision.edit');
+    Route::put('vision/update/{id}','VisionController@update')->name('vision.update');
+    Route::delete('vision/delete/{id}','VisionController@destroy')->name('vision.destroy');
+
     Route::get('investigation','InvestigationController@index')->name('investigation.index');
     Route::get('investigation/create','InvestigationController@create')->name('investigation.create');
     Route::post('investigation/store','InvestigationController@store')->name('investigation.store');
@@ -66,43 +74,43 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     Route::get('tag/create','TagController@create')->name('tag.create');
     Route::post('tag/store','TagController@store')->name('tag.store');
     Route::get('tag/edit/{id}','TagController@edit')->name('tag.edit');
-    Route::post('tag/update/{id}','TagController@update')->name('tag.update');
-    Route::get('tag/delete/{id}','TagController@destroy')->name('tag.destroy');
+    Route::put('tag/update/{id}','TagController@update')->name('tag.update');
+    Route::delete('tag/delete/{id}','TagController@destroy')->name('tag.destroy');
 
     Route::get('category','CategoryController@index')->name('category.index');
     Route::get('category/create','CategoryController@create')->name('category.create');
     Route::post('category/store','CategoryController@store')->name('category.store');
     Route::get('category/edit/{id}','CategoryController@edit')->name('category.edit');
     Route::post('category/update/{id}','CategoryController@update')->name('category.update');
-    Route::get('category/delete/{id}','CategoryController@destroy')->name('category.destroy');
+    Route::delete('category/delete/{id}','CategoryController@destroy')->name('category.destroy');
 
     Route::get('distric','DistricController@index')->name('distric.index');
     Route::get('distric/create','DistricController@create')->name('distric.create');
     Route::post('distric/store','DistricController@store')->name('distric.store');
     Route::get('distric/edit/{id}','DistricController@edit')->name('distric.edit');
     Route::post('distric/update/{id}','DistricController@update')->name('distric.update');
-    Route::get('distric/delete/{id}','DistricController@destroy')->name('distric.destroy');
+    Route::delete('distric/delete/{id}','DistricController@destroy')->name('distric.destroy');
 
     Route::get('editorial', 'EditorialController@index')->name('editorial.index');
     Route::get('editorial/create', 'EditorialController@create')->name('editorial.create');
     Route::post('editorial/store','EditorialController@store')->name('editorial.store');
     Route::get('editorial/edit/{id}','EditorialController@edit')->name('editorial.edit');
     Route::post('editorial/update/{id}','EditorialController@update')->name('editorial.update');
-    Route::get('editorial/delete/{id}','EditorialController@destroy')->name('editorial.destroy');
+    Route::delete('editorial/delete/{id}','EditorialController@destroy')->name('editorial.destroy');
 
     Route::get('author', 'AuthorController@index')->name('author.index');
     Route::get('author/create','AuthorController@create')->name('author.create');
     Route::post('author/store','AuthorController@store')->name('author.store');
     Route::get('author/edit/{id}','AuthorController@edit')->name('author.edit');
     Route::post('author/update/{id}','AuthorController@update')->name('author.update');
-    Route::get('author/delete/{id}','AuthorController@destroy')->name('author.destroy');
+    Route::delete('author/delete/{id}','AuthorController@destroy')->name('author.destroy');
 
     Route::get('institute','InstituteController@index')->name('institute.index');
     Route::get('institute/create','InstituteController@create')->name('institute.create');
     Route::post('institute/store','InstituteController@store')->name('institute.store');
     Route::get('institute/edit/{id}','InstituteController@edit')->name('institute.edit');
     Route::post('institute/update/{id}','InstituteController@update')->name('institute.update');
-    Route::get('institute/delete/{id}','InstituteController@destroy')->name('institute.destroy');
+    Route::delete('institute/delete/{id}','InstituteController@destroy')->name('institute.destroy');
 
 
     Route::get('activity','ActivityController@index')->name('activity.index');

@@ -14,16 +14,8 @@
                 </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('page.activity')}}">Actividades</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="{{route('page.information')}}">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('pages.investigation')}}">Investigacion</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('pages.tramite')}}">Tramites</a>
+            
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" 
@@ -31,9 +23,19 @@
             aria-haspopup="true" aria-expanded="false">Libros</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="#">Digitales</a>
-              <a class="dropdown-item" href="#">Fisicos</a>
+              <a class="dropdown-item" href="#">Físicos</a>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('page.activity')}}">Actividades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('pages.tramite')}}">Trámites</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('pages.investigation')}}">Investigación</a>
+          </li>
+         
 
 
         </ul>

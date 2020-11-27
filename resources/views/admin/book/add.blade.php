@@ -155,7 +155,7 @@
                     <div class="row">
                       <div class="form-group">
                         <input type="checkbox" id="publish" class="filled-in" name="status" value="1">
-                        <label for="publish">Publicar</label>
+                        <label for="publish">Disponibilidad</label>
                       </div>
                     </div>
                     <div class="row">
@@ -170,21 +170,21 @@
                       <div class="col-sm-12">
                       <div class="form-group">
                         <label for="exampleInputFile">Subir Iamgen</label>
-                        <div class="input-group">
-                            <div class="custom-file">
-                            <input type="file" name="image" class="custom-file-input" id="exampleInputFile">
-                            <label class="custom-file-label" for="exampleInputFile">Subir Imagen</label>
-                            </div> 
+                        <div class="custom-file">
+                          <input type="file" name="image" class="custom-file-input" id="customFile">
+                          <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                            
                       </div>
                       <div class="row">
                       <div class="col-sm-12">
                       <div class="form-group">
                         <label for="exampleInputFile">Subir PDF</label>
                         <div class="input-group">
-                            <div class="custom-file">
-                            <input type="file" name="document" class="custom-file-input" id="exampleInputFile">
-                            <label class="custom-file-label" for="exampleInputFile">Subir Pdf</label>
-                            </div>
+                        <div class="custom-file">
+                          <input type="file" name="document" class="custom-file-input" id="customFile">
+                          <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
                       </div>
 
                     </div>

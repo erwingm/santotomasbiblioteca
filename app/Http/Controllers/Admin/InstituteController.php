@@ -101,9 +101,9 @@ class InstituteController extends Controller
     public function destroy($id)
     {
         //
-        if($institute::destroy($id)){
+        if(Institute::destroy($id)){
             toastr()->success('Se Elimino exitosamente!');
-            return redirect('admin/institute');
+            return redirect()->route('institute.index');
         }
     }
 }

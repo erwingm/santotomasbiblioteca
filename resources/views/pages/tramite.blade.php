@@ -45,20 +45,20 @@
                     <div class="form-row">
 					<div class="form-group col-md-6">
                                   <select name="distric" id="inputState" class="form-control">
-                                    <option selected>Distrito</option>
-                                    <option> New Buyer</option>
-                                    <option> Auction</option>
-                                    <option> Complaint</option>
-                                    <option> Feedback</option>
+                                    <option selected>Seleccione su Distrito</option>
+                                    @foreach($districs as $distric)
+                                    <option value="{{$distric->id}}">{{$distric->name}}</option>
+                                    @endforeach
                                   </select>
                         </div>
                         <div class="form-group col-md-6">
-                                  <select name="level_study" id="inputState" class="form-control">
-                                    <option selected>Centro de Estudios</option>
-                                    <option> New Buyer</option>
-                                    <option> Auction</option>
-                                    <option> Complaint</option>
-                                    <option> Feedback</option>
+                                  <select name="level_study" id="inputState" class="form-control" placeholder="Nivel de Estudio">
+                                    <option selected>Nivel de Estudios</option>
+                                    <option>Inicial</option>
+                                    <option>Primaria</option>
+                                    <option>Secundaria</option>
+                                    <option>Superior</option>
+                                    <option>Otros</option>
                                   </select>
                         </div>
                     </div>

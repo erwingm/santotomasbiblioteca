@@ -55,7 +55,7 @@ class BookController extends Controller
             if(!Storage::disk('public')->exists('book')){
                 Storage::disk('public')->makeDirectory('book');
             }
-            $bookImage = Image::make($image)->resize(1600,1066)->stream();
+            $bookImage = Image::make($image)->resize(200,200)->stream();
             Storage::disk('public')->put('book/'.$imageName,$bookImage);
         }else{
 

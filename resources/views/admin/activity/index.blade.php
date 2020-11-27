@@ -32,9 +32,7 @@
                 <td>{{$activity->description}}</td>
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">
-                        <a  href="" class="btn btn-xs btn-default"><i class="fas fa-eye"></i></a>
                         <a  href="{{route('admin.activity.edit',$activity)}}" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
-                        
                       </div>
                     </td>
               </tr>

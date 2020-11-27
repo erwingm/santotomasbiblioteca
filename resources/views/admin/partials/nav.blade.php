@@ -24,7 +24,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview {{request()->is('admin/category*') || request()->is('admin/tag*')? 'menu-open' : ''}}">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon 	fa fa-braille"></i>
               <p>
                 Categoría
                 <i class="right fas fa-angle-left"></i>
@@ -33,13 +33,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item active">
                 <a href="{{route('category.index')}}" class="nav-link {{request()->is('admin/category') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-folder-o nav-icon"></i>
                   <p>Categorías</p>
                 </a>
               </li>
               <li class="nav-item active">
-                <a href="{{route('tag.index')}}" class="nav-link {{request()->is('admin/tag/create')? 'active' : ''}}" >
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{route('tag.index')}}" class="nav-link {{request()->is('admin/tag')? 'active' : ''}}" >
+                  <i class="fa fa-tag nav-icon"></i>
                   <p>Etiquetas</p>
                 </a>
               </li>
@@ -47,7 +47,7 @@
           </li>
           <li class="nav-item has-treeview {{ (request()->is('admin/distric*') || request()->is('admin/institute*') ? 'menu-open' : '')}}">
               <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fa fa-bank"></i>
                 <p>
                   Distritos
                   <i class="right fas fa-angle-left"></i>
@@ -56,7 +56,7 @@
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="{{route('distric.index')}}" class="nav-link {{request()->is('admin/distric') ? 'active' : ''}}">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="fa fa-bank nav-icon"></i>
                     <p>Distritos</p>
                   </a>
                 </li>
@@ -70,7 +70,7 @@
             </li>
           <li class="nav-item has-treeview {{ (request()->is('admin/book*') || request()->is('admin/editorial*') || request()->is('admin/author*') ? 'menu-open' : '')}}">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fa fa-book"></i>
               <p>
                 Libros
                 <i class="right fas fa-angle-left"></i>
@@ -78,20 +78,20 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('book.index')}}" class="nav-link {{request()->is('admin/book') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{route('book.index')}}" class="nav-link {{request()->is('admin/book*') ? 'active' : ''}}">
+                  <i class="fa fa-book nav-icon"></i>
                   <p>Libros</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('editorial.index')}}" class="nav-link {{request()->is('admin/editorial') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{route('editorial.index')}}" class="nav-link {{request()->is('admin/editorial*') ? 'active' : ''}}">
+                  <i class="fa fa-building-o nav-icon"></i>
                   <p>Editoriales</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('author.index')}}" class="nav-link {{request()->is('admin/author') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{route('author.index')}}" class="nav-link {{request()->is('admin/author*') ? 'active' : ''}}">
+                  <i class="fa fa-group nav-icon"></i>
                   <p>Autores</p>
                 </a>
               </li>
@@ -100,7 +100,7 @@
           </li>
           <li class="nav-item has-treeview {{request()->is('admin/activity*') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fa fa-newspaper-o"></i>
               <p>
                 Actividades
                 <i class="right fas fa-angle-left"></i>
@@ -109,21 +109,15 @@
             <ul class="nav nav-treeview">
               <li class="nav-item active">
                 <a href="{{route('activity.index')}}" class="nav-link {{request()->is('admin/activity') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-newspaper-o nav-icon"></i>
                   <p>Ver Actividades</p>
-                </a>
-              </li>
-              <li class="nav-item active">
-                <a href="{{route('activity.create')}}" class="nav-link {{request()->is('admin/activity/create')? 'active' : ''}}" >
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Registrar Actividad</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item has-treeview {{request()->is('admin/investigation*') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fa fa-mortar-board"></i>
               <p>
                 Investigación
                 <i class="right fas fa-angle-left"></i>
@@ -132,7 +126,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item active">
                 <a href="{{route('investigation.index')}}" class="nav-link {{request()->is('admin/investigation') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-mortar-board nav-icon"></i>
                   <p>Ver Links</p>
                 </a>
               </li>
@@ -140,7 +134,7 @@
           </li>
           <li class="nav-item has-treeview {{request()->is('admin/procedure*') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon 	fa fa-id-card-o"></i>
               <p>
                 Tramites
                 <i class="right fas fa-angle-left"></i>
@@ -149,7 +143,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item active">
                 <a href="{{route('procedure.index')}}" class="nav-link {{request()->is('admin/procedure') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-id-card-o nav-icon"></i>
                   <p>Ver Tramites</p>
                 </a>
               </li>
@@ -157,7 +151,7 @@
           </li>
           <li class="nav-item has-treeview ">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fa fa-cogs"></i>
               <p>
                 Configuracion
                 <i class="right fas fa-angle-left"></i>
@@ -166,28 +160,28 @@
             <ul class="nav nav-treeview">
               <li class="nav-item active">
                 <a href="{{route('story.index')}}" class="nav-link {{request()->is('admin/story') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="	fa fa-window-maximize nav-icon"></i>
                   <p>Historia</p>
                 </a>
               </li>
               <li class="nav-item active">
-                <a href="{{route('category.index')}}" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Vision</p>
+                <a href="{{route('vision.index')}}" class="nav-link {{request()->is('admin/vision') ? 'active' : ''}} ">
+                  <i class="fa fa-window-restore nav-icon"></i>
+                  <p>Vision | Mision</p>
                 </a>
               </li>
-              </li>
-              <li class="nav-item active">
-                <a href="{{route('category.index')}}" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mision</p>
-                </a>
               </li>
               </li>
               <li class="nav-item active">
                 <a href="{{route('objective.index')}}" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-sitemap nav-icon"></i>
                   <p>Objetivos</p>
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a href="#" class="nav-link ">
+                  <i class="fa fa-file-image-o nav-icon"></i>
+                  <p>Sliders</p>
                 </a>
               </li>
               </li>

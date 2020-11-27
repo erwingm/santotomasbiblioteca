@@ -30,6 +30,7 @@
                 <th>Descripcion</th>
                 <th>Extracto</th>
                 <th>Estado</th>
+                <th>Descarga</th>
                 <th>Vistas</th>
                 <th>Cantidad</th>
                 <th>Opciones</th>
@@ -47,6 +48,13 @@
                   <span class="badge badge-success">Disponible</span>
                   @else
                   <span class="badge badge-danger">No Disponible</span>
+                  @endif
+                </td>
+                <td>
+                  @if($book->donwload == 'Descargar')
+                  <span class="badge badge-success">Descargar</span>
+                  @else
+                  <span class="badge badge-danger">No Descargar</span>
                   @endif
                 </td>
                 <td>{{$book->view_count}}</td>
@@ -75,6 +83,7 @@
                 <th>Descripcion</th>
                 <th>Extracto</th>
                 <th>Estado</th>
+                <th>Descarga</th>
                 <th>Vistas</th>
                 <th>Cantidad</th>
                 <th>Opciones</th>

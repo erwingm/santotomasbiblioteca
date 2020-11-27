@@ -24,7 +24,7 @@
                             <input type="text" name="name" class="form-control"  placeholder="Ingrese el codigo para el icono">
                         </div>
                         <div class="col-md-6">
-                        <label>Subir Imagen</label>
+                            <label>Subir Imagen</label><br>
                             <input type="file" name="image">
                         </div>
                     </div>

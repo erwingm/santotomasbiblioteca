@@ -38,7 +38,7 @@
               <tr>
 
                 <td>{{$procedure->dni}}</td>
-                <td>{{$procedure->nombre}}</td>
+                <td>{{$procedure->name}}</td>
                 <td>{{$procedure->last_name_one}} {{$procedure->last_name_two}}</td>
                 <td>{{$procedure->level_study}}</td>
                 <td>{{$procedure->distric}}</td>

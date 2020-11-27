@@ -11,6 +11,11 @@ use App\Models\Tag;
 use App\Models\Investigation;
 use App\Models\Procedure;
 use App\Models\Objective;
+use App\Models\Vision;
+use App\Models\Category;
+use App\Models\Distric;
+use App\Models\Book;
+
 
 use Carbon\Carbon;
 
@@ -20,11 +25,16 @@ class PagesController extends Controller
     public function activity(){
         $activities = Activity::all();
         $tags = Tag::all();
-        return view('activity.actividades',compact('tags','activities'));
+        $categories = Category::all();
+        return view('activity.actividades',compact('tags','activities','categories'));
     }
+
+
     
     public function procedure(){
-        return view('pages.tramite');
+        $categories = Category::all();
+        $districs = Distric::all();
+        return view('pages.tramite',compact('categories','districs'));
     }
     public function procedurestore(Request $request){
         $procedure = new Procedure();
@@ -33,7 +43,7 @@ class PagesController extends Controller
         $procedure->last_name_one = $request->input('last_name_one');
         $procedure->last_name_two = $request->input('last_name_two');
         $procedure->level_study = $request->input('level_study');
-        $procedure->distric = $request->input('distric');
+        $procedure->distric_id = $request->input('distric');
         $procedure->institute = $request->input('institute');
         $procedure->save();
         
@@ -42,19 +52,22 @@ class PagesController extends Controller
     }
 
     public function home(){
-        return view('layout');
+        $books = Book::all();
+        return view('layout',compact('books'));
     }
     public function information(){
 
         $objectives = Objective::all();
         $story = DB::table('histories')->get();
-        return view('pages.information',compact('objectives'),['story'=>$story]);
+        $vision = DB::table('visions')->get();
+        return view('pages.information',compact('objectives','vision'),['story'=>$story]);
     }
 
 
     public function investigation(){
         $investigations = Investigation::all();
-        return view('pages.investigacion',compact('investigations'));
+        $categories = Category::all();
+        return view('pages.investigacion',compact('investigations','categories'));
 
     }
 

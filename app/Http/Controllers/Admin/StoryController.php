@@ -68,17 +68,6 @@ class StoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -87,6 +76,9 @@ class StoryController extends Controller
     public function edit($id)
     {
         //
+            //
+            $story = History::find($id);
+            return view('admin.story.edit',compact('story'));
     }
 
     /**
@@ -99,6 +91,40 @@ class StoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        
+        $image = $request->file('image');
+        $slug = str_slug($request->name);
+        $story = History::find($id);
+
+        if(isset($image)){
+
+            $currentDate = Carbon::now()->toDateString();
+            $imagename = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+
+            if(!Storage::disk('public')->exists('story')){
+                Storage::disk('public')->makeDirectory('story');
+            }
+            // Busqueda y Elimina para la actualizacion de dato
+            if(Storage::disk('public')->exists('story/'.$story->image)){
+                
+                Storage::disk('public')->delete('story/'.$story->image);
+            }
+            $storyImage = Image::make($image)->resize(500,255)->stream();
+            Storage::disk('public')->put('story/'.$imagename, $storyImage);
+
+        }else{
+            $imagename = $story->image;
+        }
+
+
+        $story->name = $request->name;
+        $story->slug = $slug;
+        $story->description = $request->description;
+        $story->image = $imagename;
+        $story->save();
+
+        toastr()->success('Se Actualizo exitosamente!');
+        return redirect()->back();
     }
 
     /**
@@ -110,5 +136,12 @@ class StoryController extends Controller
     public function destroy($id)
     {
         //
+        $story = History::find($id);
+        if(Storage::disk('public')->exists('story/'.$story->image)){
+            Storage::disk('public')->delete('story/'.$story->image);
+        }
+        $story->delete();
+        toastr()->success('Se Elimino exitosamente!');
+        return redirect()->back();
     }
 }

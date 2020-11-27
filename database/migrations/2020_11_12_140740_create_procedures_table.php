@@ -20,8 +20,8 @@ class CreateProceduresTable extends Migration
             $table->string('last_name_one');
             $table->string('last_name_two');
             $table->string('level_study');
-            $table->string('distric');
             $table->string('institute');
+            $table->unsignedInteger('distric_id');
             $table->timestamps();
         });
     }

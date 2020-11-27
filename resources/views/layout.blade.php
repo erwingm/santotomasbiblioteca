@@ -50,68 +50,29 @@
     </div>
     <br>
     <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card shadow" style="width: 20rem;">
-                    <div class="card-header">
-                          <h3>asdasd</h3>
+          @foreach($books as $book)
+          <div class="custom-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 offset-md-3">
+                    <div class="team-area">
+                        <img alt="" src="img/divisiones_panzer-600x600.jpg">
+                        <div class="socials">
+                            <h3>Divisiones Panzer</h3>
+                        </div>
+                        <h3>Equipo Editorial-Lexus<span>Atlas Ilustrado</span></h3>
                     </div>
-                    <div class="inner">
-                        <img class="card-img-top" src="Stock/pexels-4.jpeg" alt="Card image cap">
-                    </div>
-                    <div class="card-body text-center">
-                      <h5 class="card-title">Design</h5>
-                      <p class="card-text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                      </p>
-                      
-                      <a  href="" class="btn btn-xs btn-default"><i class="fa fa-download fa-2x" ></i></a>
-                    </div>
-                    <div class="card-footer">
-                    
-                      <a  href="" class="btn btn-xs btn-default"><i class="fa fa-eye fa-2x" ></i></a>
-                      <a  href="" class="btn btn-xs btn-default"><i class="fa fa-download fa-2x" ></i></a>
-                      <a href="#" class="btn btn-success">Learn More...</a>
-                      
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow" style="width: 20rem;">
-                    <div class="inner">
-                            <img class="card-img-top" src="Stock/pexels-5.jpeg" alt="Card image cap">
-                    </div>
-                    
-                    <div class="card-body text-center">
-                      <h5 class="card-title">Responsive</h5>
-                      <p class="card-text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                      </p>
-                      <a href="#" class="btn btn-success">Learn More...</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow" style="width: 20rem;">
-                    <div class="inner">
-                            <img class="card-img-top" src="Stock/pexels-3.jpeg" alt="Card image cap">
-                    </div>
-                    
-                    <div class="card-body text-center">
-                      <h5 class="card-title">UI/UX</h5>
-                      <p class="card-text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                      </p>
-                      <a href="#" class="btn btn-success">Learn More...</a>
-                    </div>
-                  </div>
+                </div>
+              
             </div>
         </div>
+    </div>    
+          @endforeach
 
+</div>
 
 </section>
+
 
 
     <!-- Footer -->
@@ -245,6 +206,72 @@ footer a:hover {
   color: white;
 }
 
+.custom-padding {
+	padding: 45px 0;
+}
+img {
+	max-width: 100%;
+  height: auto;
+  padding-left: 28px;
+}
+.socials a {
+	line-height: 30px;
+	text-align: center;
+	border-radius: 50%;
+	margin: 5px;
+	color: #fff;
+	display: inline-block;
+	border: 1px solid #fff;
+	height: 30px;
+	width: 30px;
+
+}
+.team-area h3 {
+	text-align: center;
+	font-weight: 800;
+	margin-top: 15px;
+	color: #000;
+}
+.team-area h3 span {
+	color: chocolate;
+	display: block;
+	font-weight: 300;
+	margin-top: 5px;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+.socials {
+	margin-top: -27px;
+	position: relative;
+	z-index: 2;
+	border-radius: 25px;
+	background: orange;
+	text-align: center;
+	padding: 5px;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+.socials a:hover {
+	background: #fff;
+	color: #000;
+	transition: .7s;
+}
+@media only screen and (max-width: 767px) {
+	.team-area {
+		margin-bottom: 30px;
+	}
+	.team-area img {
+		width: 100%;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.team-area {
+		margin-bottom: 30px;
+	}
+	.team-area img {
+		width: 100%;
+	}
+}
 
 /*SOCİAL İCONS*/
 

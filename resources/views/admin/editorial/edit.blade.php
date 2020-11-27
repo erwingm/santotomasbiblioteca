@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title','Editar Categoria')
+@section('title','Editar Editorial')
 
 @section('content')
 
@@ -23,17 +23,18 @@
                             <label>Nombre</label>
                             <input type="text" name="editorialName" value="{{$editorial->name}}" class="form-control"  placeholder="Enter email">
                         </div>
-
                     </div>
-                    </div>
+                    <br>
                     <div class="row">
-                        
-                        <button type="submit" class="btn btn-success">Actualizar</button>
+                      <div class="col-md-5">
+                      <button type="submit" class="btn btn-success">Actualizar</button>
+                      </div>
                     </div>
+                    </div>
+                    
                   </div>
-                  <!-- /.card-body -->
-  
                  
+                  <!-- /.card-body -->
                 </form>
               </div>
               <!-- /.card -->

@@ -148,13 +148,13 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label for="exampleInputFile">Categoria : </label>
+                                    <label for="exampleInputFile">Categoria : {{$book->category->name}}</label>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputFile">Editorial : </label>
+                                    <label for="exampleInputFile">Editorial : {{$book->editorial->name}} </label>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputFile">Descarga : </label>
+                                    <label for="exampleInputFile">Descarga : {{$book->donwload}} </label>
                                 </div>
                                 
                             </div>

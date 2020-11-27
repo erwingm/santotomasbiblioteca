@@ -58,7 +58,15 @@
 
                           </div>
                         </div>
-                          <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                        <div class="row">
+                        <div class="col-md-9">
+                        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                        </div>
+                        <div class="col-md-3">
+                          <a href="{{route('investigation.index')}}" class="btn btn-danger"><i class="fa fa-mail-reply-all"></i> Atras</a>
+                        </div>
+                         
+                        </div>
                       </div>
                 </div>
                     </div>
