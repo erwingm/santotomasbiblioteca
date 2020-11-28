@@ -49,29 +49,39 @@
     <a href="index.php?subject=&quot;Website&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Website</a>
     </div>
     <br>
-    <div class="row justify-content-center">
-          @foreach($books as $book)
-          <div class="custom-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 offset-md-3">
-                    <div class="team-area">
-                        <img alt="" src="img/divisiones_panzer-600x600.jpg">
-                        <div class="socials">
-                            <h3>Divisiones Panzer</h3>
-                        </div>
-                        <h3>Equipo Editorial-Lexus<span>Atlas Ilustrado</span></h3>
-                    </div>
-                </div>
-              
-            </div>
-        </div>
-    </div>    
-          @endforeach
 
 </div>
 
 </section>
+
+<div class="container">
+
+<div class="row">
+@foreach($books as $book)
+<div class="col-md-3">
+	<figure class="card card-product">
+		<div class="img-wrap"> 
+			<img src="{{ Storage::disk('public')->url('book/'.$book->image) }}">
+		</div>
+		<figcaption class="info-wrap">
+			<h6 class="title text-dots"><a href="#">{{$book->title}}</a></h6>
+			<div class="action-wrap">
+				<a href="#" class="btn btn-primary btn-sm float-right"> Ver Libro </a>
+				<div class="price-wrap h5">
+					<span class="price-new"><i class="fa fa-eye"> </i> 0</span>
+				</div> <!-- price-wrap.// -->
+			</div> <!-- action-wrap -->
+		</figcaption>
+	</figure> <!-- card // -->
+</div> <!-- col // -->
+@endforeach
+
+</div> <!-- row.// -->
+
+
+</div> 
+<!--container end-->
+
 
 
 
@@ -164,6 +174,51 @@
 $('.dropdown-toggle').dropdown();
 </script>
 <style>
+
+.card-product:after {
+    content: "";
+    border:0;
+    display: table;
+    clear: both;
+    visibility: hidden; }
+  .card-product .price-new, .card-product .price {
+    margin-right: 5px;
+    border:0; }
+  .card-product .price-old {
+    color: #999;
+    border:0; }
+  .card-product .img-wrap {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    border:0;
+    text-align: center; }
+    .card-product .img-wrap img {
+      max-height: 100%;
+      max-width: 100%;
+      border:0;
+      object-fit: cover; }
+      
+      .card-product .info-wrap {
+    overflow: hidden;
+    padding: 15px;
+    border:0;
+    border-top: 1px solid #eee; }
+  .card-product .action-wrap {
+    padding-top: 4px;
+    border:0;
+    margin-top: 4px; }
+  .card-product .bottom-wrap {
+    padding: 15px;
+    border:0;
+    border-top: 1px solid #eee; }
+  .card-product .title {
+    margin-top: 0; }
+
+
+
+
 	.carousel-item {
 	  height: 50vh;
 	  min-height: 350px;

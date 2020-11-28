@@ -64,9 +64,14 @@ class BookController extends Controller
 
     // PDF
         $pdf = $request->file('document');
-        $pdfName=time().'.'.$pdf->getClientOriginalExtension();
-        $destinationPath = public_path('/pdfs');
-        $pdf->move($destinationPath, $pdfName);
+        if(isset($pdf)){
+            $pdfName=time().'.'.$pdf->getClientOriginalExtension();
+            $destinationPath = public_path('/pdfs');
+            $pdf->move($destinationPath, $pdfName);
+        }else{
+            $pdfName = "document.pdf";
+        }
+       
 
         $book = new Book();
         $book->code = $request->code;
