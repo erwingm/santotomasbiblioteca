@@ -41,7 +41,9 @@ class TagController extends Controller
     {
         //
         $tag = new Tag();
+        $slug = str_slug($request->input('tagName'));
         $tag->name = $request->input('tagName');
+        $tag->slug = $slug;
         if($tag->save()){
             return redirect('admin/tag');
         }

@@ -21,10 +21,13 @@
             <a class="nav-link dropdown-toggle" 
             data-toggle="dropdown" href="#" role="button" 
             aria-haspopup="true" aria-expanded="false">Libros</a>
+           
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Digitales</a>
-              <a class="dropdown-item" href="#">Físicos</a>
+            @foreach($materials as $material)
+              <a class="dropdown-item" href="{{route('fisico.books',$material->slug)}}">{{$material->name}}</a>
+              @endforeach
             </div>
+         
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('page.activity')}}">Actividades</a>

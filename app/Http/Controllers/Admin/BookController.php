@@ -207,4 +207,6 @@ class BookController extends Controller
         return redirect()->route('book.index');
 
     }
+
+
 }

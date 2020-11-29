@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Book;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -44,7 +45,9 @@ class CategoryController extends Controller
         //
    
         $category = new Category();
+        $slug = str_slug($request->input('categoryName'));
         $category->name = $request->input('categoryName');
+        $category->slug = $slug;
         $category->description = $request->input('categoryDescription');
         if($category->save()){
             toastr()->success('Se Registro exitosamente!');
@@ -92,6 +95,7 @@ class CategoryController extends Controller
     {
         //
         $category = Category::find($id);
+        $slug = str_slug($request->name);
         $category->name = $request->input('categoryName');
         $category->description = $request->input('categoryDescription');
         if($category->save()){

@@ -32,128 +32,13 @@
   @include('partials.nav')
 
   
+
   
-  <!-- Conteenido -->
   @yield('content')
 
-<!-- Page Content -->
-<section class="mt-5 container">
-<h4 class=" mb-4">
-  Listado de Libros Mas Vistos<br> 
-  <small class="subtitle-section"></small>
-  </h4> <div class="flex flex-wrap">
-    <a href="index.php?subject=&quot;Operating+System&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Operating System</a>
-    <a href="index.php?subject=&quot;Computer&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Computer</a>
-    <a href="index.php?subject=&quot;Linux&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Linux</a>
-    <a href="index.php?subject=&quot;Programming&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Programming</a>
-    <a href="index.php?subject=&quot;Website&quot;&amp;search=search" class="btn btn-outline-secondary btn-rounded btn-sm mr-2 mb-2">Website</a>
-    </div>
-    <br>
-
-</div>
-
-</section>
-
-<div class="container">
-
-<div class="row">
-@foreach($books as $book)
-<div class="col-md-3">
-	<figure class="card card-product">
-		<div class="img-wrap"> 
-			<img src="{{ Storage::disk('public')->url('book/'.$book->image) }}">
-		</div>
-		<figcaption class="info-wrap">
-			<h6 class="title text-dots"><a href="#">{{$book->title}}</a></h6>
-			<div class="action-wrap">
-				<a href="#" class="btn btn-primary btn-sm float-right"> Ver Libro </a>
-				<div class="price-wrap h5">
-					<span class="price-new"><i class="fa fa-eye"> </i> 0</span>
-				</div> <!-- price-wrap.// -->
-			</div> <!-- action-wrap -->
-		</figcaption>
-	</figure> <!-- card // -->
-</div> <!-- col // -->
-@endforeach
-
-</div> <!-- row.// -->
-
-
-</div> 
-<!--container end-->
-
-
-
-
-    <!-- Footer -->
-    <footer class="mainfooter" role="contentinfo">
-  <div class="footer-middle">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-6">
-        <!--Column1-->
-        <div class="footer-pad">
-          <h4>Heading 1</h4>
-          <ul class="list-unstyled">
-            <li><a href="#"></a></li>
-            <li><a href="#">Payment Center</a></li>
-            <li><a href="#">Contact Directory</a></li>
-            <li><a href="#">Forms</a></li>
-            <li><a href="#">News and Updates</a></li>
-            <li><a href="#">FAQs</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <!--Column1-->
-        <div class="footer-pad">
-          <h4>Heading 2</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">Website Tutorial</a></li>
-            <li><a href="#">Accessibility</a></li>
-            <li><a href="#">Disclaimer</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Webmaster</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <!--Column1-->
-        <div class="footer-pad">
-          <h4>Heading 3</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">Parks and Recreation</a></li>
-            <li><a href="#">Public Works</a></li>
-            <li><a href="#">Police Department</a></li>
-            <li><a href="#">Fire</a></li>
-            <li><a href="#">Mayor and City Council</a></li>
-            <li>
-              <a href="#"></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    	<div class="col-md-3">
-    		<h4>Follow Us</h4>
-            <ul class="social-network social-circle">
-             <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-             <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-            </ul>				
-		</div>
-    </div>
-	<div class="row">
-		<div class="col-md-12 copy">
-			<p class="text-center">&copy; Copyright 2018 - Company Name.  All rights reserved.</p>
-		</div>
-	</div>
-
-
-  </div>
-  </div>
-</footer>
+  
+  @include('partials.footer')
   <!-- Bootstrap core JavaScript -->
-
   <script src="{{asset('frontend/plugins/jquery/jquery.min.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
   <script src="{{asset('frontend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

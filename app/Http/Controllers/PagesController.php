@@ -15,6 +15,7 @@ use App\Models\Vision;
 use App\Models\Category;
 use App\Models\Distric;
 use App\Models\Book;
+use App\Models\Material;
 
 
 use Carbon\Carbon;
@@ -26,7 +27,9 @@ class PagesController extends Controller
         $activities = Activity::all();
         $tags = Tag::all();
         $categories = Category::all();
-        return view('activity.actividades',compact('tags','activities','categories'));
+        $books = Book::all();
+        $materials = Material::all();
+        return view('activity.actividades',compact('tags','activities','categories','books','materials'));
     }
 
 
@@ -34,7 +37,10 @@ class PagesController extends Controller
     public function procedure(){
         $categories = Category::all();
         $districs = Distric::all();
-        return view('pages.tramite',compact('categories','districs'));
+        $books = Book::all();
+        $tags = Tag::all();
+        $materials = Material::all();
+        return view('pages.tramite',compact('categories','districs','books','tags','materials'));
     }
     public function procedurestore(Request $request){
         $procedure = new Procedure();
@@ -51,15 +57,13 @@ class PagesController extends Controller
         return redirect()->back();
     }
 
-    public function home(){
-        $books = Book::all();
-        return view('layout',compact('books'));
-    }
+
     public function information(){
 
         $objectives = Objective::all();
         $story = DB::table('histories')->get();
         $vision = DB::table('visions')->get();
+
         return view('pages.information',compact('objectives','vision'),['story'=>$story]);
     }
 
@@ -67,9 +71,38 @@ class PagesController extends Controller
     public function investigation(){
         $investigations = Investigation::all();
         $categories = Category::all();
-        return view('pages.investigacion',compact('investigations','categories'));
+        $tags = Tag::all();
+        $materials = Material::all();
+        return view('pages.investigacion',compact('investigations','categories','tags','materials'));
 
     }
+
+    public function navBar(){
+        $materials = Material::all();
+        return view('partials.nav',compact('materials'));
+    }
+
+    public function postByCategory($slug){
+        $materials = Material::all();
+        $category = Category::where('slug', $slug)->first();
+        return view('category',compact('category','materials'));
+
+    }
+
+    public function bookByTag($slug){
+        $materials = Material::all();
+        $tag = Tag::where('slug',$slug)->first();
+        return view('tag',compact('tag','materials'));
+    }
+
+    public function bookByFisico($slug){
+        $materials = Material::all();
+        $material = Material::where('slug', $slug)->first();
+        return view('fisico',compact('material','materials'));
+    }
+
+
+
 
 
     

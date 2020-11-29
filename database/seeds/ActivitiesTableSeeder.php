@@ -22,14 +22,17 @@ class ActivitiesTableSeeder extends Seeder
 
         $tag = new Tag;
         $tag->name = "Etiqueta 1";
+        $tag->slug = "Etiqueta 1";
         $tag->save();
 
         $material = new Material;
         $material->name = "Digital";
+        $material->slug = Str::slug('digital');
         $material->save();
         
         $material = new Material;
         $material->name = "Fisico";
+        $material->slug = Str::slug('fisico');
         $material->save();
 
         $activity = new Activity;

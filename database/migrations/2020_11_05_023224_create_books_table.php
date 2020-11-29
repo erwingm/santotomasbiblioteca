@@ -33,8 +33,6 @@ class CreateBooksTable extends Migration
             $table->boolean('status')->default(false);
             $table->string('quantity');
             $table->unsignedBigInteger('category_id');
-            
-            
            
             $table->foreign('category_id')->references('id')
                     ->on('categories')->onDelete('cascade');

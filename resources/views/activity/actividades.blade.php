@@ -14,7 +14,6 @@
 							<article class="blog-post">
 								<div class="featured-post">
 									<a href="#">
-
 									@if ($activity->photos->count() === 1)
 									<img src="{{$activity->photos->first()->url }}" width="70" height="250" alt="">
 									@endif
@@ -43,8 +42,8 @@
 									<div class="entry-post">
 										<p>{{$activity->description}}</p>
 										<div class="more-link">
-											<a href="#" class="read-more-btn">Ir</a>
-											<a href="#" class="read-more-btn">Registrar</a>
+											<a href="#" class="btn btn-primary">Ir</a>
+											<a href="#" class="btn btn-primary">Registrar</a>
 										</div>
 									</div>
 								</div>
@@ -52,37 +51,7 @@
 						</li>
 					@endforeach
 					</ul>
-					
-				
-				
-			
 
-					<div class="blog-pagination">
-						<ul class="">
-							<li class="prev">
-								<a href="#">
-									<i class="fas fa-chevron-left"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="waves-effect waves-teal">01</a>
-							</li>
-							<li>
-								<a href="#" class="waves-effect waves-teal">02</a>
-							</li>
-							<li class="active">
-								<a href="#" class="waves-effect waves-teal">03</a>
-							</li>
-							<li>
-								<a href="#" class="waves-effect waves-teal">04</a>
-							</li>
-							<li class="next">
-								<a href="#">
-									<i class="fas fa-chevron-right"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
 				</div>
 
 				@include('partials.sidebar')

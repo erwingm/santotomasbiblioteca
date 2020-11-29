@@ -1,4 +1,18 @@
 <div class="col-md-3 sidebar">
+				<div class="widget widget-categories">
+						<div class="widget-title">
+							<h3>Material de Libros</h3>
+						</div>
+						<ul class="cat-list">
+						@foreach($materials as $material)
+							<li>
+								<a href="{{route('fisico.books',$material->slug)}}" class="waves-effect waves-teal">{{$material->name}} </a>
+							</li>
+						@endforeach
+
+						
+						</ul>
+					</div>
 					<div class="widget widget-categories">
 						<div class="widget-title">
 							<h3>Categories</h3>
@@ -6,9 +20,11 @@
 						<ul class="cat-list">
 						@foreach($categories as $category)
 							<li>
-								<a href="#"><i class="fas fa-chevron-right"></i>{{$category->name}}<span> ({{$category->books->count()}})</span></a>
+								<a href="{{route('category.books',$category->slug)}}" class="waves-effect waves-teal">{{$category->name}} {{ $category->books->count() }} </a>
 							</li>
 						@endforeach
+
+						
 						</ul>
 					</div>
 					<div class="widget widget-tags">
@@ -16,21 +32,12 @@
 							<h3>Etiquetas</h3>
 						</div>
 						<ul class="tag-list">
+						@foreach($tags as $tag)
 							<li>
-								<a href="#" class="waves-effect waves-teal">Phone</a>
+								<a href="{{route('tag.books',$tag->slug)}}" class="waves-effect waves-teal">{{$tag->name}}}</a>
 							</li>
-							<li>
-								<a href="#" class="waves-effect waves-teal">Cameras</a>
-							</li>
-							<li>
-								<a href="#" class="waves-effect waves-teal">Computers</a>
-							</li>
-							<li>
-								<a href="#" class="waves-effect waves-teal">Laptops</a>
-							</li>
-							<li>
-								<a href="#" class="waves-effect waves-teal">Headphones</a>
-							</li>
+						@endforeach
+							
 						</ul>
 					</div>
 				</div>

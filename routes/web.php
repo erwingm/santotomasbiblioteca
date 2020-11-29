@@ -15,23 +15,37 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('Actividades', 'PagesController@activity')->name('pages.activity');
 
-Route::get('/', 'PagesController@home');
+Route::get('/', 'HomeController@index')->name('book.index');
+// Route::get('books','BookController@index');
+
+
+Route::get('/book/{slug}','BookController@details')->name('book.details');
+
 Route::get('tramite', 'PagesController@procedure')->name('pages.procedure');
 
 Route::get('actividades','PagesController@activity')->name('page.activity');
+
 Route::get('tramite', 'PagesController@procedure')->name('pages.tramite');
+
 Route::post('tramite/store', 'PagesController@procedurestore')->name('pages.procedure.store');
+
 Route::get('nosotros', 'PagesController@information')->name('page.information');
 
 Route::get('investigacion','PagesController@investigation')->name('pages.investigation');
 
+Route::get('/categorias/{slug}','PagesController@postByCategory')->name('category.books');
+Route::get('/tag/{slug}','PagesController@bookByTag')->name('tag.books');
+Route::get('/fisico/{slug}','PagesController@bookByFisico')->name('fisico.books');
+
+
+Route::get('/search', 'SearchController@search')->name('search');
 
 
 
 
 
 
-Route::post('/', 'ContactController@sendMessage')->name('contact.send');
+
 
 // Rutas del Administrador
 Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'], function(){

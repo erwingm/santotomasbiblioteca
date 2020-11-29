@@ -42,12 +42,12 @@
     <div class="container" >
       <div class="row justify-content-center" >
         <div class="col-12 col-md-10 col-lg-8" >
-            <form class="card card-sm" style="position: inherit;
+            <form method="GET" action="{{route('search')}}" class="card card-sm" style="position: inherit;
             top: -75px; line-height: 1.15;" >
                 <div class="card-body row no-gutters align-items-center">
                     <!--end of col-->
                     <div class="col">
-                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Buscar libros">
+                        <input value="{{isset($query) ? $query : '' }}" class="form-control form-control-lg form-control-borderless" name="query" type="search" placeholder="Buscar libros">
                     </div>
                     <!--end of col-->
                     <div class="col-auto">

@@ -6,8 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-    //
-    // public function activities(){
-    //     return $this->belongsToMany(Activity::class);
-    // }
+    
+
+
+    public function getRouteKeyName(){
+        return 'slug';
+    }
+
+    public function books(){
+        return $this->belongsToMany(Book::class);
+    }
 }
