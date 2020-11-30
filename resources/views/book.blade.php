@@ -54,6 +54,6 @@
   <!-- /.row -->
 
 </div>
-{{$books->links}}
+
 <!-- /.container -->
 @endsection
