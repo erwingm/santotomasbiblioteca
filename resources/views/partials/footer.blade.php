@@ -49,16 +49,17 @@
         </div>
       </div>
     	<div class="col-md-3">
-    		<h4>Follow Us</h4>
+    		<h4>Siguesno En :</h4>
             <ul class="social-network social-circle">
              <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
              <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
             </ul>				
 		</div>
     </div>
+    <br>
 	<div class="row">
 		<div class="col-md-12 copy">
-			<p class="text-center">&copy; Copyright 2018 - Company Name.  All rights reserved.</p>
+			<p class="text-center">&copy; Copyright <strong id="fecha"></strong> - Municipalidad Distrital de Santo Tomas Provincia de Chumbivilcas Departamento de Cusco - Derechos Reservados.</p>
 		</div>
 	</div>
 
@@ -67,3 +68,7 @@
   </div>
 </footer>
   <!-- Bootstrap core JavaScript -->
+
+  <script>
+
+  </script>

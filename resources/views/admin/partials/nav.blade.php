@@ -22,6 +22,32 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview {{request()->is('admin/*') || request()->is('admin/*')? 'menu-open' : ''}}">
+            <a href="/admin" class="nav-link active">
+              <i class="nav-icon 	fa fa-dashboard"></i>
+              <p>
+                Administración
+                <i class="right"></i>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview {{request()->is('admin/category*') || request()->is('admin/tag*')? 'menu-open' : ''}}">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon 	fa fa-users"></i>
+              <p>
+                Usuarios
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item active">
+                <a href="{{route('category.index')}}" class="nav-link {{request()->is('admin/category') ? 'active' : ''}}">
+                  <i class="fa fa-user nav-icon"></i>
+                  <p>Usuarios</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <li class="nav-item has-treeview {{request()->is('admin/category*') || request()->is('admin/tag*')? 'menu-open' : ''}}">
             <a href="#" class="nav-link active">
               <i class="nav-icon 	fa fa-braille"></i>

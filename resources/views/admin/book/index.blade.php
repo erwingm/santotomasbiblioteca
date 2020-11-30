@@ -21,14 +21,13 @@
             </div>
           </div>
           <!-- /.card-header -->
-          <div class="card-body">
+          <div class="card-body table-responsive">
             <table id="example1" class="table table-bordered table-striped">
               <thead>
               <tr>
                 <th>Codigo</th>
                 <th>Titulo</th>
                 <th>Descripcion</th>
-                <th>Extracto</th>
                 <th>Estado</th>
                 <th>Descarga</th>
                 <th>Vistas</th>
@@ -42,7 +41,6 @@
                 <td>{{$book->code}}</td>
                 <td>{{$book->title}}</td>
                 <td>{{$book->description}}</td>
-                <td>{{$book->extract}}</td>
                 <td>
                   @if($book->status == true)
                   <span class="badge badge-success">Disponible</span>

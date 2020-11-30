@@ -110,7 +110,7 @@
     color: #2d2d2d;
     padding-bottom: 15px;
     margin-bottom: 22px;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #1b73d2;
     position: relative;
 }
 .widget-categories > ul.cat-list {
@@ -144,9 +144,9 @@
 .widget-tags ul.tag-list li a {
     display: inline-block;
     padding: 5px 15px;
-    color: #8c8c8c;
+    color: #fafafa;
     font-size: 12px;
-    background-color: #f5f5f5;
+    background-color: #1b73d2;
     border-radius: 30px;
     text-decoration: none;
 }

@@ -21,8 +21,9 @@ class HomeController extends Controller
         $categories = Category::all();
         $tags = Tag::all();
         $materials = Material::all();
-        $books = Book::latest()->paginate(10);
-        return view('books',compact('books','materials','categories','tags'));
+        $books = Book::latest()->paginate(12);
+        $popular_books = Book::orderBy('view_count','desc')->take(5)->get();
+        return view('books',compact('books','materials','categories','tags','popular_books'));
     }
     // public function list(){
     //     $books = Book::latest()->take(5)->get();

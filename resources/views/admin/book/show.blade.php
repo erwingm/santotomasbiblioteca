@@ -86,7 +86,7 @@
                                     @foreach($book->authors as $author)
                                     <span data-toggle="tooltip" title="3 New Messages" class="badge bg-success">{{ $author->name }}</span>
                                     @endforeach
-                                    </div> 
+                                </div> 
                                 </div>
                             </div>
                             </div>

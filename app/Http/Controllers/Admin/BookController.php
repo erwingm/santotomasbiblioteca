@@ -69,7 +69,7 @@ class BookController extends Controller
             $destinationPath = public_path('/pdfs');
             $pdf->move($destinationPath, $pdfName);
         }else{
-            $pdfName = "document.pdf";
+            $pdfName = "archivo_vacio.pdf";
         }
        
 
@@ -81,7 +81,7 @@ class BookController extends Controller
         $book->description = $request->description;
         $book->extract = $request->extract;
         $book->quantity = $request->quantity;
-        $book->document = $request->pdfName;
+        $book->document = $pdfName;
         $book->page = $request->page;
         $book->donwload = $request->donwload;
         $book->category_id = $request->category;

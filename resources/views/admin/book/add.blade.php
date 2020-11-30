@@ -145,8 +145,9 @@
                         <div class="form-group">
                           <label>Disponibilidad a Descarga</label>
                           <select name="donwload" class="form-control">
+                            <option>Selecciona una opción</option>
                             <option value="Descargar">Descargar</option>
-                            <option value="no_descrgar">no_descrgar</option>
+                            <option value="no_descrgar">No Descargar</option>
                           </select>
                           
                         </div>
@@ -181,9 +182,9 @@
                       <div class="form-group">
                         <label for="exampleInputFile">Subir PDF</label>
                         <div class="input-group">
-                        <div class="custom-file">
-                          <input type="file" name="document" class="custom-file-input" id="customFile">
-                          <label class="custom-file-label" for="customFile">Choose file</label>
+
+                          <input type="file" name="document">
+                          
                         </div>
                       </div>
 

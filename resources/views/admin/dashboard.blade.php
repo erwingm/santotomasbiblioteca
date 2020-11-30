@@ -46,7 +46,7 @@
                 <p>Total de Categorias</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <i class="ion ion-folder"></i>
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -66,10 +66,15 @@
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+
           <!-- ./col -->
-              <!-- ./col -->
-              <div class="col-lg-3 col-6">
-            <!-- small box -->
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+          <!-- Left col -->
+          <section class="col-lg-3 connectedSortable ui-sortable">
+            <!-- Custom tabs (Charts with tabs)-->
             <div class="small-box bg-danger">
               <div class="inner">
                 <h3>{{$new_procedures}}</h3>
@@ -77,52 +82,14 @@
                 <p>Nuevos Tramite para Hoy</p>
               </div>
               <div class="icon">
-                <i class="ion ion-pie-graph"></i>
+                <i class="ion ion-person-add"></i>
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <section class="col-lg-6 connectedSortable ui-sortable">
-            <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
-              <div class="card-header ui-sortable-handle" style="cursor: move;">
-                <h3 class="card-title">
-                  <i class="fas fa-chart-pie mr-1"></i>
-                  Sales
-                </h3>
-                <div class="card-tools">
-                  <ul class="nav nav-pills ml-auto">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
-                    </li>
-                  </ul>
-                </div>
-              </div><!-- /.card-header -->
-              <div class="card-body">
-                <div class="tab-content p-0">
-                  <!-- Morris chart - Sales -->
-                  <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                      <canvas id="revenue-chart-canvas" height="300" style="height: 300px; display: block; width: 643px;" width="643" class="chartjs-render-monitor"></canvas>
-                   </div>
-                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                    <canvas id="sales-chart-canvas" height="0" style="height: 0px; display: block; width: 0px;" class="chartjs-render-monitor" width="0"></canvas>
-                  </div>
-                </div>
-              </div><!-- /.card-body -->
             </div>
             
             <!-- /.card -->
             </section>
-            <section class="col-lg-6 connectedSortable ui-sortable">
+            <section class="col-lg-9 connectedSortable ui-sortable">
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card">
               <div class="card-header border-transparent">
@@ -173,8 +140,7 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">Ver Libros</a>
               </div>
               <!-- /.card-footer -->
             </div>

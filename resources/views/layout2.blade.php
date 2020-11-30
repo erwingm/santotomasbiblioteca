@@ -9,7 +9,8 @@
   <meta name="author" content="">
 
   <title>Shop Homepage - Start Bootstrap Template</title>
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
   <!-- Bootstrap core CSS -->
   <link href="{{asset('frontend/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
@@ -25,8 +26,8 @@
 
 </head>
 
-<body>
-
+<body >
+<!-- onload="disableContextMenu();" oncontextmenu="return false" -->
   <!-- Navigation -->
   @include('partials.nav')
 
@@ -53,6 +54,10 @@
 
 <script>
 $('.dropdown-toggle').dropdown();
+var ano = (new Date).getFullYear();
+    $(document).ready(function() {
+      $("#fecha").text( ano );
+    });
 </script>
 
 </body>

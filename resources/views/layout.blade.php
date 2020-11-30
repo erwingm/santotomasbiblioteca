@@ -25,8 +25,8 @@
 
 </head>
 
-<body>
-
+<body  >
+<!-- onload="disableContextMenu();" oncontextmenu="return false" -->
   @include('slider.slider')
   <!-- Navigation -->
   @include('partials.nav')
@@ -36,7 +36,6 @@
   
   @yield('content')
 
-  
   @include('partials.footer')
   <!-- Bootstrap core JavaScript -->
   <script src="{{asset('frontend/plugins/jquery/jquery.min.js')}}"></script>
@@ -57,6 +56,11 @@
 </html>
 <script>
 $('.dropdown-toggle').dropdown();
+
+var ano = (new Date).getFullYear();
+    $(document).ready(function() {
+      $("#fecha").text( ano );
+    });
 </script>
 <style>
 
@@ -152,7 +156,7 @@ footer a:hover {
 img {
 	max-width: 100%;
   height: auto;
-  padding-left: 28px;
+  /* padding-left: 28px; */
 }
 .socials a {
 	line-height: 30px;

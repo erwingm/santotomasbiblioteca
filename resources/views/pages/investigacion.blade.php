@@ -1,6 +1,7 @@
 
 @extends('layout2')
 @section('content')
+
 <div class="blog-wrap">
 		<div class="container">
 			<div class="row">
@@ -27,11 +28,10 @@
                 </div>
 
                 @endforeach
-
+              
                 </div>
 
             </div>
-
           </ul>
 </div>
 
