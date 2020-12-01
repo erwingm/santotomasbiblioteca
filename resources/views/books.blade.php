@@ -1,13 +1,9 @@
 @extends('layout')
-
-
 @section('content')
-
 <!-- Page Content -->
 <section class="mt-5 container">
-
 <h4 class=" mb-4">
-  Categorias<br> 
+  <h2 class="card-subtitle mb-2 text-muted" style="text-align:center">Categorias</h2><br> 
   </h4>
   <div class="flex flex-wrap">
   @foreach($categories as $category)
@@ -36,16 +32,14 @@
 		<br>
 	</div>
 	@endforeach
-
 	</div>
-
 </div> <!-- row.// -->
 
 </div>
 <section class="mt-5 container">
 
 <h4 class=" mb-4">
-  Los Libros mas Leidos<br> 
+    <h2 class="card-subtitle mb-2 text-muted" style="text-align:center" > Los Libros más Vistos</h2><br> 
   </h4>
 </div>
 </section>
@@ -53,7 +47,6 @@
 <div class="container">
 
 	<div class="row">
-	
 	@foreach($popular_books as $popular_book)
 	<div class="col-md-3 col-sm-6 mb-4">
 	<hr>

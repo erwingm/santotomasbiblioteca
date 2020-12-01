@@ -21,8 +21,15 @@
                   <div class="card-body">
                     <div class="row">
                         <div class="col-md-8">
-                            <label>Nombre</label>
-                            <input type="text" name="tagName" value="{{$tag->name}}" class="form-control"  placeholder="Ingresar Etiqueta">
+                        <div class="form-group  {{$errors->has('tagName') ? 'text-danger' : '' }} ">
+                              <label for="title">Nombre de la categoria</label>
+                              <input type="text" id="tagName" 
+                              name="tagName" class="form-control  {{$errors->has('tagName') ? 'is-invalid' : '' }}  "  
+                              placeholder="Ingresar Nombre de la Etiqueta"
+                              value="{{ old('tagName',$tag->name)}}">
+                              {!! $errors->first('tagName','<span >El nombre es requerido</span>') !!}
+                            </div>
+                            
                         </div>
                     </div>
                     <br>

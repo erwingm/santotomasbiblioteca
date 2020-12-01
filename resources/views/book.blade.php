@@ -239,6 +239,10 @@
   border-radius: 0 2px 2px 0;
   box-shadow: -10px 0 50px 10px #666;
 }
+
+
+
+
 ul.timeline {
     list-style-type: none;
     position: relative;

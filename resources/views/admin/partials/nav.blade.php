@@ -4,19 +4,16 @@
       <img src="{{asset('backend/img/AdminLTELogo.jpeg')}}" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Biblioteca</span>
     </a>
-
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          
         </div>
         <div class="info">
           <a href="#" class="d-block">Administrador</a>
         </div>
       </div>
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -84,12 +81,6 @@
                   <a href="{{route('distric.index')}}" class="nav-link {{request()->is('admin/distric') ? 'active' : ''}}">
                     <i class="fa fa-bank nav-icon"></i>
                     <p>Distritos</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{route('institute.index')}}" class="nav-link {{request()->is('admin/institute*') ? 'active' : ''}}">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Instituciones</p>
                   </a>
                 </li>
               </ul>

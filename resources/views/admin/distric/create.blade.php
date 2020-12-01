@@ -20,10 +20,15 @@
                   <div class="card-body">
                     <div class="row">
                         <div class="col-md-8">
-                            <label>Nombre</label>
-                            <input type="text" name="districName" class="form-control"  placeholder="Enter email">
+                        <div class="form-group  {{$errors->has('districName') ? 'text-danger' : '' }} ">
+                              <label for="title">Nombre del Distrito</label>
+                              <input type="text" id="districName" 
+                              name="districName" class="form-control  {{$errors->has('districName') ? 'is-invalid' : '' }}  "  
+                              placeholder="Enter email"
+                              value="{{ old('districName')}}">
+                              {!! $errors->first('districName','<span >El nombre es requerido</span>') !!}
+                            </div>
                         </div>
-
                     </div>
                     <br>
                     <div class="row">

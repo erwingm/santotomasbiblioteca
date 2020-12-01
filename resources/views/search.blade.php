@@ -34,7 +34,7 @@
 @foreach($books as $book)
     <div class="col-md-3 col-sm-6 mb-4">
     <hr>
-            <br>
+        <br>
         <a class="book-container" href="{{route('book.details', $book->slug)}}" rel="noreferrer noopener">
 			<div class="book">
 				<img src="{{ Storage::disk('public')->url('book/'.$book->image) }}" alt="tab1" class="img img-responsive"/>

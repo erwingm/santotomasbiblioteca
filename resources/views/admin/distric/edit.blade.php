@@ -20,16 +20,21 @@
                   <div class="card-body">
                     <div class="row">
                         <div class="col-md-8">
-                            <label>Nombre</label>
-                            <input type="text" name="districName" value="{{$distric->name}}" class="form-control"  placeholder="Enter email">
+                        <div class="form-group  {{$errors->has('districName') ? 'text-danger' : '' }} ">
+                              <label for="title">Editar El Distrito</label>
+                              <input type="text" id="districName" 
+                              name="districName" class="form-control  {{$errors->has('districName') ? 'is-invalid' : '' }}  "  
+                              placeholder="Enter email"
+                              value="{{ old('districName',$distric->name)}}">
+                              {!! $errors->first('districName','<span >El nombre es requerido</span>') !!}
+                            </div>
                         </div>
-
                     </div>
-                    </div>
-                    <div class="row">
-                        
+                        <div class="form-group">
                         <button type="submit" class="btn btn-success">Actualizar</button>
+                        </div>
                     </div>
+                 
                   </div>
                   <!-- /.card-body -->
   

@@ -17,23 +17,28 @@
                 <!-- form start -->
                 <form action="{{ URL::to('admin/category/store')}}" method="post">
                 @csrf
+              
                   <div class="card-body">
                     <div class="row">
                         <div class="col-md-8">
-                            <label>Nombre</label>
-                            <input type="text" name="categoryName" class="form-control"  placeholder="Enter email">
+                            <div class="form-group  {{$errors->has('categoryName') ? 'text-danger' : '' }} ">
+                              <label for="title">Nombre de la categoria</label>
+                              <input type="text" id="categoryName" 
+                              name="categoryName" class="form-control  {{$errors->has('categoryName') ? 'is-invalid' : '' }}  "  
+                              placeholder="Enter email"
+                              value="{{ old('categoryName')}}">
+                              {!! $errors->first('categoryName','<span >El nombre es requerido</span>') !!}
+                            </div>
                         </div>
 
                     </div>
                     <div class="row">
                             <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Descripcion</label>
-                                    <div class="mb-3">
-                                        <textarea class="textarea" name="categoryDescription"
-                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                    </div>
-                                </div>
+                            <div class="form-group  {{$errors->has('categoryDescription') ? 'text-danger' : '' }} ">
+                                <label for="title">Descripción</label>
+                                <textarea name="categoryDescription" class="form-control  {{$errors->has('categoryDescription') ? 'is-invalid' : '' }}  "  id="" cols="30" rows="10">{{ old('categoryDescription')}}</textarea>
+                                {!! $errors->first('categoryDescription','<span >El titulo es requerido</span>') !!}
+                              </div>
                                   
                             </div>
                             <!-- /.col-->

@@ -39,6 +39,9 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'tagName'=>'required',
+        ]);
         //
         $tag = new Tag();
         $slug = str_slug($request->input('tagName'));
@@ -87,6 +90,9 @@ class TagController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'tagName'=>'required',
+        ]);
         $tag = Tag::find($id);
         $tag->name = $request->input('tagName');
         if($tag->save()){

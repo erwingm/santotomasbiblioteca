@@ -39,8 +39,6 @@
             <a class="nav-link" href="{{route('pages.investigation')}}">Investigación</a>
           </li>
          
-
-
         </ul>
       
       </div>

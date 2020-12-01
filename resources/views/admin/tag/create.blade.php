@@ -20,8 +20,14 @@
                   <div class="card-body">
                     <div class="row">
                         <div class="col-md-8">
-                            <label>Nombre</label>
-                            <input type="text" name="tagName" class="form-control"  placeholder="Enter email">
+                        <div class="form-group  {{$errors->has('tagName') ? 'text-danger' : '' }} ">
+                              <label for="title">Nombre de la categoria</label>
+                              <input type="text" id="tagName" 
+                              name="tagName" class="form-control  {{$errors->has('tagName') ? 'is-invalid' : '' }}  "  
+                              placeholder="Enter email"
+                              value="{{ old('tagName')}}">
+                              {!! $errors->first('tagName','<span >El nombre es requerido</span>') !!}
+                            </div>
                         </div>
 
                     </div>

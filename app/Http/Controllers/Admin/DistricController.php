@@ -40,6 +40,9 @@ class DistricController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'districName'=>'required',
+        ]);
         $distric = new Distric();
         $distric->name = $request->input('districName');
         if($distric->save()){
@@ -84,6 +87,9 @@ class DistricController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'districName'=>'required',
+        ]);
         $distric = Distric::find($id);
         $distric->name = $request->input('districName');
         if($distric->save()){

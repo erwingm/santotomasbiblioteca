@@ -31,6 +31,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        
         return view('admin.category.add');
     }
 
@@ -43,6 +44,10 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'categoryName'=>'required',
+            'categoryDescription' => 'required'
+        ]);
    
         $category = new Category();
         $slug = str_slug($request->input('categoryName'));
@@ -94,6 +99,10 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'categoryName'=>'required',
+            'categoryDescription' => 'required'
+        ]);
         $category = Category::find($id);
         $slug = str_slug($request->name);
         $category->name = $request->input('categoryName');
