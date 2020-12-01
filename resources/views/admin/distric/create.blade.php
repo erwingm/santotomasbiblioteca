@@ -24,7 +24,7 @@
                               <label for="title">Nombre del Distrito</label>
                               <input type="text" id="districName" 
                               name="districName" class="form-control  {{$errors->has('districName') ? 'is-invalid' : '' }}  "  
-                              placeholder="Enter email"
+                              placeholder="Ingrese Nombre del Distrito"
                               value="{{ old('districName')}}">
                               {!! $errors->first('districName','<span >El nombre es requerido</span>') !!}
                             </div>

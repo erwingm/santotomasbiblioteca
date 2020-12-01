@@ -20,17 +20,23 @@
                   <div class="card-body">
                     <div class="row">
                         <div class="col-md-8">
-                            <label>Nombre</label>
-                            <input type="text" name="authorName" value="{{$author->name}}" class="form-control"  placeholder="Enter email">
+                            <div class="form-group  {{$errors->has('authorName') ? 'text-danger' : '' }} ">
+                              <label for="title">Nombre del Autor</label>
+                              <input type="text" id="authorName" 
+                              name="authorName" class="form-control  {{$errors->has('authorName') ? 'is-invalid' : '' }}  "  
+                              placeholder="Nombre del Autor"
+                              value="{{ old('authorName',$author->name)}}">
+                              {!! $errors->first('authorName','<span >El nombre es requerido</span>') !!}
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Actualizar</button>
+                                <a href="{{route('author.index')}}" class="btn btn-danger">Atras</a>
+                            </div>
+    
                         </div>
 
                     </div>
                     <br>
-                    <div class="row">
-                      <div class="col-md-5">
-                      <button type="submit" class="btn btn-success">Actualizar</button>
-                      </div>
-                    </div>
                     </div>
 
                   </div>

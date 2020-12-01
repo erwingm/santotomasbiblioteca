@@ -5,7 +5,7 @@
 
 <section class="content">
         <div class="container-fluid">
-        <form action="{{ route('investigation.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('slider.store')}}" method="POST" enctype="multipart/form-data">
         @csrf {{ method_field('POST') }}
           <div class="row">
             <!-- left column -->
@@ -13,14 +13,14 @@
               <!-- general form elements -->
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">URL de Bases de Datos de Investigación</h3>
+                  <h3 class="card-title">Registrar Sliders</h3>
               </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 
                   <div class="card-body">
                     <div class="form-group  {{$errors->has('name') ? 'text-danger' : '' }} ">
-                        <label for="name">Ingresar URL</label>
+                        <label for="name">Ingresar Título</label>
                         <input type="text" id="name" 
                         name="name" class="form-control  {{$errors->has('name') ? 'is-invalid' : '' }}  "  
                         placeholder="Ingrese URL"
@@ -62,10 +62,10 @@
                         </div>
                         <div class="row">
                         <div class="col-md-9">
-                        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                        <button type="submit" class="btn btn-primary btn-block">Registrar</button>
                         </div>
                         <div class="col-md-3">
-                          <a href="{{route('investigation.index')}}" class="btn btn-danger"><i class="fa fa-mail-reply-all"></i> Atrás</a>
+                          <a href="{{route('slider.index')}}" class="btn btn-danger"><i class="fa fa-mail-reply-all"></i> Atrás</a>
                         </div>
                          
                         </div>

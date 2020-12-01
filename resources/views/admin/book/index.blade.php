@@ -25,9 +25,9 @@
             <table id="example1" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>Codigo</th>
-                <th>Titulo</th>
-                <th>Descripcion</th>
+                <th>Código</th>
+                <th>Título</th>
+                <th>Descripción</th>
                 <th>Estado</th>
                 <th>Descarga</th>
                 <th>Vistas</th>
@@ -40,7 +40,7 @@
               <tr>
                 <td>{{$book->code}}</td>
                 <td>{{$book->title}}</td>
-                <td>{{$book->description}}</td>
+                <td>{!! $book->description !!}</td>
                 <td>
                   @if($book->status == true)
                   <span class="badge badge-success">Disponible</span>

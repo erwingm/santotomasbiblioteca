@@ -28,6 +28,7 @@
 <body  >
 <!-- onload="disableContextMenu();" oncontextmenu="return false" -->
   @include('slider.slider')
+
   <!-- Navigation -->
   @include('partials.nav')
 
@@ -108,15 +109,6 @@ var ano = (new Date).getFullYear();
 
 
 
-	.carousel-item {
-	  height: 50vh;
-	  min-height: 350px;
-	  background: no-repeat center center scroll;
-	  -webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
-	  background-size: cover;
-  }
   
 /*FOOTER*/
 

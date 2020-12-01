@@ -40,6 +40,9 @@ class AuthorController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'authorName'=>'required',
+        ]);
         $authors = new Author();
         $authors->name = $request->input('authorName');
         if($authors->save()){
@@ -83,6 +86,9 @@ class AuthorController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'authorName'=>'required',
+        ]);
         $author = Author::find($id);
         $author->name = $request->input('authorName');
         if($author->save()){

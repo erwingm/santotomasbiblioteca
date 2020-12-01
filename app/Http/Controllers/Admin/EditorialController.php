@@ -41,6 +41,9 @@ class EditorialController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'editorialName'=>'required',
+        ]);
         $editorial = new Editorial();
         $editorial->name = $request->input('editorialName');
         if($editorial->save()){
@@ -86,6 +89,9 @@ class EditorialController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'editorialName'=>'required',
+        ]);
         $editorial = Editorial::find($id);
         $editorial->name = $request->input('editorialName');
         if($editorial->save()){

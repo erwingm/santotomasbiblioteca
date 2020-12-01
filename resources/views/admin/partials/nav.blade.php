@@ -153,50 +153,50 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon 	fa fa-id-card-o"></i>
               <p>
-                Tramites
+                Trámites
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item active">
-                <a href="{{route('procedure.index')}}" class="nav-link {{request()->is('admin/procedure') ? 'active' : ''}}">
+                <a href="{{route('procedure.index')}}" class="nav-link {{request()->is('admin/procedure*') ? 'active' : ''}}">
                   <i class="fa fa-id-card-o nav-icon"></i>
-                  <p>Ver Tramites</p>
+                  <p>Ver Trámites</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview ">
+          <li  class="nav-item has-treeview {{request()->is('admin/story*') || request()->is('admin/vision*') || request()->is('admin/object*') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link active">
               <i class="nav-icon fa fa-cogs"></i>
               <p>
-                Configuracion
+                Configuración
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item active">
-                <a href="{{route('story.index')}}" class="nav-link {{request()->is('admin/story') ? 'active' : ''}}">
+                <a href="{{route('story.index')}}" class="nav-link {{request()->is('admin/story*') ? 'active' : ''}}">
                   <i class="	fa fa-window-maximize nav-icon"></i>
                   <p>Historia</p>
                 </a>
               </li>
               <li class="nav-item active">
-                <a href="{{route('vision.index')}}" class="nav-link {{request()->is('admin/vision') ? 'active' : ''}} ">
+                <a href="{{route('vision.index')}}" class="nav-link {{request()->is('admin/vision*') ? 'active' : ''}} ">
                   <i class="fa fa-window-restore nav-icon"></i>
-                  <p>Vision | Mision</p>
+                  <p>Visión | Misión</p>
                 </a>
               </li>
               </li>
               </li>
               <li class="nav-item active">
-                <a href="{{route('objective.index')}}" class="nav-link ">
+                <a href="{{route('objective.index')}}" class="nav-link {{request()->is('admin/object*') ? 'active' : ''}} ">
                   <i class="fa fa-sitemap nav-icon"></i>
                   <p>Objetivos</p>
                 </a>
               </li>
               <li class="nav-item active">
-                <a href="#" class="nav-link ">
+                <a href="{{route('slider.index')}}" class="nav-link {{request()->is('admin/slider*') ? 'active' : ''}} ">
                   <i class="fa fa-file-image-o nav-icon"></i>
                   <p>Sliders</p>
                 </a>

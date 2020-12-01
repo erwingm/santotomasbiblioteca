@@ -11,7 +11,7 @@
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">
-              Listado de Categorias
+              Listado de Categorías
             </h3>
             <div  style="text-align: right">
             <a href="{{route('category.create')}}" class="btn btn-primary" ><i class="fa fa-plus"></i> Registrar</a>
@@ -25,7 +25,7 @@
               <tr>
                 <th>Nombre</th>
                 <th>Descripción</th>
-                <th>Cantidad</th>
+                <th>Cantidad de Libros</th>
                 <th>Opciones</th>
               </tr>
               </thead>
@@ -35,7 +35,7 @@
               <tr>
 
                 <td>{{$category->name}}</td>
-                <td>{{$category->description}}</td>
+                <td>{!! $category->description !!}</td>
                 <td>{{$category->books->count() }}</td>
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">

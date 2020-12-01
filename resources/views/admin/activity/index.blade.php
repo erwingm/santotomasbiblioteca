@@ -32,7 +32,7 @@
                 <td>{{$activity->description}}</td>
                 <td class="text-center py-0 align-middle">
                       <div class="btn-group btn-group-md">
-                        <a  href="{{route('admin.activity.edit',$activity)}}" class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></a>
+                      <a href="{{route('admin.activity.edit',$activity)}}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
                       </div>
                     </td>
               </tr>
@@ -74,7 +74,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Título</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -84,14 +84,13 @@
                         <label for="title">Título de la publicación</label>
                         <input type="text" id="title" 
                         name="title" class="form-control  {{$errors->has('title') ? 'is-invalid' : '' }}  "  
-                        placeholder="Enter email"
+                        placeholder="Ingrese el Título"
                         value="{{old('title')}}">
                         {!! $errors->first('title','<span >El titulo es requerido</span>') !!}
                     </div>
                   
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button  class="btn btn-secondary">Crear</button>
 
             </div>

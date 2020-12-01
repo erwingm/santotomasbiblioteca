@@ -21,10 +21,10 @@
                     <div class="row">
                         <div class="col-md-8">
                         <div class="form-group  {{$errors->has('tagName') ? 'text-danger' : '' }} ">
-                              <label for="title">Nombre de la categoria</label>
+                              <label for="title">Nombre de la Etiqueta</label>
                               <input type="text" id="tagName" 
                               name="tagName" class="form-control  {{$errors->has('tagName') ? 'is-invalid' : '' }}  "  
-                              placeholder="Enter email"
+                              placeholder="Ingrese la Etiqueta"
                               value="{{ old('tagName')}}">
                               {!! $errors->first('tagName','<span >El nombre es requerido</span>') !!}
                             </div>

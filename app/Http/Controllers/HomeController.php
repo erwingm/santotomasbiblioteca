@@ -7,7 +7,7 @@ use App\Models\Book;
 use App\Models\tag;
 use App\Models\Material;
 use App\Models\Category;
-
+use App\Models\Slider;
 class HomeController extends Controller
 {
     //
@@ -23,7 +23,8 @@ class HomeController extends Controller
         $materials = Material::all();
         $books = Book::latest()->paginate(12);
         $popular_books = Book::orderBy('view_count','desc')->take(5)->get();
-        return view('books',compact('books','materials','categories','tags','popular_books'));
+        $sliders = Slider::all();
+        return view('books',compact('books','materials','categories','tags','popular_books','sliders'));
     }
     // public function list(){
     //     $books = Book::latest()->take(5)->get();

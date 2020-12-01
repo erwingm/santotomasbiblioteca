@@ -20,8 +20,8 @@
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-7">
-                              <label>Condigo</label>
-                              <input type="text" class="form-control" name="code" placeholder="Ingrese en Codigo">
+                              <label>Código</label>
+                              <input type="text" class="form-control" name="code" placeholder="Ingrese en Código Barras o ISBN">
                           </div>
                           <div class="col-md-5 ">
                               <label>Cantidad</label>
@@ -30,8 +30,8 @@
                       </div>
                     <div class="row">
                         <div class="col-md-7">
-                            <label>Titulo del Libro</label>
-                            <input type="text" class="form-control" name="title" placeholder="Ingrese el Titulo">
+                            <label>Título del Libro</label>
+                            <input type="text" class="form-control" name="title" placeholder="Ingrese el TÍtulo">
                         </div>
                         <div class="col-sm-5">
                               <!-- select -->
@@ -40,7 +40,7 @@
                         <div class="select2-purple" >
                           <select name="authors[]" class="author" 
                                   multiple="" 
-                                  data-placeholder="Selecciona una o más etiquetas" 
+                                  data-placeholder="Selecciona una o más autores" 
                                   data-dropdown-css-class="select2-purple" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                   @foreach($authors as $author)
                                     <option value="{{$author->id}}">{{$author->name}}</option>
@@ -72,7 +72,7 @@
                             <div class="form-group">
                               <label>Editorial</label>
                               <select name="editorial" class="form-control">
-                                <option>Selecciona un Editorial</option>
+                                <option>Seleccione una Editorial</option>
                                 @foreach($editorials as $editorial)
                                 <option value="{{$editorial->id}}">{{$editorial->name}}</option>
                                 @endforeach
@@ -83,7 +83,7 @@
                     <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Descripcion del Libro</label>
+                                    <label>Descripción del Libro</label>
                                     <div class="mb-3">
                                         <textarea class="textarea" rows="5" name="description"
                                         style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
@@ -100,23 +100,23 @@
               <!-- general form elements disabled -->
               <div class="card card-warning">
                 <div class="card-header">
-                  <h3 class="card-title">Datos Tecnicos del Libro</h3>
+                  <h3 class="card-title">Datos Técnicos del Libro</h3>
                 </div>
                 <div class="card-body">
                     <div class="row">
                       <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
-                          <label>Paginas</label>
-                          <input type="number" name="page" class="form-control" placeholder="Ingrese la cantidad de libros">
+                          <label>Páginas</label>
+                          <input type="number" name="page" class="form-control" placeholder="Ingrese la cantidad de páginas del libro">
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
-                          <label>Categoria</label>
+                          <label>Categoría</label>
                           <select name="category" id="" class="form-control">
-                                <option value="">Selecciona una Categoria</option>
+                                <option value="">Selecciona una Categoría</option>
                                 @foreach ($categories as $category )
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                                 @endforeach
@@ -163,14 +163,14 @@
                       <div class="col-sm-10">
                       <div class="form-group">
                         <label>Resumen</label>
-                        <textarea name="extract" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                        <textarea name="extract" class="form-control" rows="3" placeholder="Ingrese resumen ..."></textarea>
                       </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-sm-12">
                       <div class="form-group">
-                        <label for="exampleInputFile">Subir Iamgen</label>
+                        <label for="exampleInputFile">Subir Imagen</label>
                         <div class="custom-file">
                           <input type="file" name="image" class="custom-file-input" id="customFile">
                           <label class="custom-file-label" for="customFile">Choose file</label>
@@ -182,15 +182,13 @@
                       <div class="form-group">
                         <label for="exampleInputFile">Subir PDF</label>
                         <div class="input-group">
-
                           <input type="file" name="document">
-                          
                         </div>
                       </div>
 
                     </div>
                     <div class="form-group">
-                         <button type="submit" class="btn btn-success">Submit</button>
+                         <button type="submit" class="btn btn-success">Registrar Datos</button>
                     </div>
                     </div>
                     

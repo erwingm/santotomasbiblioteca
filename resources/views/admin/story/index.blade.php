@@ -20,7 +20,7 @@
               <thead>
               <tr>
                 <th>Nombre</th>
-                <th>Descripcion</th>
+                <th>Descripción</th>
                 <th>Opciones</th>
               </tr>
               </thead>

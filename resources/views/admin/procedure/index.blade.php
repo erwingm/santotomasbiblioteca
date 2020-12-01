@@ -11,7 +11,7 @@
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">
-              Listado de Tramites
+              Listado de Trámites
             </h3>
             <div  style="text-align: right">
             
@@ -28,7 +28,7 @@
                 <th>Apellidos</th>
                 <th>Nivel de Estudio</th>
                 <th>Distrito</th>
-                <th>Insitituto</th>
+                <th>Institución</th>
                 <th>Opciones</th>
               </tr>
               </thead>

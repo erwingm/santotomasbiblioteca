@@ -42,6 +42,11 @@ class StoryController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+            'name' => 'required',
+            'image' => 'required|mimes:jpeg,bmp,png,jpg',
+            'description' => 'required'
+        ]);
         $image = $request->file('image');
         $slug = str_slug($request->name);
         if(isset($image)){
@@ -91,6 +96,10 @@ class StoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request,[
+            'name' => 'required',
+            'description' => 'required'
+        ]);
         
         $image = $request->file('image');
         $slug = str_slug($request->name);

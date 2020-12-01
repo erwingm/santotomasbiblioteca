@@ -50,7 +50,8 @@ class InvestigationController extends Controller
         //
         $this->validate($request,[
             'name' => 'required',
-            'image' => 'required|mimes:jpeg,bmp,png,jpg'
+            'image' => 'required|mimes:jpeg,bmp,png,jpg',
+            'description' => 'required'
         ]);
 
         $image = $request->file('image');
@@ -90,18 +91,6 @@ class InvestigationController extends Controller
 
 
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -128,7 +117,8 @@ class InvestigationController extends Controller
          //
          $this->validate($request,[
             'name' => 'required',
-            'image' => 'required|mimes:jpeg,bmp,png,jpg'
+            
+            'description' => 'required'
         ]);
 
         $image = $request->file('image');
@@ -171,11 +161,10 @@ class InvestigationController extends Controller
         $investigation->description = $request->description;
         $investigation->slug = $slug;
         $investigation->image = $imagename;
-        
         $investigation->save();
 
         toastr()->success('Se Actualizo exitosamente!');
-        return redirect()->back();
+        return redirect()->route('investigation.index');
     }
 
     /**

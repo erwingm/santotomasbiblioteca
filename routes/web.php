@@ -17,7 +17,7 @@ Route::get('Actividades', 'PagesController@activity')->name('pages.activity');
 
 Route::get('/', 'HomeController@index')->name('book.index');
 // Route::get('books','BookController@index');
-
+Route::get('/slider','SliderController@index')->name('slider');
 
 Route::get('/book/{slug}','BookController@details')->name('book.details');
 
@@ -75,12 +75,23 @@ Route::group(['prefix' => 'admin', 'namespace'=> 'Admin', 'middleware' => 'auth'
     Route::put('vision/update/{id}','VisionController@update')->name('vision.update');
     Route::delete('vision/delete/{id}','VisionController@destroy')->name('vision.destroy');
 
+    
+
     Route::get('investigation','InvestigationController@index')->name('investigation.index');
     Route::get('investigation/create','InvestigationController@create')->name('investigation.create');
     Route::post('investigation/store','InvestigationController@store')->name('investigation.store');
     Route::get('investigation/edit/{id}','InvestigationController@edit')->name('investigation.edit');
     Route::put('investigation/update/{id}','InvestigationController@update')->name('investigation.update');
     Route::delete('investigation/delete/{id}','InvestigationController@destroy')->name('investigation.destroy');
+
+
+    Route::get('slider','SliderController@index')->name('slider.index');
+    Route::get('slider/create','SliderController@create')->name('slider.create');
+    Route::post('slider/store','SliderController@store')->name('slider.store');
+    Route::get('slider/edit/{id}','SliderController@edit')->name('slider.edit');
+    Route::put('slider/update/{id}','SliderController@update')->name('slider.update');
+    Route::delete('slider/delete/{id}','SliderController@destroy')->name('slider.destroy');
+
 
     // Route::resource('investigation','InvestigationController');
     

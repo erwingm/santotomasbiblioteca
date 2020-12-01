@@ -11,7 +11,7 @@
       <div class="card">
           <div class="card-header">
             <h3 class="card-title">
-                Registar Enlaces
+                Registar Enlaces de Bases de Datos de Investigación
             </h3>
             <div  style="text-align: right">
             <a href="{{route('investigation.create')}}" class="btn btn-primary" ><i class="fa fa-plus"></i> Registrar Enlaces</a>
@@ -22,7 +22,7 @@
             <table id="example1" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>Nombre</th>
+                <th>Título</th>
                 <th>Descripción</th>
                 <th>Imagen</th>
                 <th>Opciones</th>

@@ -23,12 +23,12 @@
                         <label for="title">Título de la publicación</label>
                         <input type="text" id="title" 
                         name="title" class="form-control  {{$errors->has('title') ? 'is-invalid' : '' }}  "  
-                        placeholder="Enter email"
+                        placeholder="Ingrese el Título"
                         value="{{ old('title',$activity->title)}}">
-                        {!! $errors->first('title','<span >El titulo es requerido</span>') !!}
+                        {!! $errors->first('title','<span >El título es requerido</span>') !!}
                     </div>
                     <div class="form-group {{$errors->has('description') ? 'text-danger' : '' }} ">
-                        <label for="description">Descripcion</label>
+                        <label for="description">Descripción</label>
                         <textarea class="form-control {{$errors->has('description') ? 'is-invalid' : '' }} " 
                         name="description" id="description" 
                         cols="30" rows="10">{{old('description',$activity->description)}}</textarea>
@@ -45,7 +45,7 @@
               <div class="col-md-4">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Datos de la Categoria</h3>
+                        <h3 class="card-title">Datos de la Actividad</h3>
                     </div>
                     <div class="card-body">
                     <div class="form-group">
@@ -93,7 +93,6 @@
                         @endif
                       </div>
 
-                     
                       <div class="form-group">
                         <div class="row">
                           <div class="col-md-12">
@@ -121,7 +120,7 @@
                           @csrf
                           {{method_field('delete')}}
                           <div class="col-md-3">
-                            <button class="btn btn-danger" style="position: absolute"><i class="fa fa-remove"></i>X</button>
+                            <button class="btn btn-danger" style="position: absolute"><i class="fa fa-remove"></i></button>
                             <img width="200" height="200" class="img-responsive" src="{{ url($photo->url) }}" alt="">
                           </div>
                         </form>

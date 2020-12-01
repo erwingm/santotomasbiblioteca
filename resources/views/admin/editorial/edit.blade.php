@@ -20,8 +20,14 @@
                   <div class="card-body">
                     <div class="row">
                         <div class="col-md-8">
-                            <label>Nombre</label>
-                            <input type="text" name="editorialName" value="{{$editorial->name}}" class="form-control"  placeholder="Enter email">
+                        <div class="form-group  {{$errors->has('editorialName') ? 'text-danger' : '' }} ">
+                              <label for="title">Nombre del Editorial</label>
+                              <input type="text" id="editorialName" 
+                              name="editorialName" class="form-control  {{$errors->has('editorialName') ? 'is-invalid' : '' }}  "  
+                              placeholder="Ingresar Nombre de la Editorial"
+                              value="{{ old('editorialName',$editorial->name)}}">
+                              {!! $errors->first('editorialName','<span >El editorial es requerido</span>') !!}
+                            </div>
                         </div>
                     </div>
                     <br>

@@ -20,19 +20,33 @@
                   <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <label>Titulo</label>
-                            <input type="text" name="name" class="form-control"  placeholder="Ingrese el codigo para el icono">
+                            <div class="form-group  {{$errors->has('name') ? 'text-danger' : '' }} ">
+                                  <label for="title">Título</label>
+                                  <input type="text" id="name" 
+                                  name="name" class="form-control  {{$errors->has('name') ? 'is-invalid' : '' }}  "  
+                                  placeholder="Ingrese el Título de la Historia"
+                                  value="{{ old('name')}}">
+                                  {!! $errors->first('name','<span >El Título es requerido</span>') !!}
+                            </div>
                         </div>
                         <div class="col-md-6">
-                            <label>Subir Imagen</label><br>
-                            <input type="file" name="image">
+                            <div class="form-group  {{$errors->has('image') ? 'text-danger' : '' }} ">
+                                      <label for="title">Subir Imagen</label>
+                                      <input type="file" id="image" 
+                                      name="image" class="form-control  {{$errors->has('image') ? 'is-invalid' : '' }}  "  
+                                      placeholder="Ingrese el Título de la Historia"
+                                      value="{{ old('image')}}">
+                                      {!! $errors->first('image','<span >La Imagen es requerida</span>') !!}
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                     <div class="col-md-8">
-                    <label>Descripcion</label>
-                            <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
-   
+                            <div class="form-group  {{$errors->has('name') ? 'text-danger' : '' }} ">
+                                  <label for="title">Descripción</label>
+                                  <textarea name="description" id="" cols="30" rows="10" class="form-control {{$errors->has('name') ? 'is-invalid' : '' }}  ">{{ old('description')}}</textarea>
+                                  {!! $errors->first('description','<span >La Descripción es requerida</span>') !!}
+                            </div>
                         </div>
                     </div>
                     <br>

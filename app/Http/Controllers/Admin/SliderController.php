@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
-use Carbon\Carbon;
-use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
-use App\Models\Vision;
-
-class VisionController extends Controller
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+use Carbon\Carbon;
+use App\Models\Slider;
+class SliderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +19,8 @@ class VisionController extends Controller
     public function index()
     {
         //
-        $visions = Vision::all();
-        return view('admin.vision.index',compact('visions'));
+        $sliders = Slider::all();
+        return view('admin.slider.index',compact('sliders'));
     }
 
     /**
@@ -32,7 +31,7 @@ class VisionController extends Controller
     public function create()
     {
         //
-        return view('admin.vision.create');
+        return view('admin.slider.create');
     }
 
     /**
@@ -49,30 +48,36 @@ class VisionController extends Controller
             'image' => 'required|mimes:jpeg,bmp,png,jpg',
             'description' => 'required'
         ]);
+
         $image = $request->file('image');
         $slug = str_slug($request->name);
+
         if(isset($image)){
+
             $currentDate = Carbon::now()->toDateString();
-            $imageName = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            $imagename = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
 
-            if(!Storage::disk('public')->exists('vision')){
-                Storage::disk('public')->makeDirectory('vision');
+            if(!Storage::disk('public')->exists('slider')){
+                Storage::disk('public')->makeDirectory('slider');
             }
-            $storyImage = Image::make($image)->resize(1600,1066)->stream();
-            Storage::disk('public')->put('vision/'.$imageName,$storyImage);
-        }else{
+            $slider = Image::make($image)->resize(500,255)->stream();
+            Storage::disk('public')->put('slider/'.$imagename, $slider);
 
-            $imageName = "default.png";
+        
+        }else{
+            $imagename = "default.png";
         }
-        $story = new Vision();
-        $story->name = $request->name;
-        $story->slug = $slug;
-        $story->description = $request->description;
-        $story->image = $imageName;
-        $story->save();
+
+        $slider = new Slider();
+        $slider->name = $request->name;
+        $slider->description = $request->description;
+        $slider->slug = $slug;
+        $slider->image = $imagename;
+        $slider->save();
+
         toastr()->success('Se Registro exitosamente!');
-        return redirect()->route('vision.index');
-    
+        return redirect()->route('slider.index');
+       
     }
 
 
@@ -85,8 +90,8 @@ class VisionController extends Controller
     public function edit($id)
     {
         //
-        $vision = Vision::find($id);
-        return view('admin.vision.edit',compact('vision'));
+        $slider = Slider::find($id);
+        return view('admin.slider.edit',compact('slider'));
     }
 
     /**
@@ -103,39 +108,41 @@ class VisionController extends Controller
             'name' => 'required',
             'description' => 'required'
         ]);
+
         $image = $request->file('image');
         $slug = str_slug($request->name);
-        $vision = Vision::find($id);
+        $slider = Slider::find($id);
 
         if(isset($image)){
 
             $currentDate = Carbon::now()->toDateString();
             $imagename = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
 
-            if(!Storage::disk('public')->exists('vision')){
-                Storage::disk('public')->makeDirectory('vision');
+            if(!Storage::disk('public')->exists('slider')){
+                Storage::disk('public')->makeDirectory('slider');
             }
             // Busqueda y Elimina para la actualizacion de dato
-            if(Storage::disk('public')->exists('vision/'.$vision->image)){
+            if(Storage::disk('public')->exists('slider/'.$slider->image)){
                 
-                Storage::disk('public')->delete('vision/'.$vision->image);
+                Storage::disk('public')->delete('slider/'.$slider->image);
             }
-            $visionImage = Image::make($image)->resize(500,255)->stream();
-            Storage::disk('public')->put('vision/'.$imagename, $visionImage);
+            $sliderImage = Image::make($image)->resize(500,255)->stream();
+            Storage::disk('public')->put('slider/'.$imagename, $sliderImage);
+ 
 
         }else{
-            $imagename = $vision->image;
+            $imagename = $slider->image;
         }
 
 
-        $vision->name = $request->name;
-        $vision->slug = $slug;
-        $vision->description = $request->description;
-        $vision->image = $imagename;
-        $vision->save();
+        $slider->name = $request->name;
+        $slider->description = $request->description;
+        $slider->slug = $slug;
+        $slider->image = $imagename;
+        $slider->save();
 
         toastr()->success('Se Actualizo exitosamente!');
-        return redirect()->back();
+        return redirect()->route('slider.index');
     }
 
     /**
@@ -147,12 +154,12 @@ class VisionController extends Controller
     public function destroy($id)
     {
         //
-        $vision = Vision::find($id);
-        if(Storage::disk('public')->exists('vision/'.$vision->image)){
-            Storage::disk('public')->delete('vision/'.$vision->image);
+        $slider = Slider::find($id);
+        if(Storage::disk('public')->exists('slider/'.$slider->image)){
+            Storage::disk('public')->delete('slider/'.$slider->image);
         }
-        $vision->delete();
+        $slider->delete();
         toastr()->success('Se Elimino exitosamente!');
-        return redirect()->back();
+        return redirect()->route('slider.index');
     }
 }

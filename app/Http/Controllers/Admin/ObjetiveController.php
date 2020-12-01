@@ -40,6 +40,12 @@ class ObjetiveController extends Controller
     public function store(Request $request)
     {
         //
+        //
+        $this->validate($request, [
+            'icon'=>'required',
+            'name'=>'required',
+            'description'=>'required',
+        ]);
         $objective = new Objective();
         $objective->icon = $request->icon;
         $objective->name = $request->name;
@@ -85,6 +91,11 @@ class ObjetiveController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'icon'=>'required',
+            'name'=>'required',
+            'description'=>'required',
+        ]);
         $objective  = Objective::find($id);
         $objective->icon = $request->icon;
         $objective->name = $request->name;

@@ -16,6 +16,7 @@ use App\Models\Category;
 use App\Models\Distric;
 use App\Models\Book;
 use App\Models\Material;
+use App\Models\Slider;
 
 
 use Carbon\Carbon;
@@ -96,10 +97,13 @@ class PagesController extends Controller
     }
 
     public function bookByFisico($slug){
+        $sliders = Slider::all();
         $materials = Material::all();
         $material = Material::where('slug', $slug)->first();
-        return view('fisico',compact('material','materials'));
+        return view('fisico',compact('material','materials','sliders'));
     }
+
+
 
 
 

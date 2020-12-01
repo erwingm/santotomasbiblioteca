@@ -1,9 +1,11 @@
 @extends('layout')
 @section('content')
+
 <!-- Page Content -->
 <section class="mt-5 container">
+
 <h4 class=" mb-4">
-  <h2 class="card-subtitle mb-2 text-muted" style="text-align:center">Categorias</h2><br> 
+  <h2 class="card-subtitle mb-2 text-muted" style="text-align:center">Categorías</h2><br> 
   </h4>
   <div class="flex flex-wrap">
   @foreach($categories as $category)
@@ -69,6 +71,7 @@
 
 <!--container end-->
 @endsection
+
 
 
 <style>
