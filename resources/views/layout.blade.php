@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -13,16 +12,12 @@
   <!-- Bootstrap core CSS -->
   <link href="{{asset('frontend/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-  
 
   <!-- Ionicons --> 
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Custom styles for this template -->
   <link href="{{asset('frontend/css/shop-homepage.css')}}" rel="stylesheet">
-  <link href="{{asset('frontend/css/newtemplate.css')}}" rel="stylesheet">
-
-  
-
+  <link href="{{asset('frontend/css/newtemplate.css')}}" rel="stylesheet"> 
 </head>
 
 <body  >
@@ -33,6 +28,9 @@
   @include('partials.nav')
 
   
+
+
+
 
   
   @yield('content')
@@ -56,6 +54,7 @@
 
 </html>
 <script>
+
 $('.dropdown-toggle').dropdown();
 
 var ano = (new Date).getFullYear();
