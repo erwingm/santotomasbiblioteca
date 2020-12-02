@@ -19,6 +19,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+          
           <li class="nav-item has-treeview {{request()->is('admin/*') || request()->is('admin/*')? 'menu-open' : ''}}">
             <a href="/admin" class="nav-link active">
               <i class="nav-icon 	fa fa-dashboard"></i>
@@ -28,7 +29,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview {{request()->is('admin/category*') || request()->is('admin/tag*')? 'menu-open' : ''}}">
+          @if(Auth::user()->checkAdmin())
+          <li class="nav-item has-treeview {{request()->is('admin/category*') || request()->is('admin/user*')? 'menu-open' : ''}}">
             <a href="#" class="nav-link active">
               <i class="nav-icon 	fa fa-users"></i>
               <p>
@@ -38,13 +40,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item active">
-                <a href="{{route('category.index')}}" class="nav-link {{request()->is('admin/category') ? 'active' : ''}}">
+                <a href="{{route('user.index')}}" class="nav-link {{request()->is('admin/user*') ? 'active' : ''}}">
                   <i class="fa fa-user nav-icon"></i>
                   <p>Usuarios</p>
                 </a>
               </li>
             </ul>
           </li>
+          @endif
+
           <li class="nav-item has-treeview {{request()->is('admin/category*') || request()->is('admin/tag*')? 'menu-open' : ''}}">
             <a href="#" class="nav-link active">
               <i class="nav-icon 	fa fa-braille"></i>
@@ -68,6 +72,7 @@
               </li>
             </ul>
           </li>
+
           <li class="nav-item has-treeview {{ (request()->is('admin/distric*') || request()->is('admin/institute*') ? 'menu-open' : '')}}">
               <a href="#" class="nav-link active">
                 <i class="nav-icon fa fa-bank"></i>
@@ -115,6 +120,7 @@
 
             </ul>
           </li>
+
           <li class="nav-item has-treeview {{request()->is('admin/activity*') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link active">
               <i class="nav-icon fa fa-newspaper-o"></i>
@@ -132,6 +138,7 @@
               </li>
             </ul>
           </li>
+
           <li class="nav-item has-treeview {{request()->is('admin/investigation*') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link active">
               <i class="nav-icon fa fa-mortar-board"></i>
@@ -149,6 +156,7 @@
               </li>
             </ul>
           </li>
+
           <li class="nav-item has-treeview {{request()->is('admin/procedure*') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link active">
               <i class="nav-icon 	fa fa-id-card-o"></i>
@@ -166,6 +174,7 @@
               </li>
             </ul>
           </li>
+
           <li  class="nav-item has-treeview {{request()->is('admin/story*') || request()->is('admin/vision*') || request()->is('admin/object*') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link active">
               <i class="nav-icon fa fa-cogs"></i>
@@ -206,6 +215,7 @@
               </li>
             </ul>
           </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
