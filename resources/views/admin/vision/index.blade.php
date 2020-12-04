@@ -11,7 +11,11 @@
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">
+            @if($visions->count() >= 2)
+              Edite Los Datos Ingresados
+            @else
                 <a href="{{route('vision.create')}}" class="btn btn-info"><i class="fas fa-plus"></i> Registrar</a>
+            @endif
             </h3>
           </div>
           <!-- /.card-header -->

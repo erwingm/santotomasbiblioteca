@@ -62,10 +62,11 @@ class PagesController extends Controller
     public function information(){
 
         $objectives = Objective::all();
+        $materials = Material::all();
         $story = DB::table('histories')->get();
         $vision = DB::table('visions')->get();
 
-        return view('pages.information',compact('objectives','vision'),['story'=>$story]);
+        return view('pages.information',compact('objectives','vision','materials'),['story'=>$story]);
     }
 
 

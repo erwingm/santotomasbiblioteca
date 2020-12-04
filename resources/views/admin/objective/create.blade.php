@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group  {{$errors->has('icon') ? 'text-danger' : '' }} ">
-                                <label for="icon">Ingresar URL</label>
+                                <label for="icon">Ingresar el codigo del icono</label>
                                 <input type="text" id="icon" 
                                 name="icon" class="form-control  {{$errors->has('icon') ? 'is-invalid' : '' }}  "  
                                 placeholder="Ingrese el código del icono a usar"

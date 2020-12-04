@@ -4,7 +4,9 @@
 <section class="about-section">
 	     <div class="container">
             <div class="row">
+            @if($story->count() >= 1 )
                 <div class="col-lg-6 col-md-12 about-text">
+                
                     <div class="section-heading space-overflow">
                         <h1 class="section-title"> <span>  {{$story[0]->name}}  </span> </h1>
                         <h4 class="section-description">
@@ -14,7 +16,6 @@
 					<div class="space-t-40 space-b-40">
 						<p> {{$story[0]->description}} </p>
 					</div>
-					
 				</div>
   
                 <div class="col-lg-6 col-md-12 about_img space-60">
@@ -22,11 +23,15 @@
                     <img  class="img-responsive thumbnail" src="{{ Storage::disk('public')->url('story/'.$story[0]->image) }}" alt="">
                     </div>
                 </div>
+            @else
+            <h1>Porfavor Ingrese La Historia de La Municipalidad Desde El Administrador</h1>
+            @endif
             </div>
         </div>
 	  </section>
 
     <section>
+    @if($vision->count() >= 2)
     <div class="post-slider text-white">
          <div class="container">
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -73,6 +78,12 @@
             </div>
          </div>
       </div>
+    
+    @else
+
+    <h1>Porfavor Ingrese los Datos De Visión | Misión Desde El administrador</h1>
+    
+    @endif
     </section>
     <br>
     <section class="container pt-3 mb-3">

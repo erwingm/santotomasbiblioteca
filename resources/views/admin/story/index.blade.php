@@ -10,9 +10,13 @@
 
         <div class="card">
           <div class="card-header">
+          @if($stories->count() >= 1)
+              Edite La Historia
+          @else
             <h3 class="card-title">
                 <a href="{{route('story.create')}}" class="btn btn-info"><i class="fas fa-plus"></i> Agregar</a>
             </h3>
+          @endif
           </div>
           <!-- /.card-header -->
           <div class="card-body">
