@@ -5,7 +5,7 @@
 @section('content')
 
 <!-- Page Content -->
-<section class="mt-5 container">
+<!-- <section class="mt-5 container">
 
 <h4 class=" mb-4">
   Listado de Libros Mas Vistos<br> 
@@ -22,7 +22,7 @@
 
 </div>
 
-</section>
+</section> -->
 
 <div class="container">
 {{$books->count()}} Resultados {{$query}}

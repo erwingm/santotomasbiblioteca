@@ -24,7 +24,7 @@ class BookController extends Controller
             $book->increment('view_count');
             Session::put($bookKey,1);
         }
-        $randombooks = Book::all()->random(4);
+        $randombooks = Book::all()->random(1);
         return view('book',compact('book','randombooks','materials','books','authors'));
 
     }
